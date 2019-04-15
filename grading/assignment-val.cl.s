@@ -427,6 +427,79 @@ Main.f:
 	move	$s0 $a0 # f
  # formal x
  # formal y
+	la	$a0 str_const1 # f
+	sw	$a0 0($sp) # f
+	addiu	$sp $sp -4 # f
+# for self SELF 
+	move	$a0 $s0 # f
+	bne	$a0 $zero label0 # f
+	la	$a0 str_const0 # f
+	li	$t1 1 # f
+	jal	_dispatch_abort # f
+label0: # f
+	lw	$t1 8($a0) # f
+	lw	$t1 12($t1) # f
+	jalr	$t1 # f
+#  ==> x offset : 4 self type:M 
+#  ==> y offset : 3 self type:M 
+#  -> curr off 16
+# for x method 
+	lw	$a0 16($fp) # f
+	sw	$a0 0($sp) # f
+	addiu	$sp $sp -4 # f
+# for self SELF 
+	move	$a0 $s0 # f
+	bne	$a0 $zero label1 # f
+	la	$a0 str_const0 # f
+	li	$t1 1 # f
+	jal	_dispatch_abort # f
+label1: # f
+	lw	$t1 8($a0) # f
+	lw	$t1 16($t1) # f
+	jalr	$t1 # f
+	la	$a0 str_const2 # f
+	sw	$a0 0($sp) # f
+	addiu	$sp $sp -4 # f
+# for self SELF 
+	move	$a0 $s0 # f
+	bne	$a0 $zero label2 # f
+	la	$a0 str_const0 # f
+	li	$t1 1 # f
+	jal	_dispatch_abort # f
+label2: # f
+	lw	$t1 8($a0) # f
+	lw	$t1 12($t1) # f
+	jalr	$t1 # f
+#  ==> x offset : 4 self type:M 
+#  ==> y offset : 3 self type:M 
+#  -> curr off 12
+# for y method 
+	lw	$a0 12($fp) # f
+	sw	$a0 0($sp) # f
+	addiu	$sp $sp -4 # f
+# for self SELF 
+	move	$a0 $s0 # f
+	bne	$a0 $zero label3 # f
+	la	$a0 str_const0 # f
+	li	$t1 1 # f
+	jal	_dispatch_abort # f
+label3: # f
+	lw	$t1 8($a0) # f
+	lw	$t1 16($t1) # f
+	jalr	$t1 # f
+	la	$a0 str_const3 # f
+	sw	$a0 0($sp) # f
+	addiu	$sp $sp -4 # f
+# for self SELF 
+	move	$a0 $s0 # f
+	bne	$a0 $zero label4 # f
+	la	$a0 str_const0 # f
+	li	$t1 1 # f
+	jal	_dispatch_abort # f
+label4: # f
+	lw	$t1 8($a0) # f
+	lw	$t1 12($t1) # f
+	jalr	$t1 # f
 	lw	$fp 12($sp) # f
 	lw	$s0 8($sp) # f
 	lw	$ra 4($sp) # f
@@ -442,6 +515,44 @@ Main.main:
  # let code for name x
 	la	$a0 int_const0 # main
 	sw	$a0 12($fp) # main
+	la	$a0 int_const1 # main
+#> for x method 
+	sw	$a0 12($fp) # main
+# tet
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const2 # main
+#> for x method 
+	sw	$a0 12($fp) # main
+# tet
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+#  ==> x offset : 3 Main type:M 
+#  -> curr off 12
+# for x method 
+	lw	$a0 12($fp) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label6 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label6: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

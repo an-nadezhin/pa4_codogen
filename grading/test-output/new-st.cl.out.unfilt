@@ -3,4 +3,8 @@ Copyright 1990-2003 by James R. Larus (larus@cs.wisc.edu).
 All Rights Reserved.
 See the file README for a full copyright notice.
 Loaded: ../lib/trap.handler
+x is 0
+x is 3
+x is 0
+x is 3
 COOL program successfully executed

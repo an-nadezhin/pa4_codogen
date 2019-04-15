@@ -399,6 +399,136 @@ Main.fibo:
 	addiu	$fp $sp 4 # fibo
 	move	$s0 $a0 # fibo
  # formal i
+# ya tyt
+#  ==> i offset : 5 self type:M 
+#  -> curr off 20
+# for i method 
+	lw	$a0 20($fp) # fibo
+	sw	$s1 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$s1 0($sp) # fibo
+	la	$a0 int_const0 # fibo
+	sw	$t0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$t0 0($sp) # fibo
+	la	$a0 bool_const0 # fibo
+	beq	$t0 $s1 label2 # fibo
+	la	$a0 bool_const1 # fibo
+label2: # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$s1 0($sp) # fibo
+# ya tyt(net)
+	lw	$s1 12($a0) # fibo
+	beqz	$s1 label1 # fibo
+	la	$a0 int_const0 # fibo
+	b	label0 # fibo
+label1: # fibo
+# ya tyt
+#  ==> i offset : 5 self type:M 
+#  -> curr off 20
+# for i method 
+	lw	$a0 20($fp) # fibo
+	sw	$s1 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$s1 0($sp) # fibo
+	la	$a0 int_const1 # fibo
+	sw	$t0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$t0 0($sp) # fibo
+	la	$a0 bool_const0 # fibo
+	beq	$t0 $s1 label5 # fibo
+	la	$a0 bool_const1 # fibo
+label5: # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$s1 0($sp) # fibo
+# ya tyt(net)
+	lw	$s1 12($a0) # fibo
+	beqz	$s1 label4 # fibo
+	la	$a0 int_const1 # fibo
+	b	label3 # fibo
+label4: # fibo
+#  ==> i offset : 5 self type:M 
+#  -> curr off 20
+# for i method 
+	lw	$a0 20($fp) # fibo
+	sw	$a0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	la	$a0 int_const1 # fibo
+	lw	$s1 12($a0) # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$a0 0($sp) # fibo
+	lw	$a0 12($a0) # fibo
+	sub	$a0 $a0 $s1 # fibo
+	sw	$a0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	la	$a0 Int_protObj # fibo
+	jal	Object.copy # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$s1 0($sp) # fibo
+	sw	$s1 12($a0) # fibo
+	sw	$a0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+# for self SELF 
+	move	$a0 $s0 # fibo
+	bne	$a0 $zero label6 # fibo
+	la	$a0 str_const0 # fibo
+	li	$t1 1 # fibo
+	jal	_dispatch_abort # fibo
+label6: # fibo
+	lw	$t1 8($a0) # fibo
+	lw	$t1 28($t1) # fibo
+	jalr	$t1 # fibo
+	sw	$a0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+#  ==> i offset : 5 self type:M 
+#  -> curr off 20
+# for i method 
+	lw	$a0 20($fp) # fibo
+	sw	$a0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	la	$a0 int_const2 # fibo
+	lw	$s1 12($a0) # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$a0 0($sp) # fibo
+	lw	$a0 12($a0) # fibo
+	sub	$a0 $a0 $s1 # fibo
+	sw	$a0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	la	$a0 Int_protObj # fibo
+	jal	Object.copy # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$s1 0($sp) # fibo
+	sw	$s1 12($a0) # fibo
+	sw	$a0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+# for self SELF 
+	move	$a0 $s0 # fibo
+	bne	$a0 $zero label7 # fibo
+	la	$a0 str_const0 # fibo
+	li	$t1 1 # fibo
+	jal	_dispatch_abort # fibo
+label7: # fibo
+	lw	$t1 8($a0) # fibo
+	lw	$t1 28($t1) # fibo
+	jalr	$t1 # fibo
+	lw	$s1 12($a0) # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$a0 0($sp) # fibo
+	lw	$a0 12($a0) # fibo
+	add	$a0 $a0 $s1 # fibo
+	sw	$a0 0($sp) # fibo
+	addiu	$sp $sp -4 # fibo
+	la	$a0 Int_protObj # fibo
+	jal	Object.copy # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$s1 0($sp) # fibo
+	sw	$s1 12($a0) # fibo
+label3: # fibo
+label0: # fibo
 	lw	$fp 12($sp) # fibo
 	lw	$s0 8($sp) # fibo
 	lw	$ra 4($sp) # fibo
@@ -416,11 +546,11 @@ Main.main:
 	addiu	$sp $sp -4 # main
 # for self SELF 
 	move	$a0 $s0 # main
-	bne	$a0 $zero label0 # main
+	bne	$a0 $zero label8 # main
 	la	$a0 str_const0 # main
 	li	$t1 1 # main
 	jal	_dispatch_abort # main
-label0: # main
+label8: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 28($t1) # main
 	jalr	$t1 # main
@@ -428,11 +558,11 @@ label0: # main
 	addiu	$sp $sp -4 # main
 # for self SELF 
 	move	$a0 $s0 # main
-	bne	$a0 $zero label1 # main
+	bne	$a0 $zero label9 # main
 	la	$a0 str_const0 # main
 	li	$t1 1 # main
 	jal	_dispatch_abort # main
-label1: # main
+label9: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 16($t1) # main
 	jalr	$t1 # main

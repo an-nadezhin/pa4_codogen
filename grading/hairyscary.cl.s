@@ -607,6 +607,25 @@ Bazz.printh:
 	sw	$ra 4($sp) # printh
 	addiu	$fp $sp 4 # printh
 	move	$s0 $a0 # printh
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  -> curr off 12
+# for h self 
+	lw	$a0 12($s0) # printh
+	sw	$a0 0($sp) # printh
+	addiu	$sp $sp -4 # printh
+# for self SELF 
+	move	$a0 $s0 # printh
+	bne	$a0 $zero label0 # printh
+	la	$a0 str_const0 # printh
+	li	$t1 1 # printh
+	jal	_dispatch_abort # printh
+label0: # printh
+	lw	$t1 8($a0) # printh
+	lw	$t1 16($t1) # printh
+	jalr	$t1 # printh
+	la	$a0 int_const2 # printh
 	lw	$fp 12($sp) # printh
 	lw	$s0 8($sp) # printh
 	lw	$ra 4($sp) # printh
@@ -627,6 +646,38 @@ Bazz.doh:
 # for h self 
 	lw	$a0 12($s0) # doh
 	sw	$a0 12($fp) # doh
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> i offset : 3 Bazz type:M 
+#  -> curr off 12
+# for h self 
+	lw	$a0 12($s0) # doh
+	sw	$a0 0($sp) # doh
+	addiu	$sp $sp -4 # doh
+	la	$a0 int_const1 # doh
+	lw	$s1 12($a0) # doh
+	addiu	$sp $sp 4 # doh
+	lw	$a0 0($sp) # doh
+	lw	$a0 12($a0) # doh
+	add	$a0 $a0 $s1 # doh
+	sw	$a0 0($sp) # doh
+	addiu	$sp $sp -4 # doh
+	la	$a0 Int_protObj # doh
+	jal	Object.copy # doh
+	addiu	$sp $sp 4 # doh
+	lw	$s1 0($sp) # doh
+	sw	$s1 12($a0) # doh
+#> for h self 
+	sw	$a0 12($s0) # doh
+# tet
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> i offset : 3 Bazz type:M 
+#  -> curr off 12
+# for i method 
+	lw	$a0 12($fp) # doh
 	lw	$fp 12($sp) # doh
 	lw	$s0 8($sp) # doh
 	lw	$ra 4($sp) # doh
@@ -649,6 +700,42 @@ Foo.doh:
 # for h self 
 	lw	$a0 12($s0) # doh
 	sw	$a0 12($fp) # doh
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  ==> i offset : 3 Foo type:M 
+#  -> curr off 12
+# for h self 
+	lw	$a0 12($s0) # doh
+	sw	$a0 0($sp) # doh
+	addiu	$sp $sp -4 # doh
+	la	$a0 int_const0 # doh
+	lw	$s1 12($a0) # doh
+	addiu	$sp $sp 4 # doh
+	lw	$a0 0($sp) # doh
+	lw	$a0 12($a0) # doh
+	add	$a0 $a0 $s1 # doh
+	sw	$a0 0($sp) # doh
+	addiu	$sp $sp -4 # doh
+	la	$a0 Int_protObj # doh
+	jal	Object.copy # doh
+	addiu	$sp $sp 4 # doh
+	lw	$s1 0($sp) # doh
+	sw	$s1 12($a0) # doh
+#> for h self 
+	sw	$a0 12($s0) # doh
+# tet
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  ==> i offset : 3 Foo type:M 
+#  -> curr off 12
+# for i method 
+	lw	$a0 12($fp) # doh
 	lw	$fp 12($sp) # doh
 	lw	$s0 8($sp) # doh
 	lw	$ra 4($sp) # doh

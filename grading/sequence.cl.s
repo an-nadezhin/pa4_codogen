@@ -393,6 +393,272 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 16
+# for b self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for a self 
+	sw	$a0 12($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 12
+# for a self 
+	lw	$a0 12($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for b self 
+	sw	$a0 16($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 16
+# for b self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for a self 
+	sw	$a0 12($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 12
+# for a self 
+	lw	$a0 12($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for b self 
+	sw	$a0 16($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 16
+# for b self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for a self 
+	sw	$a0 12($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 12
+# for a self 
+	lw	$a0 12($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for b self 
+	sw	$a0 16($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 16
+# for b self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for a self 
+	sw	$a0 12($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 12
+# for a self 
+	lw	$a0 12($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for b self 
+	sw	$a0 16($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 16
+# for b self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for a self 
+	sw	$a0 12($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 12
+# for a self 
+	lw	$a0 12($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for b self 
+	sw	$a0 16($s0) # main
+# tet
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 12
+# for a self 
+	lw	$a0 12($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> a offset : 3 Main type:O 
+#  ==> b offset : 4 Main type:O 
+#  -> curr off 16
+# for b self 
+	lw	$a0 16($s0) # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label0 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label0: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

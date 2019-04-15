@@ -415,6 +415,220 @@ Main.exp:
 	move	$s0 $a0 # exp
  # formal b
  # formal x
+# ya tyt
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  -> curr off 24
+# for x method 
+	lw	$a0 24($fp) # exp
+	sw	$s1 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+	la	$a0 int_const0 # exp
+	sw	$t0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	addiu	$sp $sp 4 # exp
+	lw	$t0 0($sp) # exp
+	la	$a0 bool_const0 # exp
+	beq	$t0 $s1 label2 # exp
+	la	$a0 bool_const1 # exp
+label2: # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+# ya tyt(net)
+	lw	$s1 12($a0) # exp
+	beqz	$s1 label1 # exp
+	la	$a0 int_const1 # exp
+	b	label0 # exp
+label1: # exp
+# ya tyt
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  -> curr off 24
+# for x method 
+	lw	$a0 24($fp) # exp
+	sw	$s1 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+	la	$a0 int_const2 # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  -> curr off 24
+# for x method 
+	lw	$a0 24($fp) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 int_const2 # exp
+	lw	$s1 12($a0) # exp
+	addiu	$sp $sp 4 # exp
+	lw	$a0 0($sp) # exp
+	lw	$a0 12($a0) # exp
+	div	$a0 $a0 $s1 # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 Int_protObj # exp
+	jal	Object.copy # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+	sw	$s1 12($a0) # exp
+	lw	$s1 12($a0) # exp
+	addiu	$sp $sp 4 # exp
+	lw	$a0 0($sp) # exp
+	lw	$a0 12($a0) # exp
+	mul	$a0 $a0 $s1 # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 Int_protObj # exp
+	jal	Object.copy # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+	sw	$s1 12($a0) # exp
+	sw	$t0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	addiu	$sp $sp 4 # exp
+	lw	$t0 0($sp) # exp
+	la	$a0 bool_const0 # exp
+	beq	$t0 $s1 label5 # exp
+	la	$a0 bool_const1 # exp
+label5: # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+# ya tyt(net)
+	lw	$s1 12($a0) # exp
+	beqz	$s1 label4 # exp
+ # let code for name y
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  -> curr off 28
+# for b method 
+	lw	$a0 28($fp) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  -> curr off 24
+# for x method 
+	lw	$a0 24($fp) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 int_const2 # exp
+	lw	$s1 12($a0) # exp
+	addiu	$sp $sp 4 # exp
+	lw	$a0 0($sp) # exp
+	lw	$a0 12($a0) # exp
+	div	$a0 $a0 $s1 # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 Int_protObj # exp
+	jal	Object.copy # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+	sw	$s1 12($a0) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+# for self SELF 
+	move	$a0 $s0 # exp
+	bne	$a0 $zero label6 # exp
+	la	$a0 str_const0 # exp
+	li	$t1 1 # exp
+	jal	_dispatch_abort # exp
+label6: # exp
+	lw	$t1 8($a0) # exp
+	lw	$t1 28($t1) # exp
+	jalr	$t1 # exp
+	sw	$a0 12($fp) # exp
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  ==> y offset : 3 Main type:M 
+#  -> curr off 12
+# for y method 
+	lw	$a0 12($fp) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  ==> y offset : 3 Main type:M 
+#  -> curr off 12
+# for y method 
+	lw	$a0 12($fp) # exp
+	lw	$s1 12($a0) # exp
+	addiu	$sp $sp 4 # exp
+	lw	$a0 0($sp) # exp
+	lw	$a0 12($a0) # exp
+	mul	$a0 $a0 $s1 # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 Int_protObj # exp
+	jal	Object.copy # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+	sw	$s1 12($a0) # exp
+	b	label3 # exp
+label4: # exp
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  -> curr off 28
+# for b method 
+	lw	$a0 28($fp) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  -> curr off 28
+# for b method 
+	lw	$a0 28($fp) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+#  ==> b offset : 7 self type:M 
+#  ==> x offset : 6 self type:M 
+#  -> curr off 24
+# for x method 
+	lw	$a0 24($fp) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 int_const1 # exp
+	lw	$s1 12($a0) # exp
+	addiu	$sp $sp 4 # exp
+	lw	$a0 0($sp) # exp
+	lw	$a0 12($a0) # exp
+	sub	$a0 $a0 $s1 # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 Int_protObj # exp
+	jal	Object.copy # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+	sw	$s1 12($a0) # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+# for self SELF 
+	move	$a0 $s0 # exp
+	bne	$a0 $zero label7 # exp
+	la	$a0 str_const0 # exp
+	li	$t1 1 # exp
+	jal	_dispatch_abort # exp
+label7: # exp
+	lw	$t1 8($a0) # exp
+	lw	$t1 28($t1) # exp
+	jalr	$t1 # exp
+	lw	$s1 12($a0) # exp
+	addiu	$sp $sp 4 # exp
+	lw	$a0 0($sp) # exp
+	lw	$a0 12($a0) # exp
+	mul	$a0 $a0 $s1 # exp
+	sw	$a0 0($sp) # exp
+	addiu	$sp $sp -4 # exp
+	la	$a0 Int_protObj # exp
+	jal	Object.copy # exp
+	addiu	$sp $sp 4 # exp
+	lw	$s1 0($sp) # exp
+	sw	$s1 12($a0) # exp
+label3: # exp
+label0: # exp
 	lw	$fp 12($sp) # exp
 	lw	$s0 8($sp) # exp
 	lw	$ra 4($sp) # exp
@@ -427,6 +641,129 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+	la	$a0 int_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const3 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label8 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label8: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label9 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label9: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label10 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label10: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 int_const4 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const5 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label11 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label11: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label12 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label12: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label13 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label13: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 int_const6 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const4 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label14 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label14: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label15 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label15: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label16 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label16: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

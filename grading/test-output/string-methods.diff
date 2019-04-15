@@ -1,4 +1,10 @@
-6,8d5
+6,9c6,9
 < 9
 < this is a string
 < is
+< COOL program successfully executed
+---
+> 0
+>  string
+> Index to substr is too big
+> Execution aborted.

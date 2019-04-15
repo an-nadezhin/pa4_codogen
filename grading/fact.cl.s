@@ -408,6 +408,82 @@ Main.fact:
 	addiu	$fp $sp 4 # fact
 	move	$s0 $a0 # fact
  # formal n
+# ya tyt
+#  ==> n offset : 5 self type:M 
+#  -> curr off 20
+# for n method 
+	lw	$a0 20($fp) # fact
+	sw	$s1 0($sp) # fact
+	addiu	$sp $sp -4 # fact
+	addiu	$sp $sp 4 # fact
+	lw	$s1 0($sp) # fact
+	la	$a0 int_const0 # fact
+	sw	$t0 0($sp) # fact
+	addiu	$sp $sp -4 # fact
+	addiu	$sp $sp 4 # fact
+	lw	$t0 0($sp) # fact
+	la	$a0 bool_const0 # fact
+	beq	$t0 $s1 label2 # fact
+	la	$a0 bool_const1 # fact
+label2: # fact
+	addiu	$sp $sp 4 # fact
+	lw	$s1 0($sp) # fact
+# ya tyt(net)
+	lw	$s1 12($a0) # fact
+	beqz	$s1 label1 # fact
+	la	$a0 int_const1 # fact
+	b	label0 # fact
+label1: # fact
+#  ==> n offset : 5 self type:M 
+#  -> curr off 20
+# for n method 
+	lw	$a0 20($fp) # fact
+	sw	$a0 0($sp) # fact
+	addiu	$sp $sp -4 # fact
+#  ==> n offset : 5 self type:M 
+#  -> curr off 20
+# for n method 
+	lw	$a0 20($fp) # fact
+	sw	$a0 0($sp) # fact
+	addiu	$sp $sp -4 # fact
+	la	$a0 int_const1 # fact
+	lw	$s1 12($a0) # fact
+	addiu	$sp $sp 4 # fact
+	lw	$a0 0($sp) # fact
+	lw	$a0 12($a0) # fact
+	sub	$a0 $a0 $s1 # fact
+	sw	$a0 0($sp) # fact
+	addiu	$sp $sp -4 # fact
+	la	$a0 Int_protObj # fact
+	jal	Object.copy # fact
+	addiu	$sp $sp 4 # fact
+	lw	$s1 0($sp) # fact
+	sw	$s1 12($a0) # fact
+	sw	$a0 0($sp) # fact
+	addiu	$sp $sp -4 # fact
+# for self SELF 
+	move	$a0 $s0 # fact
+	bne	$a0 $zero label3 # fact
+	la	$a0 str_const0 # fact
+	li	$t1 1 # fact
+	jal	_dispatch_abort # fact
+label3: # fact
+	lw	$t1 8($a0) # fact
+	lw	$t1 28($t1) # fact
+	jalr	$t1 # fact
+	lw	$s1 12($a0) # fact
+	addiu	$sp $sp 4 # fact
+	lw	$a0 0($sp) # fact
+	lw	$a0 12($a0) # fact
+	mul	$a0 $a0 $s1 # fact
+	sw	$a0 0($sp) # fact
+	addiu	$sp $sp -4 # fact
+	la	$a0 Int_protObj # fact
+	jal	Object.copy # fact
+	addiu	$sp $sp 4 # fact
+	lw	$s1 0($sp) # fact
+	sw	$s1 12($a0) # fact
+label0: # fact
 	lw	$fp 12($sp) # fact
 	lw	$s0 8($sp) # fact
 	lw	$ra 4($sp) # fact
@@ -420,6 +496,120 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+	la	$a0 int_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label4 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label4: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label6 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label6: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 int_const3 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label7 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label7: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label8 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label8: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label9 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label9: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 int_const4 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label10 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label10: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label11 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label11: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label12 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label12: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

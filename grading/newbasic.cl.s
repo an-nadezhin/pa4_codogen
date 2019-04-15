@@ -397,6 +397,150 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+	la	$a0 bool_const0 # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label0 # main
+	la	$a0 bool_const1 # main
+label0: # main
+	bne	$a0 $zero label1 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label1: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 4($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> io offset : 3 Main type:O 
+#  -> curr off 12
+# for io self 
+	lw	$a0 12($s0) # main
+	bne	$a0 $zero label2 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label2: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> io offset : 3 Main type:O 
+#  -> curr off 12
+# for io self 
+	lw	$a0 12($s0) # main
+	bne	$a0 $zero label3 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label3: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	jal	Int_init
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const0 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> io offset : 3 Main type:O 
+#  -> curr off 12
+# for io self 
+	lw	$a0 12($s0) # main
+	bne	$a0 $zero label4 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label4: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> io offset : 3 Main type:O 
+#  -> curr off 12
+# for io self 
+	lw	$a0 12($s0) # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 int_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 String_protObj # main
+	jal	Object.copy # main
+	jal	String_init
+	bne	$a0 $zero label6 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label6: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 20($t1) # main
+	jalr	$t1 # main
+	bne	$a0 $zero label7 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label7: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 4($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> io offset : 3 Main type:O 
+#  -> curr off 12
+# for io self 
+	lw	$a0 12($s0) # main
+	bne	$a0 $zero label8 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label8: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> io offset : 3 Main type:O 
+#  -> curr off 12
+# for io self 
+	lw	$a0 12($s0) # main
+	bne	$a0 $zero label9 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label9: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

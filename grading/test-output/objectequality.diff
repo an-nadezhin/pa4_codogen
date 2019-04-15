@@ -1,5 +1,4 @@
-6,7c6
-< 15
+6c6
 < COOL program successfully executed
 ---
-> : Dispatch to void.
+> Abort called from class Main

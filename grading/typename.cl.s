@@ -508,6 +508,43 @@ Base.identify:
 	addiu	$fp $sp 4 # identify
 	move	$s0 $a0 # identify
  # formal thing
+#  ==> thing offset : 3 self type:M 
+#  -> curr off 12
+# for thing method 
+	lw	$a0 12($fp) # identify
+	bne	$a0 $zero label1 # identify
+	la	$a0 str_const0 # identify
+	li	$t1 1 # identify
+	jal	_dispatch_abort # identify
+label1: # identify
+	lw	$t1 8($a0) # identify
+	lw	$t1 4($t1) # identify
+	jalr	$t1 # identify
+	sw	$a0 0($sp) # identify
+	addiu	$sp $sp -4 # identify
+# for self SELF 
+	move	$a0 $s0 # identify
+	bne	$a0 $zero label2 # identify
+	la	$a0 str_const0 # identify
+	li	$t1 1 # identify
+	jal	_dispatch_abort # identify
+label2: # identify
+	lw	$t1 8($a0) # identify
+	lw	$t1 12($t1) # identify
+	jalr	$t1 # identify
+	la	$a0 str_const1 # identify
+	sw	$a0 0($sp) # identify
+	addiu	$sp $sp -4 # identify
+# for self SELF 
+	move	$a0 $s0 # identify
+	bne	$a0 $zero label3 # identify
+	la	$a0 str_const0 # identify
+	li	$t1 1 # identify
+	jal	_dispatch_abort # identify
+label3: # identify
+	lw	$t1 8($a0) # identify
+	lw	$t1 12($t1) # identify
+	jalr	$t1 # identify
 	lw	$fp 12($sp) # identify
 	lw	$s0 8($sp) # identify
 	lw	$ra 4($sp) # identify
@@ -520,6 +557,86 @@ Base.test:
 	sw	$ra 4($sp) # test
 	addiu	$fp $sp 4 # test
 	move	$s0 $a0 # test
+	la	$a0 Base_protObj # test
+	jal	Object.copy # test
+	jal	Base_init
+	sw	$a0 0($sp) # test
+	addiu	$sp $sp -4 # test
+# for self SELF 
+	move	$a0 $s0 # test
+	bne	$a0 $zero label4 # test
+	la	$a0 str_const0 # test
+	li	$t1 1 # test
+	jal	_dispatch_abort # test
+label4: # test
+	lw	$t1 8($a0) # test
+	lw	$t1 28($t1) # test
+	jalr	$t1 # test
+	la	$a0 Derived_protObj # test
+	jal	Object.copy # test
+	jal	Derived_init
+	sw	$a0 0($sp) # test
+	addiu	$sp $sp -4 # test
+# for self SELF 
+	move	$a0 $s0 # test
+	bne	$a0 $zero label5 # test
+	la	$a0 str_const0 # test
+	li	$t1 1 # test
+	jal	_dispatch_abort # test
+label5: # test
+	lw	$t1 8($a0) # test
+	lw	$t1 28($t1) # test
+	jalr	$t1 # test
+	la	$a0 Main_protObj # test
+	jal	Object.copy # test
+	jal	Main_init
+	sw	$a0 0($sp) # test
+	addiu	$sp $sp -4 # test
+# for self SELF 
+	move	$a0 $s0 # test
+	bne	$a0 $zero label6 # test
+	la	$a0 str_const0 # test
+	li	$t1 1 # test
+	jal	_dispatch_abort # test
+label6: # test
+	lw	$t1 8($a0) # test
+	lw	$t1 28($t1) # test
+	jalr	$t1 # test
+ # let code for name poly
+	la	$a0 Derived_protObj # test
+	jal	Object.copy # test
+	jal	Derived_init
+	sw	$a0 12($fp) # test
+#  ==> poly offset : 3 Base type:M 
+#  -> curr off 12
+# for poly method 
+	lw	$a0 12($fp) # test
+	sw	$a0 0($sp) # test
+	addiu	$sp $sp -4 # test
+# for self SELF 
+	move	$a0 $s0 # test
+	bne	$a0 $zero label7 # test
+	la	$a0 str_const0 # test
+	li	$t1 1 # test
+	jal	_dispatch_abort # test
+label7: # test
+	lw	$t1 8($a0) # test
+	lw	$t1 28($t1) # test
+	jalr	$t1 # test
+# for self SELF 
+	move	$a0 $s0 # test
+	sw	$a0 0($sp) # test
+	addiu	$sp $sp -4 # test
+# for self SELF 
+	move	$a0 $s0 # test
+	bne	$a0 $zero label8 # test
+	la	$a0 str_const0 # test
+	li	$t1 1 # test
+	jal	_dispatch_abort # test
+label8: # test
+	lw	$t1 8($a0) # test
+	lw	$t1 28($t1) # test
+	jalr	$t1 # test
 	lw	$fp 12($sp) # test
 	lw	$s0 8($sp) # test
 	lw	$ra 4($sp) # test

@@ -1,5 +1,4 @@
-6,26d5
-<          X         
+7,27c7,9
 < ........XXX........
 < .......X...X.......
 < ......XXX.XXX......
@@ -20,3 +19,8 @@
 < ...X...X...X...X...
 < ..XXX.XXX.XXX.XXX..
 < .X...............X.
+< COOL program successfully executed
+---
+> Exception occurred at PC=0x1001078c
+>   Bad address in text read: 0x1001078c
+>   Exception 6  [Bad address in text read]  Execution aborted

@@ -414,6 +414,35 @@ Main.print:
 	addiu	$fp $sp 4 # print
 	move	$s0 $a0 # print
  # formal x
+#  ==> x offset : 3 self type:M 
+#  -> curr off 12
+# for x method 
+	lw	$a0 12($fp) # print
+	sw	$a0 0($sp) # print
+	addiu	$sp $sp -4 # print
+# for self SELF 
+	move	$a0 $s0 # print
+	bne	$a0 $zero label0 # print
+	la	$a0 str_const0 # print
+	li	$t1 1 # print
+	jal	_dispatch_abort # print
+label0: # print
+	lw	$t1 8($a0) # print
+	lw	$t1 16($t1) # print
+	jalr	$t1 # print
+	la	$a0 str_const1 # print
+	sw	$a0 0($sp) # print
+	addiu	$sp $sp -4 # print
+# for self SELF 
+	move	$a0 $s0 # print
+	bne	$a0 $zero label1 # print
+	la	$a0 str_const0 # print
+	li	$t1 1 # print
+	jal	_dispatch_abort # print
+label1: # print
+	lw	$t1 8($a0) # print
+	lw	$t1 12($t1) # print
+	jalr	$t1 # print
 	lw	$fp 12($sp) # print
 	lw	$s0 8($sp) # print
 	lw	$ra 4($sp) # print
@@ -444,6 +473,60 @@ Main.main:
  # let code for name foo
 	la	$a0 bool_const0 # main
 	sw	$a0 20($fp) # main
+#  ==> foo offset : 3 Main type:M 
+#  ==> foo offset : 4 Main type:M 
+#  ==> foo offset : 5 Main type:M 
+#  -> curr off 20
+# for foo method 
+	lw	$a0 20($fp) # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label4 # main
+	la	$a0 bool_const1 # main
+label4: # main
+	lw	$s1 12($a0) # main
+	beqz	$s1 label3 # main
+ # let code for name foo
+	la	$a0 int_const2 # main
+	sw	$a0 24($fp) # main
+#  ==> foo offset : 3 Main type:M 
+#  ==> foo offset : 4 Main type:M 
+#  ==> foo offset : 5 Main type:M 
+#  ==> foo offset : 6 Main type:M 
+#  -> curr off 24
+# for foo method 
+	lw	$a0 24($fp) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	b	label2 # main
+label3: # main
+	la	$a0 int_const0 # main
+label2: # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

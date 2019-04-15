@@ -409,6 +409,35 @@ Main.recite:
 	addiu	$fp $sp 4 # recite
 	move	$s0 $a0 # recite
  # formal value
+#  ==> value offset : 3 self type:M 
+#  -> curr off 12
+# for value method 
+	lw	$a0 12($fp) # recite
+	sw	$a0 0($sp) # recite
+	addiu	$sp $sp -4 # recite
+# for self SELF 
+	move	$a0 $s0 # recite
+	bne	$a0 $zero label0 # recite
+	la	$a0 str_const0 # recite
+	li	$t1 1 # recite
+	jal	_dispatch_abort # recite
+label0: # recite
+	lw	$t1 8($a0) # recite
+	lw	$t1 16($t1) # recite
+	jalr	$t1 # recite
+	la	$a0 str_const1 # recite
+	sw	$a0 0($sp) # recite
+	addiu	$sp $sp -4 # recite
+# for self SELF 
+	move	$a0 $s0 # recite
+	bne	$a0 $zero label1 # recite
+	la	$a0 str_const0 # recite
+	li	$t1 1 # recite
+	jal	_dispatch_abort # recite
+label1: # recite
+	lw	$t1 8($a0) # recite
+	lw	$t1 12($t1) # recite
+	jalr	$t1 # recite
 	lw	$fp 12($sp) # recite
 	lw	$s0 8($sp) # recite
 	lw	$ra 4($sp) # recite
@@ -443,36 +472,6 @@ Main.main:
 	addiu	$sp $sp -4 # main
 # for self SELF 
 	move	$a0 $s0 # main
-	bne	$a0 $zero label0 # main
-	la	$a0 str_const0 # main
-	li	$t1 1 # main
-	jal	_dispatch_abort # main
-label0: # main
-	lw	$t1 8($a0) # main
-	lw	$t1 28($t1) # main
-	jalr	$t1 # main
-	sw	$a0 0($sp) # main
-	addiu	$sp $sp -4 # main
-	la	$a0 int_const1 # main
-	sw	$a0 0($sp) # main
-	addiu	$sp $sp -4 # main
-# for self SELF 
-	move	$a0 $s0 # main
-	bne	$a0 $zero label1 # main
-	la	$a0 str_const0 # main
-	li	$t1 1 # main
-	jal	_dispatch_abort # main
-label1: # main
-	lw	$t1 8($a0) # main
-	lw	$t1 28($t1) # main
-	jalr	$t1 # main
-	sw	$a0 0($sp) # main
-	addiu	$sp $sp -4 # main
-	la	$a0 int_const2 # main
-	sw	$a0 0($sp) # main
-	addiu	$sp $sp -4 # main
-# for self SELF 
-	move	$a0 $s0 # main
 	bne	$a0 $zero label2 # main
 	la	$a0 str_const0 # main
 	li	$t1 1 # main
@@ -483,6 +482,9 @@ label2: # main
 	jalr	$t1 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
+	la	$a0 int_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
 # for self SELF 
 	move	$a0 $s0 # main
 	bne	$a0 $zero label3 # main
@@ -490,6 +492,33 @@ label2: # main
 	li	$t1 1 # main
 	jal	_dispatch_abort # main
 label3: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label4 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label4: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 32($t1) # main
 	jalr	$t1 # main

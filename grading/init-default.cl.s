@@ -522,6 +522,141 @@ A.print_attr:
 	sw	$ra 4($sp) # print_attr
 	addiu	$fp $sp 4 # print_attr
 	move	$s0 $a0 # print_attr
+	la	$a0 str_const1 # print_attr
+	sw	$a0 0($sp) # print_attr
+	addiu	$sp $sp -4 # print_attr
+# for self SELF 
+	move	$a0 $s0 # print_attr
+	bne	$a0 $zero label1 # print_attr
+	la	$a0 str_const0 # print_attr
+	li	$t1 1 # print_attr
+	jal	_dispatch_abort # print_attr
+label1: # print_attr
+	lw	$t1 8($a0) # print_attr
+	lw	$t1 12($t1) # print_attr
+	jalr	$t1 # print_attr
+#  ==> x offset : 3 A type:O 
+#  ==> b offset : 4 A type:O 
+#  ==> y offset : 5 A type:O 
+#  ==> z offset : 6 A type:O 
+#  -> curr off 12
+# for x self 
+	lw	$a0 12($s0) # print_attr
+	sw	$a0 0($sp) # print_attr
+	addiu	$sp $sp -4 # print_attr
+# for self SELF 
+	move	$a0 $s0 # print_attr
+	bne	$a0 $zero label2 # print_attr
+	la	$a0 str_const0 # print_attr
+	li	$t1 1 # print_attr
+	jal	_dispatch_abort # print_attr
+label2: # print_attr
+	lw	$t1 8($a0) # print_attr
+	lw	$t1 16($t1) # print_attr
+	jalr	$t1 # print_attr
+	la	$a0 str_const2 # print_attr
+	sw	$a0 0($sp) # print_attr
+	addiu	$sp $sp -4 # print_attr
+# for self SELF 
+	move	$a0 $s0 # print_attr
+	bne	$a0 $zero label3 # print_attr
+	la	$a0 str_const0 # print_attr
+	li	$t1 1 # print_attr
+	jal	_dispatch_abort # print_attr
+label3: # print_attr
+	lw	$t1 8($a0) # print_attr
+	lw	$t1 12($t1) # print_attr
+	jalr	$t1 # print_attr
+#  ==> x offset : 3 A type:O 
+#  ==> b offset : 4 A type:O 
+#  ==> y offset : 5 A type:O 
+#  ==> z offset : 6 A type:O 
+#  -> curr off 16
+# for b self 
+	lw	$a0 16($s0) # print_attr
+	lw	$s1 12($a0) # print_attr
+	beqz	$s1 label5 # print_attr
+	la	$a0 str_const3 # print_attr
+	b	label4 # print_attr
+label5: # print_attr
+	la	$a0 str_const4 # print_attr
+label4: # print_attr
+	sw	$a0 0($sp) # print_attr
+	addiu	$sp $sp -4 # print_attr
+# for self SELF 
+	move	$a0 $s0 # print_attr
+	bne	$a0 $zero label6 # print_attr
+	la	$a0 str_const0 # print_attr
+	li	$t1 1 # print_attr
+	jal	_dispatch_abort # print_attr
+label6: # print_attr
+	lw	$t1 8($a0) # print_attr
+	lw	$t1 12($t1) # print_attr
+	jalr	$t1 # print_attr
+	la	$a0 str_const5 # print_attr
+	sw	$a0 0($sp) # print_attr
+	addiu	$sp $sp -4 # print_attr
+# for self SELF 
+	move	$a0 $s0 # print_attr
+	bne	$a0 $zero label7 # print_attr
+	la	$a0 str_const0 # print_attr
+	li	$t1 1 # print_attr
+	jal	_dispatch_abort # print_attr
+label7: # print_attr
+	lw	$t1 8($a0) # print_attr
+	lw	$t1 12($t1) # print_attr
+	jalr	$t1 # print_attr
+#  ==> x offset : 3 A type:O 
+#  ==> b offset : 4 A type:O 
+#  ==> y offset : 5 A type:O 
+#  ==> z offset : 6 A type:O 
+#  -> curr off 20
+# for y self 
+	lw	$a0 20($s0) # print_attr
+	sw	$a0 0($sp) # print_attr
+	addiu	$sp $sp -4 # print_attr
+# for self SELF 
+	move	$a0 $s0 # print_attr
+	bne	$a0 $zero label8 # print_attr
+	la	$a0 str_const0 # print_attr
+	li	$t1 1 # print_attr
+	jal	_dispatch_abort # print_attr
+label8: # print_attr
+	lw	$t1 8($a0) # print_attr
+	lw	$t1 16($t1) # print_attr
+	jalr	$t1 # print_attr
+	la	$a0 str_const6 # print_attr
+	sw	$a0 0($sp) # print_attr
+	addiu	$sp $sp -4 # print_attr
+# for self SELF 
+	move	$a0 $s0 # print_attr
+	bne	$a0 $zero label9 # print_attr
+	la	$a0 str_const0 # print_attr
+	li	$t1 1 # print_attr
+	jal	_dispatch_abort # print_attr
+label9: # print_attr
+	lw	$t1 8($a0) # print_attr
+	lw	$t1 12($t1) # print_attr
+	jalr	$t1 # print_attr
+#  ==> x offset : 3 A type:O 
+#  ==> b offset : 4 A type:O 
+#  ==> y offset : 5 A type:O 
+#  ==> z offset : 6 A type:O 
+#  -> curr off 24
+# for z self 
+	lw	$a0 24($s0) # print_attr
+	sw	$a0 0($sp) # print_attr
+	addiu	$sp $sp -4 # print_attr
+# for self SELF 
+	move	$a0 $s0 # print_attr
+	bne	$a0 $zero label10 # print_attr
+	la	$a0 str_const0 # print_attr
+	li	$t1 1 # print_attr
+	jal	_dispatch_abort # print_attr
+label10: # print_attr
+	lw	$t1 8($a0) # print_attr
+	lw	$t1 16($t1) # print_attr
+	jalr	$t1 # print_attr
 	lw	$fp 12($sp) # print_attr
 	lw	$s0 8($sp) # print_attr
 	lw	$ra 4($sp) # print_attr

@@ -462,6 +462,522 @@ Main.main:
 	jal	Object.copy # main
 	jal	IO_init
 	sw	$a0 44($fp) # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label0 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label0: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 12
+# for t method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label1 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label1: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 4($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label2 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label2: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label3 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label3: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 12
+# for t method 
+	lw	$a0 12($fp) # main
+#> for b1 method 
+	sw	$a0 36($fp) # main
+# tet
+	la	$a0 str_const3 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label4 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label4: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 36
+# for b1 method 
+	lw	$a0 36($fp) # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 4($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label6 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label6: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label7 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label7: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 20
+# for t1 method 
+	lw	$a0 20($fp) # main
+#> for b2 method 
+	sw	$a0 40($fp) # main
+# tet
+	la	$a0 str_const4 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label8 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label8: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 40
+# for b2 method 
+	lw	$a0 40($fp) # main
+	bne	$a0 $zero label9 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label9: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 4($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label10 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label10: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label11 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label11: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 16
+# for f method 
+	lw	$a0 16($fp) # main
+	bne	$a0 $zero label12 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label12: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 8($t1) # main
+	jalr	$t1 # main
+#> for b1 method 
+	sw	$a0 36($fp) # main
+# tet
+	la	$a0 str_const3 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label13 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label13: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 36
+# for b1 method 
+	lw	$a0 36($fp) # main
+	bne	$a0 $zero label14 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label14: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 4($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label15 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label15: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label16 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label16: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 32
+# for f2 method 
+	lw	$a0 32($fp) # main
+	bne	$a0 $zero label17 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label17: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 8($t1) # main
+	jalr	$t1 # main
+#> for b2 method 
+	sw	$a0 40($fp) # main
+# tet
+	la	$a0 str_const4 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label18 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label18: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 40
+# for b2 method 
+	lw	$a0 40($fp) # main
+	bne	$a0 $zero label19 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label19: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 4($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label20 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label20: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> t offset : 3 Main type:M 
+#  ==> f offset : 4 Main type:M 
+#  ==> t1 offset : 5 Main type:M 
+#  ==> t2 offset : 6 Main type:M 
+#  ==> f1 offset : 7 Main type:M 
+#  ==> f2 offset : 8 Main type:M 
+#  ==> b1 offset : 9 Main type:M 
+#  ==> b2 offset : 10 Main type:M 
+#  ==> io offset : 11 Main type:M 
+#  -> curr off 44
+# for io method 
+	lw	$a0 44($fp) # main
+	bne	$a0 $zero label21 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label21: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

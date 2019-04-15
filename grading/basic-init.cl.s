@@ -443,6 +443,125 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+#  ==> i offset : 3 Main type:O 
+#  ==> s offset : 4 Main type:O 
+#  ==> b offset : 5 Main type:O 
+#  ==> io offset : 6 Main type:O 
+#  -> curr off 12
+# for i self 
+	lw	$a0 12($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label0 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label0: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+#  ==> i offset : 3 Main type:O 
+#  ==> s offset : 4 Main type:O 
+#  ==> b offset : 5 Main type:O 
+#  ==> io offset : 6 Main type:O 
+#  -> curr off 16
+# for s self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label1 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label1: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> i offset : 3 Main type:O 
+#  ==> s offset : 4 Main type:O 
+#  ==> b offset : 5 Main type:O 
+#  ==> io offset : 6 Main type:O 
+#  -> curr off 20
+# for b self 
+	lw	$a0 20($s0) # main
+	lw	$s1 12($a0) # main
+	beqz	$s1 label3 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label4 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label4: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	b	label2 # main
+label3: # main
+	la	$a0 str_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+label2: # main
+#  ==> i offset : 3 Main type:O 
+#  ==> s offset : 4 Main type:O 
+#  ==> b offset : 5 Main type:O 
+#  ==> io offset : 6 Main type:O 
+#  -> curr off 24
+# for io self 
+	lw	$a0 24($s0) # main
+	la	$t0 bool_const0 # main
+	bne	$a0 $zero label8 # main
+	la	$t0 bool_const1 # main
+label8: # main
+	move	$a0 $t0 # main
+	lw	$s1 12($a0) # main
+	beqz	$s1 label7 # main
+	la	$a0 str_const3 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label9 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label9: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+	b	label6 # main
+label7: # main
+	la	$a0 str_const4 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label10 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label10: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+label6: # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

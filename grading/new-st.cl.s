@@ -464,6 +464,113 @@ Main.main:
  # let code for name a2
 	li	$a0 0 # main
 	sw	$a0 16($fp) # main
+#  ==> a1 offset : 3 Main type:M 
+#  ==> a2 offset : 4 Main type:M 
+#  -> curr off 12
+# for a1 method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label0 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label0: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> a1 offset : 3 Main type:M 
+#  ==> a2 offset : 4 Main type:M 
+#  -> curr off 12
+# for a1 method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label1 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label1: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 20($t1) # main
+	jalr	$t1 # main
+#  ==> a1 offset : 3 Main type:M 
+#  ==> a2 offset : 4 Main type:M 
+#  -> curr off 12
+# for a1 method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label2 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label2: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 20($t1) # main
+	jalr	$t1 # main
+#  ==> a1 offset : 3 Main type:M 
+#  ==> a2 offset : 4 Main type:M 
+#  -> curr off 12
+# for a1 method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label3 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label3: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 20($t1) # main
+	jalr	$t1 # main
+#  ==> a1 offset : 3 Main type:M 
+#  ==> a2 offset : 4 Main type:M 
+#  -> curr off 12
+# for a1 method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label4 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label4: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> a1 offset : 3 Main type:M 
+#  ==> a2 offset : 4 Main type:M 
+#  -> curr off 12
+# for a1 method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
+#> for a2 method 
+	sw	$a0 16($fp) # main
+# tet
+#  ==> a1 offset : 3 Main type:M 
+#  ==> a2 offset : 4 Main type:M 
+#  -> curr off 16
+# for a2 method 
+	lw	$a0 16($fp) # main
+	bne	$a0 $zero label6 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label6: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+#  ==> a1 offset : 3 Main type:M 
+#  ==> a2 offset : 4 Main type:M 
+#  -> curr off 12
+# for a1 method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label7 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label7: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main
@@ -476,6 +583,51 @@ A.printX:
 	sw	$ra 4($sp) # printX
 	addiu	$fp $sp 4 # printX
 	move	$s0 $a0 # printX
+	la	$a0 str_const1 # printX
+	sw	$a0 0($sp) # printX
+	addiu	$sp $sp -4 # printX
+	la	$a0 IO_protObj # printX
+	jal	Object.copy # printX
+	jal	IO_init
+	bne	$a0 $zero label8 # printX
+	la	$a0 str_const0 # printX
+	li	$t1 1 # printX
+	jal	_dispatch_abort # printX
+label8: # printX
+	lw	$t1 8($a0) # printX
+	lw	$t1 12($t1) # printX
+	jalr	$t1 # printX
+#  ==> x offset : 3 A type:O 
+#  -> curr off 12
+# for x self 
+	lw	$a0 12($s0) # printX
+	sw	$a0 0($sp) # printX
+	addiu	$sp $sp -4 # printX
+	la	$a0 IO_protObj # printX
+	jal	Object.copy # printX
+	jal	IO_init
+	bne	$a0 $zero label9 # printX
+	la	$a0 str_const0 # printX
+	li	$t1 1 # printX
+	jal	_dispatch_abort # printX
+label9: # printX
+	lw	$t1 8($a0) # printX
+	lw	$t1 16($t1) # printX
+	jalr	$t1 # printX
+	la	$a0 str_const2 # printX
+	sw	$a0 0($sp) # printX
+	addiu	$sp $sp -4 # printX
+	la	$a0 IO_protObj # printX
+	jal	Object.copy # printX
+	jal	IO_init
+	bne	$a0 $zero label10 # printX
+	la	$a0 str_const0 # printX
+	li	$t1 1 # printX
+	jal	_dispatch_abort # printX
+label10: # printX
+	lw	$t1 8($a0) # printX
+	lw	$t1 12($t1) # printX
+	jalr	$t1 # printX
 	lw	$fp 12($sp) # printX
 	lw	$s0 8($sp) # printX
 	lw	$ra 4($sp) # printX

@@ -475,6 +475,126 @@ Main.jack:
 	move	$s0 $a0 # jack
  # formal q
  # formal z
+ # let code for name z
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> q offset : 5 self type:M 
+#  ==> z offset : 4 self type:M 
+#  -> curr off 16
+# for z method 
+	lw	$a0 16($fp) # jack
+	sw	$a0 0($sp) # jack
+	addiu	$sp $sp -4 # jack
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> q offset : 5 self type:M 
+#  ==> z offset : 4 self type:M 
+#  -> curr off 16
+# for y self 
+	lw	$a0 16($s0) # jack
+	lw	$s1 12($a0) # jack
+	addiu	$sp $sp 4 # jack
+	lw	$a0 0($sp) # jack
+	lw	$a0 12($a0) # jack
+	add	$a0 $a0 $s1 # jack
+	sw	$a0 0($sp) # jack
+	addiu	$sp $sp -4 # jack
+	la	$a0 Int_protObj # jack
+	jal	Object.copy # jack
+	addiu	$sp $sp 4 # jack
+	lw	$s1 0($sp) # jack
+	sw	$s1 12($a0) # jack
+	sw	$a0 12($fp) # jack
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> q offset : 5 self type:M 
+#  ==> z offset : 4 self type:M 
+#  ==> z offset : 3 Main type:M 
+#  -> curr off 12
+# for z method 
+	lw	$a0 12($fp) # jack
+	sw	$a0 0($sp) # jack
+	addiu	$sp $sp -4 # jack
+# for self SELF 
+	move	$a0 $s0 # jack
+	bne	$a0 $zero label0 # jack
+	la	$a0 str_const0 # jack
+	li	$t1 1 # jack
+	jal	_dispatch_abort # jack
+label0: # jack
+	lw	$t1 8($a0) # jack
+	lw	$t1 32($t1) # jack
+	jalr	$t1 # jack
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> q offset : 5 self type:M 
+#  ==> z offset : 4 self type:M 
+#  -> curr off 16
+# for y self 
+	lw	$a0 16($s0) # jack
+	sw	$a0 0($sp) # jack
+	addiu	$sp $sp -4 # jack
+	la	$a0 int_const0 # jack
+	lw	$s1 12($a0) # jack
+	addiu	$sp $sp 4 # jack
+	lw	$a0 0($sp) # jack
+	lw	$a0 12($a0) # jack
+	add	$a0 $a0 $s1 # jack
+	sw	$a0 0($sp) # jack
+	addiu	$sp $sp -4 # jack
+	la	$a0 Int_protObj # jack
+	jal	Object.copy # jack
+	addiu	$sp $sp 4 # jack
+	lw	$s1 0($sp) # jack
+	sw	$s1 12($a0) # jack
+#> for y self 
+	sw	$a0 16($s0) # jack
+# tet
+ # let code for name y
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> q offset : 5 self type:M 
+#  ==> z offset : 4 self type:M 
+#  -> curr off 16
+# for z method 
+	lw	$a0 16($fp) # jack
+	sw	$a0 0($sp) # jack
+	addiu	$sp $sp -4 # jack
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> q offset : 5 self type:M 
+#  ==> z offset : 4 self type:M 
+#  -> curr off 16
+# for y self 
+	lw	$a0 16($s0) # jack
+	lw	$s1 12($a0) # jack
+	addiu	$sp $sp 4 # jack
+	lw	$a0 0($sp) # jack
+	lw	$a0 12($a0) # jack
+	add	$a0 $a0 $s1 # jack
+	sw	$a0 0($sp) # jack
+	addiu	$sp $sp -4 # jack
+	la	$a0 Int_protObj # jack
+	jal	Object.copy # jack
+	addiu	$sp $sp 4 # jack
+	lw	$s1 0($sp) # jack
+	sw	$s1 12($a0) # jack
+	sw	$a0 16($fp) # jack
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> q offset : 5 self type:M 
+#  ==> z offset : 4 self type:M 
+#  ==> y offset : 4 Main type:M 
+#  -> curr off 16
+# for y method 
+	lw	$a0 16($fp) # jack
 	lw	$fp 12($sp) # jack
 	lw	$s0 8($sp) # jack
 	lw	$ra 4($sp) # jack
@@ -488,6 +608,51 @@ Main.print_z:
 	addiu	$fp $sp 4 # print_z
 	move	$s0 $a0 # print_z
  # formal z
+	la	$a0 str_const1 # print_z
+	sw	$a0 0($sp) # print_z
+	addiu	$sp $sp -4 # print_z
+# for self SELF 
+	move	$a0 $s0 # print_z
+	bne	$a0 $zero label1 # print_z
+	la	$a0 str_const0 # print_z
+	li	$t1 1 # print_z
+	jal	_dispatch_abort # print_z
+label1: # print_z
+	lw	$t1 8($a0) # print_z
+	lw	$t1 12($t1) # print_z
+	jalr	$t1 # print_z
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> z offset : 3 self type:M 
+#  -> curr off 12
+# for z method 
+	lw	$a0 12($fp) # print_z
+	sw	$a0 0($sp) # print_z
+	addiu	$sp $sp -4 # print_z
+# for self SELF 
+	move	$a0 $s0 # print_z
+	bne	$a0 $zero label2 # print_z
+	la	$a0 str_const0 # print_z
+	li	$t1 1 # print_z
+	jal	_dispatch_abort # print_z
+label2: # print_z
+	lw	$t1 8($a0) # print_z
+	lw	$t1 16($t1) # print_z
+	jalr	$t1 # print_z
+	la	$a0 str_const2 # print_z
+	sw	$a0 0($sp) # print_z
+	addiu	$sp $sp -4 # print_z
+# for self SELF 
+	move	$a0 $s0 # print_z
+	bne	$a0 $zero label3 # print_z
+	la	$a0 str_const0 # print_z
+	li	$t1 1 # print_z
+	jal	_dispatch_abort # print_z
+label3: # print_z
+	lw	$t1 8($a0) # print_z
+	lw	$t1 12($t1) # print_z
+	jalr	$t1 # print_z
 	lw	$fp 12($sp) # print_z
 	lw	$s0 8($sp) # print_z
 	lw	$ra 4($sp) # print_z
@@ -500,6 +665,81 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  -> curr off 20
+# for z self 
+	lw	$a0 20($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label4 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label4: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 32($t1) # main
+	jalr	$t1 # main
+ # let code for name z
+	la	$a0 int_const2 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  -> curr off 20
+# for z self 
+	lw	$a0 20($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const3 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label5 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label5: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	sw	$a0 12($fp) # main
+#  ==> x offset : 3 Bob type:O 
+#  ==> y offset : 4 Bob type:O 
+#  ==> z offset : 5 Main type:O 
+#  ==> z offset : 3 Main type:M 
+#  -> curr off 12
+# for z method 
+	lw	$a0 12($fp) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label6 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label6: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 32($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

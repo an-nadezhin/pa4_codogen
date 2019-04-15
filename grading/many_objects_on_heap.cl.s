@@ -405,6 +405,94 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+label0: # main
+#  ==> a offset : 3 Main type:O 
+#  ==> i offset : 4 Main type:O 
+#  -> curr off 16
+# for i self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$t0 0($sp) # main
+	lw	$t0 12($t0) # main
+	neg	$t0 $t0 # main
+	sw	$t0 12($a0) # main
+	sw	$s1 0($sp) # main
+	addiu	$sp $sp -4 # main
+	lw	$s1 12($a0) # main
+	la	$a0 int_const1 # main
+	lw	$t0 12($a0) # main
+	la	$a0 bool_const0 # main
+	blt	$t0 $s1 label2 # main
+	la	$a0 bool_const1 # main
+label2: # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	la	$t0 bool_const0 # main
+	beq	$a0 $t0 label1 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	jal	Int_init
+#> for a self 
+	sw	$a0 12($s0) # main
+# tet
+ # let code for name b
+	la	$a0 IO_protObj # main
+	jal	Object.copy # main
+	jal	IO_init
+	sw	$a0 12($fp) # main
+#  ==> a offset : 3 Main type:O 
+#  ==> i offset : 4 Main type:O 
+#  ==> b offset : 3 Main type:M 
+#  -> curr off 12
+# for b method 
+	lw	$a0 12($fp) # main
+#  ==> a offset : 3 Main type:O 
+#  ==> i offset : 4 Main type:O 
+#  -> curr off 16
+# for i self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const2 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	sub	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for i self 
+	sw	$a0 16($s0) # main
+# tet
+	b	label0 # main
+label1: # main
+	move	$a0 $zero # main
+#  ==> a offset : 3 Main type:O 
+#  ==> i offset : 4 Main type:O 
+#  -> curr off 16
+# for i self 
+	lw	$a0 16($s0) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label3 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label3: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 16($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

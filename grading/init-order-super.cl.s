@@ -475,6 +475,39 @@ Base.recite:
 	addiu	$fp $sp 4 # recite
 	move	$s0 $a0 # recite
  # formal value
+#  ==> x offset : 3 Base type:O 
+#  ==> b offset : 4 Base type:O 
+#  ==> value offset : 3 self type:M 
+#  -> curr off 12
+# for value method 
+	lw	$a0 12($fp) # recite
+	sw	$a0 0($sp) # recite
+	addiu	$sp $sp -4 # recite
+# for self SELF 
+	move	$a0 $s0 # recite
+	bne	$a0 $zero label0 # recite
+	la	$a0 str_const0 # recite
+	li	$t1 1 # recite
+	jal	_dispatch_abort # recite
+label0: # recite
+	lw	$t1 8($a0) # recite
+	lw	$t1 16($t1) # recite
+	jalr	$t1 # recite
+	la	$a0 str_const1 # recite
+	sw	$a0 0($sp) # recite
+	addiu	$sp $sp -4 # recite
+# for self SELF 
+	move	$a0 $s0 # recite
+	bne	$a0 $zero label1 # recite
+	la	$a0 str_const0 # recite
+	li	$t1 1 # recite
+	jal	_dispatch_abort # recite
+label1: # recite
+	lw	$t1 8($a0) # recite
+	lw	$t1 12($t1) # recite
+	jalr	$t1 # recite
+# for self SELF 
+	move	$a0 $s0 # recite
 	lw	$fp 12($sp) # recite
 	lw	$s0 8($sp) # recite
 	lw	$ra 4($sp) # recite

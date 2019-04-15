@@ -405,6 +405,477 @@ Main.main:
  # let code for name b
 	la	$a0 bool_const0 # main
 	sw	$a0 16($fp) # main
+label0: # main
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 12
+# for x method 
+	lw	$a0 12($fp) # main
+	sw	$s1 0($sp) # main
+	addiu	$sp $sp -4 # main
+	lw	$s1 12($a0) # main
+	la	$a0 int_const1 # main
+	lw	$t0 12($a0) # main
+	la	$a0 bool_const0 # main
+	blt	$t0 $s1 label2 # main
+	la	$a0 bool_const1 # main
+label2: # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	la	$t0 bool_const0 # main
+	beq	$a0 $t0 label1 # main
+# ya tyt
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	sw	$s1 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label3 # main
+	la	$a0 bool_const1 # main
+label3: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label4 # main
+	la	$a0 bool_const1 # main
+label4: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label5 # main
+	la	$a0 bool_const1 # main
+label5: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label6 # main
+	la	$a0 bool_const1 # main
+label6: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label7 # main
+	la	$a0 bool_const1 # main
+label7: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label8 # main
+	la	$a0 bool_const1 # main
+label8: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label9 # main
+	la	$a0 bool_const1 # main
+label9: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label10 # main
+	la	$a0 bool_const1 # main
+label10: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label11 # main
+	la	$a0 bool_const1 # main
+label11: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label12 # main
+	la	$a0 bool_const1 # main
+label12: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label13 # main
+	la	$a0 bool_const1 # main
+label13: # main
+	sw	$t0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$t0 0($sp) # main
+	la	$a0 bool_const0 # main
+	beq	$t0 $s1 label14 # main
+	la	$a0 bool_const1 # main
+label14: # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+# ya tyt(net)
+# ya tyt
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	sw	$s1 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label15 # main
+	la	$a0 bool_const1 # main
+label15: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label16 # main
+	la	$a0 bool_const1 # main
+label16: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label17 # main
+	la	$a0 bool_const1 # main
+label17: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label18 # main
+	la	$a0 bool_const1 # main
+label18: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label19 # main
+	la	$a0 bool_const1 # main
+label19: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label20 # main
+	la	$a0 bool_const1 # main
+label20: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label21 # main
+	la	$a0 bool_const1 # main
+label21: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label22 # main
+	la	$a0 bool_const1 # main
+label22: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label23 # main
+	la	$a0 bool_const1 # main
+label23: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label24 # main
+	la	$a0 bool_const1 # main
+label24: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label25 # main
+	la	$a0 bool_const1 # main
+label25: # main
+	sw	$t0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$t0 0($sp) # main
+	la	$a0 bool_const0 # main
+	beq	$t0 $s1 label26 # main
+	la	$a0 bool_const1 # main
+label26: # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+# ya tyt(net)
+# ya tyt
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	sw	$s1 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label27 # main
+	la	$a0 bool_const1 # main
+label27: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label28 # main
+	la	$a0 bool_const1 # main
+label28: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label29 # main
+	la	$a0 bool_const1 # main
+label29: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label30 # main
+	la	$a0 bool_const1 # main
+label30: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label31 # main
+	la	$a0 bool_const1 # main
+label31: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label32 # main
+	la	$a0 bool_const1 # main
+label32: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label33 # main
+	la	$a0 bool_const1 # main
+label33: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label34 # main
+	la	$a0 bool_const1 # main
+label34: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label35 # main
+	la	$a0 bool_const1 # main
+label35: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label36 # main
+	la	$a0 bool_const1 # main
+label36: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label37 # main
+	la	$a0 bool_const1 # main
+label37: # main
+	sw	$t0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$t0 0($sp) # main
+	la	$a0 bool_const0 # main
+	beq	$t0 $s1 label38 # main
+	la	$a0 bool_const1 # main
+label38: # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+# ya tyt(net)
+# ya tyt
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	sw	$s1 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label39 # main
+	la	$a0 bool_const1 # main
+label39: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label40 # main
+	la	$a0 bool_const1 # main
+label40: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label41 # main
+	la	$a0 bool_const1 # main
+label41: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label42 # main
+	la	$a0 bool_const1 # main
+label42: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label43 # main
+	la	$a0 bool_const1 # main
+label43: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label44 # main
+	la	$a0 bool_const1 # main
+label44: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label45 # main
+	la	$a0 bool_const1 # main
+label45: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label46 # main
+	la	$a0 bool_const1 # main
+label46: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label47 # main
+	la	$a0 bool_const1 # main
+label47: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label48 # main
+	la	$a0 bool_const1 # main
+label48: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label49 # main
+	la	$a0 bool_const1 # main
+label49: # main
+	sw	$t0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$t0 0($sp) # main
+	la	$a0 bool_const0 # main
+	beq	$t0 $s1 label50 # main
+	la	$a0 bool_const1 # main
+label50: # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+# ya tyt(net)
+# ya tyt
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	sw	$s1 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label51 # main
+	la	$a0 bool_const1 # main
+label51: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label52 # main
+	la	$a0 bool_const1 # main
+label52: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label53 # main
+	la	$a0 bool_const1 # main
+label53: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label54 # main
+	la	$a0 bool_const1 # main
+label54: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label55 # main
+	la	$a0 bool_const1 # main
+label55: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label56 # main
+	la	$a0 bool_const1 # main
+label56: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label57 # main
+	la	$a0 bool_const1 # main
+label57: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label58 # main
+	la	$a0 bool_const1 # main
+label58: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label59 # main
+	la	$a0 bool_const1 # main
+label59: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label60 # main
+	la	$a0 bool_const1 # main
+label60: # main
+	lw	$s1 12($a0) # main
+	la	$a0 bool_const0 # main
+	beqz	$s1 label61 # main
+	la	$a0 bool_const1 # main
+label61: # main
+	sw	$t0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	addiu	$sp $sp 4 # main
+	lw	$t0 0($sp) # main
+	la	$a0 bool_const0 # main
+	beq	$t0 $s1 label62 # main
+	la	$a0 bool_const1 # main
+label62: # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+# ya tyt(net)
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 12
+# for x method 
+	lw	$a0 12($fp) # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 int_const2 # main
+	lw	$s1 12($a0) # main
+	addiu	$sp $sp 4 # main
+	lw	$a0 0($sp) # main
+	lw	$a0 12($a0) # main
+	add	$a0 $a0 $s1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+	la	$a0 Int_protObj # main
+	jal	Object.copy # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+	sw	$s1 12($a0) # main
+#> for x method 
+	sw	$a0 12($fp) # main
+# tet
+	b	label0 # main
+label1: # main
+	move	$a0 $zero # main
+#  ==> x offset : 3 Main type:M 
+#  ==> b offset : 4 Main type:M 
+#  -> curr off 16
+# for b method 
+	lw	$a0 16($fp) # main
+	lw	$s1 12($a0) # main
+	beqz	$s1 label64 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label65 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label65: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 0($t1) # main
+	jalr	$t1 # main
+	b	label63 # main
+label64: # main
+	la	$a0 int_const0 # main
+label63: # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

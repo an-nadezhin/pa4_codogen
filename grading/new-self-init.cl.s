@@ -575,6 +575,77 @@ Derived.report:
 	addiu	$fp $sp 4 # report
 	move	$s0 $a0 # report
  # formal value
+	la	$a0 str_const2 # report
+	sw	$a0 0($sp) # report
+	addiu	$sp $sp -4 # report
+# for self SELF 
+	move	$a0 $s0 # report
+	bne	$a0 $zero label3 # report
+	la	$a0 str_const0 # report
+	li	$t1 1 # report
+	jal	_dispatch_abort # report
+label3: # report
+	lw	$t1 8($a0) # report
+	lw	$t1 12($t1) # report
+	jalr	$t1 # report
+#  ==> baseAttr offset : 3 Base type:O 
+#  ==> derivedAttr offset : 4 Derived type:O 
+#  ==> value offset : 3 self type:M 
+#  -> curr off 16
+# for derivedAttr self 
+	lw	$a0 16($s0) # report
+	sw	$a0 0($sp) # report
+	addiu	$sp $sp -4 # report
+# for self SELF 
+	move	$a0 $s0 # report
+	bne	$a0 $zero label4 # report
+	la	$a0 str_const0 # report
+	li	$t1 1 # report
+	jal	_dispatch_abort # report
+label4: # report
+	lw	$t1 8($a0) # report
+	lw	$t1 16($t1) # report
+	jalr	$t1 # report
+	la	$a0 str_const3 # report
+	sw	$a0 0($sp) # report
+	addiu	$sp $sp -4 # report
+# for self SELF 
+	move	$a0 $s0 # report
+	bne	$a0 $zero label5 # report
+	la	$a0 str_const0 # report
+	li	$t1 1 # report
+	jal	_dispatch_abort # report
+label5: # report
+	lw	$t1 8($a0) # report
+	lw	$t1 12($t1) # report
+	jalr	$t1 # report
+#  ==> baseAttr offset : 3 Base type:O 
+#  ==> derivedAttr offset : 4 Derived type:O 
+#  ==> value offset : 3 self type:M 
+#  -> curr off 12
+# for value method 
+	lw	$a0 12($fp) # report
+#> for derivedAttr self 
+	sw	$a0 16($s0) # report
+# tet
+#  ==> baseAttr offset : 3 Base type:O 
+#  ==> derivedAttr offset : 4 Derived type:O 
+#  ==> value offset : 3 self type:M 
+#  -> curr off 16
+# for derivedAttr self 
+	lw	$a0 16($s0) # report
+	sw	$a0 0($sp) # report
+	addiu	$sp $sp -4 # report
+# for self SELF 
+	move	$a0 $s0 # report
+	bne	$a0 $zero label6 # report
+	la	$a0 str_const0 # report
+	li	$t1 1 # report
+	jal	_dispatch_abort # report
+label6: # report
+	la	$t0 Base_dispTab
+	lw	$t0 28($t0) # report
+	jalr	$t0 # report
 	lw	$fp 12($sp) # report
 	lw	$s0 8($sp) # report
 	lw	$ra 4($sp) # report
@@ -588,6 +659,38 @@ Base.report:
 	addiu	$fp $sp 4 # report
 	move	$s0 $a0 # report
  # formal value
+#  ==> baseAttr offset : 3 Base type:O 
+#  ==> value offset : 3 self type:M 
+#  -> curr off 12
+# for value method 
+	lw	$a0 12($fp) # report
+	sw	$a0 0($sp) # report
+	addiu	$sp $sp -4 # report
+# for self SELF 
+	move	$a0 $s0 # report
+	bne	$a0 $zero label7 # report
+	la	$a0 str_const0 # report
+	li	$t1 1 # report
+	jal	_dispatch_abort # report
+label7: # report
+	lw	$t1 8($a0) # report
+	lw	$t1 16($t1) # report
+	jalr	$t1 # report
+	la	$a0 str_const1 # report
+	sw	$a0 0($sp) # report
+	addiu	$sp $sp -4 # report
+# for self SELF 
+	move	$a0 $s0 # report
+	bne	$a0 $zero label8 # report
+	la	$a0 str_const0 # report
+	li	$t1 1 # report
+	jal	_dispatch_abort # report
+label8: # report
+	lw	$t1 8($a0) # report
+	lw	$t1 12($t1) # report
+	jalr	$t1 # report
+# for self SELF 
+	move	$a0 $s0 # report
 	lw	$fp 12($sp) # report
 	lw	$s0 8($sp) # report
 	lw	$ra 4($sp) # report

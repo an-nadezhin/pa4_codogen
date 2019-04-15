@@ -1482,6 +1482,163 @@ Main.beta_reduce:
 	addiu	$fp $sp 4 # beta_reduce
 	move	$s0 $a0 # beta_reduce
  # formal e
+	la	$a0 str_const38 # beta_reduce
+	sw	$a0 0($sp) # beta_reduce
+	addiu	$sp $sp -4 # beta_reduce
+# for self SELF 
+	move	$a0 $s0 # beta_reduce
+	bne	$a0 $zero label0 # beta_reduce
+	la	$a0 str_const0 # beta_reduce
+	li	$t1 1 # beta_reduce
+	jal	_dispatch_abort # beta_reduce
+label0: # beta_reduce
+	lw	$t1 8($a0) # beta_reduce
+	lw	$t1 12($t1) # beta_reduce
+	jalr	$t1 # beta_reduce
+#  ==> e offset : 6 self type:M 
+#  -> curr off 24
+# for e method 
+	lw	$a0 24($fp) # beta_reduce
+	bne	$a0 $zero label1 # beta_reduce
+	la	$a0 str_const0 # beta_reduce
+	li	$t1 1 # beta_reduce
+	jal	_dispatch_abort # beta_reduce
+label1: # beta_reduce
+	lw	$t1 8($a0) # beta_reduce
+	lw	$t1 28($t1) # beta_reduce
+	jalr	$t1 # beta_reduce
+ # let code for name done
+	la	$a0 bool_const0 # beta_reduce
+	sw	$a0 12($fp) # beta_reduce
+ # let code for name new_expr
+	li	$a0 0 # beta_reduce
+	sw	$a0 16($fp) # beta_reduce
+label2: # beta_reduce
+#  ==> e offset : 6 self type:M 
+#  ==> done offset : 3 Main type:M 
+#  ==> new_expr offset : 4 Main type:M 
+#  -> curr off 12
+# for done method 
+	lw	$a0 12($fp) # beta_reduce
+	lw	$s1 12($a0) # beta_reduce
+	la	$a0 bool_const0 # beta_reduce
+	beqz	$s1 label4 # beta_reduce
+	la	$a0 bool_const1 # beta_reduce
+label4: # beta_reduce
+	la	$t0 bool_const0 # beta_reduce
+	beq	$a0 $t0 label3 # beta_reduce
+#  ==> e offset : 6 self type:M 
+#  ==> done offset : 3 Main type:M 
+#  ==> new_expr offset : 4 Main type:M 
+#  -> curr off 24
+# for e method 
+	lw	$a0 24($fp) # beta_reduce
+	bne	$a0 $zero label5 # beta_reduce
+	la	$a0 str_const0 # beta_reduce
+	li	$t1 1 # beta_reduce
+	jal	_dispatch_abort # beta_reduce
+label5: # beta_reduce
+	lw	$t1 8($a0) # beta_reduce
+	lw	$t1 32($t1) # beta_reduce
+	jalr	$t1 # beta_reduce
+#> for new_expr method 
+	sw	$a0 16($fp) # beta_reduce
+# tet
+# ya tyt
+#  ==> e offset : 6 self type:M 
+#  ==> done offset : 3 Main type:M 
+#  ==> new_expr offset : 4 Main type:M 
+#  -> curr off 16
+# for new_expr method 
+	lw	$a0 16($fp) # beta_reduce
+	sw	$s1 0($sp) # beta_reduce
+	addiu	$sp $sp -4 # beta_reduce
+	addiu	$sp $sp 4 # beta_reduce
+	lw	$s1 0($sp) # beta_reduce
+#  ==> e offset : 6 self type:M 
+#  ==> done offset : 3 Main type:M 
+#  ==> new_expr offset : 4 Main type:M 
+#  -> curr off 24
+# for e method 
+	lw	$a0 24($fp) # beta_reduce
+	sw	$t0 0($sp) # beta_reduce
+	addiu	$sp $sp -4 # beta_reduce
+	addiu	$sp $sp 4 # beta_reduce
+	lw	$t0 0($sp) # beta_reduce
+	la	$a0 bool_const0 # beta_reduce
+	beq	$t0 $s1 label8 # beta_reduce
+	la	$a0 bool_const1 # beta_reduce
+label8: # beta_reduce
+	addiu	$sp $sp 4 # beta_reduce
+	lw	$s1 0($sp) # beta_reduce
+# ya tyt(net)
+	lw	$s1 12($a0) # beta_reduce
+	beqz	$s1 label7 # beta_reduce
+	la	$a0 bool_const1 # beta_reduce
+#> for done method 
+	sw	$a0 12($fp) # beta_reduce
+# tet
+	b	label6 # beta_reduce
+label7: # beta_reduce
+#  ==> e offset : 6 self type:M 
+#  ==> done offset : 3 Main type:M 
+#  ==> new_expr offset : 4 Main type:M 
+#  -> curr off 16
+# for new_expr method 
+	lw	$a0 16($fp) # beta_reduce
+#> for e method 
+	sw	$a0 24($fp) # beta_reduce
+# tet
+	la	$a0 str_const39 # beta_reduce
+	sw	$a0 0($sp) # beta_reduce
+	addiu	$sp $sp -4 # beta_reduce
+# for self SELF 
+	move	$a0 $s0 # beta_reduce
+	bne	$a0 $zero label9 # beta_reduce
+	la	$a0 str_const0 # beta_reduce
+	li	$t1 1 # beta_reduce
+	jal	_dispatch_abort # beta_reduce
+label9: # beta_reduce
+	lw	$t1 8($a0) # beta_reduce
+	lw	$t1 12($t1) # beta_reduce
+	jalr	$t1 # beta_reduce
+#  ==> e offset : 6 self type:M 
+#  ==> done offset : 3 Main type:M 
+#  ==> new_expr offset : 4 Main type:M 
+#  -> curr off 24
+# for e method 
+	lw	$a0 24($fp) # beta_reduce
+	bne	$a0 $zero label10 # beta_reduce
+	la	$a0 str_const0 # beta_reduce
+	li	$t1 1 # beta_reduce
+	jal	_dispatch_abort # beta_reduce
+label10: # beta_reduce
+	lw	$t1 8($a0) # beta_reduce
+	lw	$t1 28($t1) # beta_reduce
+	jalr	$t1 # beta_reduce
+label6: # beta_reduce
+	b	label2 # beta_reduce
+label3: # beta_reduce
+	move	$a0 $zero # beta_reduce
+	la	$a0 str_const1 # beta_reduce
+	sw	$a0 0($sp) # beta_reduce
+	addiu	$sp $sp -4 # beta_reduce
+# for self SELF 
+	move	$a0 $s0 # beta_reduce
+	bne	$a0 $zero label11 # beta_reduce
+	la	$a0 str_const0 # beta_reduce
+	li	$t1 1 # beta_reduce
+	jal	_dispatch_abort # beta_reduce
+label11: # beta_reduce
+	lw	$t1 8($a0) # beta_reduce
+	lw	$t1 12($t1) # beta_reduce
+	jalr	$t1 # beta_reduce
+#  ==> e offset : 6 self type:M 
+#  ==> done offset : 3 Main type:M 
+#  ==> new_expr offset : 4 Main type:M 
+#  -> curr off 24
+# for e method 
+	lw	$a0 24($fp) # beta_reduce
 	lw	$fp 12($sp) # beta_reduce
 	lw	$s0 8($sp) # beta_reduce
 	lw	$ra 4($sp) # beta_reduce
@@ -1494,6 +1651,45 @@ Main.eval_class:
 	sw	$ra 4($sp) # eval_class
 	addiu	$fp $sp 4 # eval_class
 	move	$s0 $a0 # eval_class
+	la	$a0 str_const40 # eval_class
+	sw	$a0 0($sp) # eval_class
+	addiu	$sp $sp -4 # eval_class
+# for self SELF 
+	move	$a0 $s0 # eval_class
+	bne	$a0 $zero label12 # eval_class
+	la	$a0 str_const0 # eval_class
+	li	$t1 1 # eval_class
+	jal	_dispatch_abort # eval_class
+label12: # eval_class
+	lw	$t1 8($a0) # eval_class
+	lw	$t1 12($t1) # eval_class
+	jalr	$t1 # eval_class
+	la	$a0 str_const41 # eval_class
+	sw	$a0 0($sp) # eval_class
+	addiu	$sp $sp -4 # eval_class
+# for self SELF 
+	move	$a0 $s0 # eval_class
+	bne	$a0 $zero label13 # eval_class
+	la	$a0 str_const0 # eval_class
+	li	$t1 1 # eval_class
+	jal	_dispatch_abort # eval_class
+label13: # eval_class
+	lw	$t1 8($a0) # eval_class
+	lw	$t1 12($t1) # eval_class
+	jalr	$t1 # eval_class
+	la	$a0 str_const23 # eval_class
+	sw	$a0 0($sp) # eval_class
+	addiu	$sp $sp -4 # eval_class
+# for self SELF 
+	move	$a0 $s0 # eval_class
+	bne	$a0 $zero label14 # eval_class
+	la	$a0 str_const0 # eval_class
+	li	$t1 1 # eval_class
+	jal	_dispatch_abort # eval_class
+label14: # eval_class
+	lw	$t1 8($a0) # eval_class
+	lw	$t1 12($t1) # eval_class
+	jalr	$t1 # eval_class
 	lw	$fp 12($sp) # eval_class
 	lw	$s0 8($sp) # eval_class
 	lw	$ra 4($sp) # eval_class
@@ -1506,6 +1702,110 @@ Main.closure_class:
 	sw	$ra 4($sp) # closure_class
 	addiu	$fp $sp 4 # closure_class
 	move	$s0 $a0 # closure_class
+	la	$a0 str_const42 # closure_class
+	sw	$a0 0($sp) # closure_class
+	addiu	$sp $sp -4 # closure_class
+# for self SELF 
+	move	$a0 $s0 # closure_class
+	bne	$a0 $zero label15 # closure_class
+	la	$a0 str_const0 # closure_class
+	li	$t1 1 # closure_class
+	jal	_dispatch_abort # closure_class
+label15: # closure_class
+	lw	$t1 8($a0) # closure_class
+	lw	$t1 12($t1) # closure_class
+	jalr	$t1 # closure_class
+	la	$a0 str_const43 # closure_class
+	sw	$a0 0($sp) # closure_class
+	addiu	$sp $sp -4 # closure_class
+# for self SELF 
+	move	$a0 $s0 # closure_class
+	bne	$a0 $zero label16 # closure_class
+	la	$a0 str_const0 # closure_class
+	li	$t1 1 # closure_class
+	jal	_dispatch_abort # closure_class
+label16: # closure_class
+	lw	$t1 8($a0) # closure_class
+	lw	$t1 12($t1) # closure_class
+	jalr	$t1 # closure_class
+	la	$a0 str_const44 # closure_class
+	sw	$a0 0($sp) # closure_class
+	addiu	$sp $sp -4 # closure_class
+# for self SELF 
+	move	$a0 $s0 # closure_class
+	bne	$a0 $zero label17 # closure_class
+	la	$a0 str_const0 # closure_class
+	li	$t1 1 # closure_class
+	jal	_dispatch_abort # closure_class
+label17: # closure_class
+	lw	$t1 8($a0) # closure_class
+	lw	$t1 12($t1) # closure_class
+	jalr	$t1 # closure_class
+	la	$a0 str_const45 # closure_class
+	sw	$a0 0($sp) # closure_class
+	addiu	$sp $sp -4 # closure_class
+# for self SELF 
+	move	$a0 $s0 # closure_class
+	bne	$a0 $zero label18 # closure_class
+	la	$a0 str_const0 # closure_class
+	li	$t1 1 # closure_class
+	jal	_dispatch_abort # closure_class
+label18: # closure_class
+	lw	$t1 8($a0) # closure_class
+	lw	$t1 12($t1) # closure_class
+	jalr	$t1 # closure_class
+	la	$a0 str_const46 # closure_class
+	sw	$a0 0($sp) # closure_class
+	addiu	$sp $sp -4 # closure_class
+# for self SELF 
+	move	$a0 $s0 # closure_class
+	bne	$a0 $zero label19 # closure_class
+	la	$a0 str_const0 # closure_class
+	li	$t1 1 # closure_class
+	jal	_dispatch_abort # closure_class
+label19: # closure_class
+	lw	$t1 8($a0) # closure_class
+	lw	$t1 12($t1) # closure_class
+	jalr	$t1 # closure_class
+	la	$a0 str_const47 # closure_class
+	sw	$a0 0($sp) # closure_class
+	addiu	$sp $sp -4 # closure_class
+# for self SELF 
+	move	$a0 $s0 # closure_class
+	bne	$a0 $zero label20 # closure_class
+	la	$a0 str_const0 # closure_class
+	li	$t1 1 # closure_class
+	jal	_dispatch_abort # closure_class
+label20: # closure_class
+	lw	$t1 8($a0) # closure_class
+	lw	$t1 12($t1) # closure_class
+	jalr	$t1 # closure_class
+	la	$a0 str_const48 # closure_class
+	sw	$a0 0($sp) # closure_class
+	addiu	$sp $sp -4 # closure_class
+# for self SELF 
+	move	$a0 $s0 # closure_class
+	bne	$a0 $zero label21 # closure_class
+	la	$a0 str_const0 # closure_class
+	li	$t1 1 # closure_class
+	jal	_dispatch_abort # closure_class
+label21: # closure_class
+	lw	$t1 8($a0) # closure_class
+	lw	$t1 12($t1) # closure_class
+	jalr	$t1 # closure_class
+	la	$a0 str_const23 # closure_class
+	sw	$a0 0($sp) # closure_class
+	addiu	$sp $sp -4 # closure_class
+# for self SELF 
+	move	$a0 $s0 # closure_class
+	bne	$a0 $zero label22 # closure_class
+	la	$a0 str_const0 # closure_class
+	li	$t1 1 # closure_class
+	jal	_dispatch_abort # closure_class
+label22: # closure_class
+	lw	$t1 8($a0) # closure_class
+	lw	$t1 12($t1) # closure_class
+	jalr	$t1 # closure_class
 	lw	$fp 12($sp) # closure_class
 	lw	$s0 8($sp) # closure_class
 	lw	$ra 4($sp) # closure_class
@@ -1523,15 +1823,298 @@ Main.gen_code:
 	la	$a0 LambdaListRef_protObj # gen_code
 	jal	Object.copy # gen_code
 	jal	LambdaListRef_init
-	bne	$a0 $zero label0 # gen_code
+	bne	$a0 $zero label23 # gen_code
 	la	$a0 str_const0 # gen_code
 	li	$t1 1 # gen_code
 	jal	_dispatch_abort # gen_code
-label0: # gen_code
+label23: # gen_code
 	lw	$t1 8($a0) # gen_code
 	lw	$t1 28($t1) # gen_code
 	jalr	$t1 # gen_code
 	sw	$a0 12($fp) # gen_code
+	la	$a0 str_const49 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label24 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label24: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  -> curr off 28
+# for e method 
+	lw	$a0 28($fp) # gen_code
+	bne	$a0 $zero label25 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label25: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 28($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const50 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label26 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label26: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const51 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label27 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label27: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label28 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label28: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 56($t1) # gen_code
+	jalr	$t1 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label29 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label29: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 60($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const52 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label30 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label30: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const53 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label31 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label31: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 VarList_protObj # gen_code
+	jal	Object.copy # gen_code
+	jal	VarList_init
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  -> curr off 12
+# for cl method 
+	lw	$a0 12($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  -> curr off 28
+# for e method 
+	lw	$a0 28($fp) # gen_code
+	bne	$a0 $zero label32 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label32: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 40($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const54 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label33 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label33: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+label34: # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  -> curr off 12
+# for cl method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label36 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label36: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	lw	$s1 12($a0) # gen_code
+	la	$a0 bool_const0 # gen_code
+	beqz	$s1 label37 # gen_code
+	la	$a0 bool_const1 # gen_code
+label37: # gen_code
+	la	$t0 bool_const0 # gen_code
+	beq	$a0 $t0 label35 # gen_code
+ # let code for name e
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  -> curr off 12
+# for cl method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label38 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label38: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 16($t1) # gen_code
+	jalr	$t1 # gen_code
+	sw	$a0 16($fp) # gen_code
+ # let code for name c
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  ==> e offset : 4 Main type:M 
+#  -> curr off 12
+# for cl method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label39 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label39: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 20($t1) # gen_code
+	jalr	$t1 # gen_code
+	sw	$a0 20($fp) # gen_code
+ # let code for name n
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  ==> e offset : 4 Main type:M 
+#  ==> c offset : 5 Main type:M 
+#  -> curr off 12
+# for cl method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label40 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label40: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 24($t1) # gen_code
+	jalr	$t1 # gen_code
+	sw	$a0 24($fp) # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  ==> e offset : 4 Main type:M 
+#  ==> c offset : 5 Main type:M 
+#  ==> n offset : 6 Main type:M 
+#  -> curr off 12
+# for cl method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label41 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label41: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 36($t1) # gen_code
+	jalr	$t1 # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  ==> e offset : 4 Main type:M 
+#  ==> c offset : 5 Main type:M 
+#  ==> n offset : 6 Main type:M 
+#  -> curr off 24
+# for n method 
+	lw	$a0 24($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  ==> e offset : 4 Main type:M 
+#  ==> c offset : 5 Main type:M 
+#  ==> n offset : 6 Main type:M 
+#  -> curr off 16
+# for e method 
+	lw	$a0 16($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  ==> e offset : 4 Main type:M 
+#  ==> c offset : 5 Main type:M 
+#  ==> n offset : 6 Main type:M 
+#  -> curr off 12
+# for cl method 
+	lw	$a0 12($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> e offset : 7 self type:M 
+#  ==> cl offset : 3 Main type:M 
+#  ==> e offset : 4 Main type:M 
+#  ==> c offset : 5 Main type:M 
+#  ==> n offset : 6 Main type:M 
+#  -> curr off 20
+# for c method 
+	lw	$a0 20($fp) # gen_code
+	bne	$a0 $zero label42 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label42: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 52($t1) # gen_code
+	jalr	$t1 # gen_code
+	b	label34 # gen_code
+label35: # gen_code
+	move	$a0 $zero # gen_code
+	la	$a0 str_const50 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label43 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label43: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
 	lw	$fp 12($sp) # gen_code
 	lw	$s0 8($sp) # gen_code
 	lw	$ra 4($sp) # gen_code
@@ -1544,6 +2127,760 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label44 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label44: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	bne	$a0 $zero label45 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label45: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label46 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label46: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label47 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label47: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	bne	$a0 $zero label48 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label48: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label49 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label49: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label50 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label50: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	bne	$a0 $zero label51 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label51: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	la	$a0 str_const1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label52 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label52: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 12($t1) # main
+	jalr	$t1 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label53 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label53: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label54 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label54: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label55 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label55: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label56 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label56: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label57 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label57: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label58 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label58: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label59 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label59: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label60 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label60: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 52($t1) # main
+	jalr	$t1 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label61 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label61: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label62 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label62: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label63 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label63: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label64 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label64: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label65 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label65: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label66 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label66: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 52($t1) # main
+	jalr	$t1 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label67 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label67: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label68 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label68: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label69 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label69: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label70 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label70: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 64($t1) # main
+	jalr	$t1 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label71 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label71: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label72 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label72: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label73 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label73: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label74 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label74: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label75 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label75: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label76 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label76: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label77 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label77: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label78 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label78: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 64($t1) # main
+	jalr	$t1 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label79 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label79: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label80 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label80: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label81 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label81: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label82 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label82: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label83 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label83: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label84 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label84: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label85 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label85: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label86 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label86: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label87 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label87: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label88 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label88: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label89 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label89: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label90 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label90: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label91 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label91: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label92 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label92: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label93 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label93: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label94 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label94: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label95 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label95: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label96 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label96: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 64($t1) # main
+	jalr	$t1 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label97 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label97: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 40($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label98 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label98: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label99 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label99: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label100 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label100: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label101 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label101: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label102 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label102: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 44($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label103 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label103: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label104 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label104: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 48($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label105 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label105: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label106 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label106: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label107 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label107: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 36($t1) # main
+	jalr	$t1 # main
+	sw	$a0 0($sp) # main
+	addiu	$sp $sp -4 # main
+# for self SELF 
+	move	$a0 $s0 # main
+	bne	$a0 $zero label108 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label108: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 64($t1) # main
+	jalr	$t1 # main
+	la	$a0 int_const1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main
@@ -1574,11 +2911,11 @@ Term.var:
 #  -> curr off 12
 # for v method 
 	lw	$a0 12($fp) # var
-	bne	$a0 $zero label1 # var
+	bne	$a0 $zero label109 # var
 	la	$a0 str_const0 # var
 	li	$t1 1 # var
 	jal	_dispatch_abort # var
-label1: # var
+label109: # var
 	lw	$t1 8($a0) # var
 	lw	$t1 44($t1) # var
 	jalr	$t1 # var
@@ -1623,11 +2960,11 @@ Term.lam:
 #  -> curr off 12
 # for l method 
 	lw	$a0 12($fp) # lam
-	bne	$a0 $zero label2 # lam
+	bne	$a0 $zero label110 # lam
 	la	$a0 str_const0 # lam
 	li	$t1 1 # lam
 	jal	_dispatch_abort # lam
-label2: # lam
+label110: # lam
 	lw	$t1 8($a0) # lam
 	lw	$t1 44($t1) # lam
 	jalr	$t1 # lam
@@ -1672,11 +3009,11 @@ Term.app:
 #  -> curr off 12
 # for a method 
 	lw	$a0 12($fp) # app
-	bne	$a0 $zero label3 # app
+	bne	$a0 $zero label111 # app
 	la	$a0 str_const0 # app
 	li	$t1 1 # app
 	jal	_dispatch_abort # app
-label3: # app
+label111: # app
 	lw	$t1 8($a0) # app
 	lw	$t1 44($t1) # app
 	jalr	$t1 # app
@@ -1698,11 +3035,11 @@ Term.i:
 	addiu	$sp $sp -4 # i
 # for self SELF 
 	move	$a0 $s0 # i
-	bne	$a0 $zero label4 # i
+	bne	$a0 $zero label112 # i
 	la	$a0 str_const0 # i
 	li	$t1 1 # i
 	jal	_dispatch_abort # i
-label4: # i
+label112: # i
 	lw	$t1 8($a0) # i
 	lw	$t1 28($t1) # i
 	jalr	$t1 # i
@@ -1721,11 +3058,11 @@ label4: # i
 	addiu	$sp $sp -4 # i
 # for self SELF 
 	move	$a0 $s0 # i
-	bne	$a0 $zero label5 # i
+	bne	$a0 $zero label113 # i
 	la	$a0 str_const0 # i
 	li	$t1 1 # i
 	jal	_dispatch_abort # i
-label5: # i
+label113: # i
 	lw	$t1 8($a0) # i
 	lw	$t1 32($t1) # i
 	jalr	$t1 # i
@@ -1747,11 +3084,11 @@ Term.k:
 	addiu	$sp $sp -4 # k
 # for self SELF 
 	move	$a0 $s0 # k
-	bne	$a0 $zero label6 # k
+	bne	$a0 $zero label114 # k
 	la	$a0 str_const0 # k
 	li	$t1 1 # k
 	jal	_dispatch_abort # k
-label6: # k
+label114: # k
 	lw	$t1 8($a0) # k
 	lw	$t1 28($t1) # k
 	jalr	$t1 # k
@@ -1762,11 +3099,11 @@ label6: # k
 	addiu	$sp $sp -4 # k
 # for self SELF 
 	move	$a0 $s0 # k
-	bne	$a0 $zero label7 # k
+	bne	$a0 $zero label115 # k
 	la	$a0 str_const0 # k
 	li	$t1 1 # k
 	jal	_dispatch_abort # k
-label7: # k
+label115: # k
 	lw	$t1 8($a0) # k
 	lw	$t1 28($t1) # k
 	jalr	$t1 # k
@@ -1794,11 +3131,11 @@ label7: # k
 	addiu	$sp $sp -4 # k
 # for self SELF 
 	move	$a0 $s0 # k
-	bne	$a0 $zero label8 # k
+	bne	$a0 $zero label116 # k
 	la	$a0 str_const0 # k
 	li	$t1 1 # k
 	jal	_dispatch_abort # k
-label8: # k
+label116: # k
 	lw	$t1 8($a0) # k
 	lw	$t1 32($t1) # k
 	jalr	$t1 # k
@@ -1806,11 +3143,11 @@ label8: # k
 	addiu	$sp $sp -4 # k
 # for self SELF 
 	move	$a0 $s0 # k
-	bne	$a0 $zero label9 # k
+	bne	$a0 $zero label117 # k
 	la	$a0 str_const0 # k
 	li	$t1 1 # k
 	jal	_dispatch_abort # k
-label9: # k
+label117: # k
 	lw	$t1 8($a0) # k
 	lw	$t1 32($t1) # k
 	jalr	$t1 # k
@@ -1832,11 +3169,11 @@ Term.s:
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label10 # s
+	bne	$a0 $zero label118 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label10: # s
+label118: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 28($t1) # s
 	jalr	$t1 # s
@@ -1847,11 +3184,11 @@ label10: # s
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label11 # s
+	bne	$a0 $zero label119 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label11: # s
+label119: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 28($t1) # s
 	jalr	$t1 # s
@@ -1862,11 +3199,11 @@ label11: # s
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label12 # s
+	bne	$a0 $zero label120 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label12: # s
+label120: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 28($t1) # s
 	jalr	$t1 # s
@@ -1913,11 +3250,11 @@ label12: # s
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label13 # s
+	bne	$a0 $zero label121 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label13: # s
+label121: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 36($t1) # s
 	jalr	$t1 # s
@@ -1941,11 +3278,11 @@ label13: # s
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label14 # s
+	bne	$a0 $zero label122 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label14: # s
+label122: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 36($t1) # s
 	jalr	$t1 # s
@@ -1953,11 +3290,11 @@ label14: # s
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label15 # s
+	bne	$a0 $zero label123 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label15: # s
+label123: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 36($t1) # s
 	jalr	$t1 # s
@@ -1965,11 +3302,11 @@ label15: # s
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label16 # s
+	bne	$a0 $zero label124 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label16: # s
+label124: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 32($t1) # s
 	jalr	$t1 # s
@@ -1977,11 +3314,11 @@ label16: # s
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label17 # s
+	bne	$a0 $zero label125 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label17: # s
+label125: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 32($t1) # s
 	jalr	$t1 # s
@@ -1989,11 +3326,11 @@ label17: # s
 	addiu	$sp $sp -4 # s
 # for self SELF 
 	move	$a0 $s0 # s
-	bne	$a0 $zero label18 # s
+	bne	$a0 $zero label126 # s
 	la	$a0 str_const0 # s
 	li	$t1 1 # s
 	jal	_dispatch_abort # s
-label18: # s
+label126: # s
 	lw	$t1 8($a0) # s
 	lw	$t1 32($t1) # s
 	jalr	$t1 # s
@@ -2011,6 +3348,28 @@ App.init:
 	move	$s0 $a0 # init
  # formal f
  # formal a
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  ==> f offset : 4 self type:M 
+#  ==> a offset : 3 self type:M 
+#  -> curr off 16
+# for f method 
+	lw	$a0 16($fp) # init
+#> for fun self 
+	sw	$a0 12($s0) # init
+# tet
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  ==> f offset : 4 self type:M 
+#  ==> a offset : 3 self type:M 
+#  -> curr off 12
+# for a method 
+	lw	$a0 12($fp) # init
+#> for arg self 
+	sw	$a0 16($s0) # init
+# tet
+# for self SELF 
+	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
 	lw	$s0 8($sp) # init
 	lw	$ra 4($sp) # init
@@ -2023,6 +3382,73 @@ App.print_self:
 	sw	$ra 4($sp) # print_self
 	addiu	$fp $sp 4 # print_self
 	move	$s0 $a0 # print_self
+	la	$a0 str_const24 # print_self
+	sw	$a0 0($sp) # print_self
+	addiu	$sp $sp -4 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
+	bne	$a0 $zero label127 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label127: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 12($t1) # print_self
+	jalr	$t1 # print_self
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  -> curr off 12
+# for fun self 
+	lw	$a0 12($s0) # print_self
+	bne	$a0 $zero label128 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label128: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 28($t1) # print_self
+	jalr	$t1 # print_self
+	la	$a0 str_const25 # print_self
+	sw	$a0 0($sp) # print_self
+	addiu	$sp $sp -4 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
+	bne	$a0 $zero label129 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label129: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 12($t1) # print_self
+	jalr	$t1 # print_self
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  -> curr off 16
+# for arg self 
+	lw	$a0 16($s0) # print_self
+	bne	$a0 $zero label130 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label130: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 28($t1) # print_self
+	jalr	$t1 # print_self
+	la	$a0 str_const26 # print_self
+	sw	$a0 0($sp) # print_self
+	addiu	$sp $sp -4 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
+	bne	$a0 $zero label131 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label131: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 12($t1) # print_self
+	jalr	$t1 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
 	lw	$fp 12($sp) # print_self
 	lw	$s0 8($sp) # print_self
 	lw	$ra 4($sp) # print_self
@@ -2040,16 +3466,16 @@ App.beta:
 #  -> curr off 12
 # for fun self 
 	lw	$a0 12($s0) # beta
-	bne	$a0 $zero label19 # beta
+	bne	$a0 $zero label132 # beta
 	la	$a0 str_const0 # beta
 	li	$t1 1 # beta
 	jal	_case_abort2 # beta
-label19: # beta
+label132: # beta
 	lw	$t0 0($a0) # beta
 	sw	$a0 12($fp) # beta
-label21: # beta
-	blt	$t0 12 label22 # beta
-	bgt	$t0 12 label22 # beta
+label134: # beta
+	blt	$t0 12 label135 # beta
+	bgt	$t0 12 label135 # beta
 #  ==> fun offset : 3 App type:O 
 #  ==> arg offset : 4 App type:O 
 #  ==> l offset : 3 App type:M 
@@ -2064,18 +3490,18 @@ label21: # beta
 #  -> curr off 12
 # for l method 
 	lw	$a0 12($fp) # beta
-	bne	$a0 $zero label23 # beta
+	bne	$a0 $zero label136 # beta
 	la	$a0 str_const0 # beta
 	li	$t1 1 # beta
 	jal	_dispatch_abort # beta
-label23: # beta
+label136: # beta
 	lw	$t1 8($a0) # beta
 	lw	$t1 48($t1) # beta
 	jalr	$t1 # beta
-	b	label20 # beta
-label22: # beta
-	blt	$t0 10 label24 # beta
-	bgt	$t0 13 label24 # beta
+	b	label133 # beta
+label135: # beta
+	blt	$t0 10 label137 # beta
+	bgt	$t0 13 label137 # beta
  # let code for name new_fun
 #  ==> fun offset : 3 App type:O 
 #  ==> arg offset : 4 App type:O 
@@ -2083,11 +3509,11 @@ label22: # beta
 #  -> curr off 12
 # for fun self 
 	lw	$a0 12($s0) # beta
-	bne	$a0 $zero label25 # beta
+	bne	$a0 $zero label138 # beta
 	la	$a0 str_const0 # beta
 	li	$t1 1 # beta
 	jal	_dispatch_abort # beta
-label25: # beta
+label138: # beta
 	lw	$t1 8($a0) # beta
 	lw	$t1 32($t1) # beta
 	jalr	$t1 # beta
@@ -2125,18 +3551,18 @@ label25: # beta
 #  -> curr off 20
 # for new_app method 
 	lw	$a0 20($fp) # beta
-	bne	$a0 $zero label26 # beta
+	bne	$a0 $zero label139 # beta
 	la	$a0 str_const0 # beta
 	li	$t1 1 # beta
 	jal	_dispatch_abort # beta
-label26: # beta
+label139: # beta
 	lw	$t1 8($a0) # beta
 	lw	$t1 44($t1) # beta
 	jalr	$t1 # beta
-	b	label20 # beta
-label24: # beta
+	b	label133 # beta
+label137: # beta
 	jal	_case_abort # beta
-label20: # beta
+label133: # beta
 	lw	$fp 12($sp) # beta
 	lw	$s0 8($sp) # beta
 	lw	$ra 4($sp) # beta
@@ -2177,11 +3603,11 @@ App.substitute:
 #  -> curr off 12
 # for fun self 
 	lw	$a0 12($s0) # substitute
-	bne	$a0 $zero label27 # substitute
+	bne	$a0 $zero label140 # substitute
 	la	$a0 str_const0 # substitute
 	li	$t1 1 # substitute
 	jal	_dispatch_abort # substitute
-label27: # substitute
+label140: # substitute
 	lw	$t1 8($a0) # substitute
 	lw	$t1 36($t1) # substitute
 	jalr	$t1 # substitute
@@ -2215,11 +3641,11 @@ label27: # substitute
 #  -> curr off 16
 # for arg self 
 	lw	$a0 16($s0) # substitute
-	bne	$a0 $zero label28 # substitute
+	bne	$a0 $zero label141 # substitute
 	la	$a0 str_const0 # substitute
 	li	$t1 1 # substitute
 	jal	_dispatch_abort # substitute
-label28: # substitute
+label141: # substitute
 	lw	$t1 8($a0) # substitute
 	lw	$t1 36($t1) # substitute
 	jalr	$t1 # substitute
@@ -2263,11 +3689,11 @@ label28: # substitute
 #  -> curr off 20
 # for new_app method 
 	lw	$a0 20($fp) # substitute
-	bne	$a0 $zero label29 # substitute
+	bne	$a0 $zero label142 # substitute
 	la	$a0 str_const0 # substitute
 	li	$t1 1 # substitute
 	jal	_dispatch_abort # substitute
-label29: # substitute
+label142: # substitute
 	lw	$t1 8($a0) # substitute
 	lw	$t1 44($t1) # substitute
 	jalr	$t1 # substitute
@@ -2285,6 +3711,176 @@ App.gen_code:
 	move	$s0 $a0 # gen_code
  # formal env
  # formal closures
+	la	$a0 str_const27 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label143 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label143: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 16
+# for env method 
+	lw	$a0 16($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 12
+# for closures method 
+	lw	$a0 12($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 12
+# for fun self 
+	lw	$a0 12($s0) # gen_code
+	bne	$a0 $zero label144 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label144: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 40($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const28 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label145 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label145: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const29 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label146 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label146: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 16
+# for env method 
+	lw	$a0 16($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 12
+# for closures method 
+	lw	$a0 12($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> fun offset : 3 App type:O 
+#  ==> arg offset : 4 App type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 16
+# for arg self 
+	lw	$a0 16($s0) # gen_code
+	bne	$a0 $zero label147 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label147: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 40($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const30 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label148 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label148: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const31 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label149 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label149: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const32 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label150 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label150: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const33 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label151 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label151: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const34 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label152 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label152: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
 	lw	$fp 12($sp) # gen_code
 	lw	$s0 8($sp) # gen_code
 	lw	$ra 4($sp) # gen_code
@@ -2299,6 +3895,28 @@ Lambda.init:
 	move	$s0 $a0 # init
  # formal a
  # formal b
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> a offset : 4 self type:M 
+#  ==> b offset : 3 self type:M 
+#  -> curr off 16
+# for a method 
+	lw	$a0 16($fp) # init
+#> for arg self 
+	sw	$a0 12($s0) # init
+# tet
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> a offset : 4 self type:M 
+#  ==> b offset : 3 self type:M 
+#  -> curr off 12
+# for b method 
+	lw	$a0 12($fp) # init
+#> for body self 
+	sw	$a0 16($s0) # init
+# tet
+# for self SELF 
+	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
 	lw	$s0 8($sp) # init
 	lw	$ra 4($sp) # init
@@ -2311,6 +3929,60 @@ Lambda.print_self:
 	sw	$ra 4($sp) # print_self
 	addiu	$fp $sp 4 # print_self
 	move	$s0 $a0 # print_self
+	la	$a0 str_const10 # print_self
+	sw	$a0 0($sp) # print_self
+	addiu	$sp $sp -4 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
+	bne	$a0 $zero label153 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label153: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 12($t1) # print_self
+	jalr	$t1 # print_self
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  -> curr off 12
+# for arg self 
+	lw	$a0 12($s0) # print_self
+	bne	$a0 $zero label154 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label154: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 28($t1) # print_self
+	jalr	$t1 # print_self
+	la	$a0 str_const11 # print_self
+	sw	$a0 0($sp) # print_self
+	addiu	$sp $sp -4 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
+	bne	$a0 $zero label155 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label155: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 12($t1) # print_self
+	jalr	$t1 # print_self
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  -> curr off 16
+# for body self 
+	lw	$a0 16($s0) # print_self
+	bne	$a0 $zero label156 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label156: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 28($t1) # print_self
+	jalr	$t1 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
 	lw	$fp 12($sp) # print_self
 	lw	$s0 8($sp) # print_self
 	lw	$ra 4($sp) # print_self
@@ -2360,11 +4032,11 @@ Lambda.apply:
 #  -> curr off 16
 # for body self 
 	lw	$a0 16($s0) # apply
-	bne	$a0 $zero label30 # apply
+	bne	$a0 $zero label157 # apply
 	la	$a0 str_const0 # apply
 	li	$t1 1 # apply
 	jal	_dispatch_abort # apply
-label30: # apply
+label157: # apply
 	lw	$t1 8($a0) # apply
 	lw	$t1 36($t1) # apply
 	jalr	$t1 # apply
@@ -2382,6 +4054,122 @@ Lambda.substitute:
 	move	$s0 $a0 # substitute
  # formal x
  # formal e
+# ya tyt
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> x offset : 6 self type:M 
+#  ==> e offset : 5 self type:M 
+#  -> curr off 24
+# for x method 
+	lw	$a0 24($fp) # substitute
+	sw	$s1 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+	addiu	$sp $sp 4 # substitute
+	lw	$s1 0($sp) # substitute
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> x offset : 6 self type:M 
+#  ==> e offset : 5 self type:M 
+#  -> curr off 12
+# for arg self 
+	lw	$a0 12($s0) # substitute
+	sw	$t0 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+	addiu	$sp $sp 4 # substitute
+	lw	$t0 0($sp) # substitute
+	la	$a0 bool_const0 # substitute
+	beq	$t0 $s1 label160 # substitute
+	la	$a0 bool_const1 # substitute
+label160: # substitute
+	addiu	$sp $sp 4 # substitute
+	lw	$s1 0($sp) # substitute
+# ya tyt(net)
+	lw	$s1 12($a0) # substitute
+	beqz	$s1 label159 # substitute
+# for self SELF 
+	move	$a0 $s0 # substitute
+	b	label158 # substitute
+label159: # substitute
+ # let code for name new_body
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> x offset : 6 self type:M 
+#  ==> e offset : 5 self type:M 
+#  -> curr off 24
+# for x method 
+	lw	$a0 24($fp) # substitute
+	sw	$a0 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> x offset : 6 self type:M 
+#  ==> e offset : 5 self type:M 
+#  -> curr off 20
+# for e method 
+	lw	$a0 20($fp) # substitute
+	sw	$a0 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> x offset : 6 self type:M 
+#  ==> e offset : 5 self type:M 
+#  -> curr off 16
+# for body self 
+	lw	$a0 16($s0) # substitute
+	bne	$a0 $zero label161 # substitute
+	la	$a0 str_const0 # substitute
+	li	$t1 1 # substitute
+	jal	_dispatch_abort # substitute
+label161: # substitute
+	lw	$t1 8($a0) # substitute
+	lw	$t1 36($t1) # substitute
+	jalr	$t1 # substitute
+	sw	$a0 12($fp) # substitute
+ # let code for name new_lam
+	la	$a0 Lambda_protObj # substitute
+	jal	Object.copy # substitute
+	jal	Lambda_init
+	sw	$a0 16($fp) # substitute
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> x offset : 6 self type:M 
+#  ==> e offset : 5 self type:M 
+#  ==> new_body offset : 3 Lambda type:M 
+#  ==> new_lam offset : 4 Lambda type:M 
+#  -> curr off 12
+# for arg self 
+	lw	$a0 12($s0) # substitute
+	sw	$a0 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> x offset : 6 self type:M 
+#  ==> e offset : 5 self type:M 
+#  ==> new_body offset : 3 Lambda type:M 
+#  ==> new_lam offset : 4 Lambda type:M 
+#  -> curr off 12
+# for new_body method 
+	lw	$a0 12($fp) # substitute
+	sw	$a0 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> x offset : 6 self type:M 
+#  ==> e offset : 5 self type:M 
+#  ==> new_body offset : 3 Lambda type:M 
+#  ==> new_lam offset : 4 Lambda type:M 
+#  -> curr off 16
+# for new_lam method 
+	lw	$a0 16($fp) # substitute
+	bne	$a0 $zero label162 # substitute
+	la	$a0 str_const0 # substitute
+	li	$t1 1 # substitute
+	jal	_dispatch_abort # substitute
+label162: # substitute
+	lw	$t1 8($a0) # substitute
+	lw	$t1 44($t1) # substitute
+	jalr	$t1 # substitute
+label158: # substitute
 	lw	$fp 12($sp) # substitute
 	lw	$s0 8($sp) # substitute
 	lw	$ra 4($sp) # substitute
@@ -2396,6 +4184,120 @@ Lambda.gen_code:
 	move	$s0 $a0 # gen_code
  # formal env
  # formal closures
+	la	$a0 str_const12 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label163 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label163: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 16
+# for env method 
+	lw	$a0 16($fp) # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 12
+# for closures method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label164 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label164: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 32($t1) # gen_code
+	jalr	$t1 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label165 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label165: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 16($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const13 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label166 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label166: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 16
+# for env method 
+	lw	$a0 16($fp) # gen_code
+	bne	$a0 $zero label169 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label169: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 28($t1) # gen_code
+	jalr	$t1 # gen_code
+	lw	$s1 12($a0) # gen_code
+	beqz	$s1 label168 # gen_code
+	la	$a0 str_const14 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label170 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label170: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+	b	label167 # gen_code
+label168: # gen_code
+	la	$a0 str_const15 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label171 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label171: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+label167: # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
 	lw	$fp 12($sp) # gen_code
 	lw	$s0 8($sp) # gen_code
 	lw	$ra 4($sp) # gen_code
@@ -2411,6 +4313,204 @@ Lambda.gen_closure_code:
  # formal n
  # formal env
  # formal closures
+	la	$a0 str_const16 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label172 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label172: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 12($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> n offset : 5 self type:M 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 20
+# for n method 
+	lw	$a0 20($fp) # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label173 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label173: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 16($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+	la	$a0 str_const17 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label174 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label174: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 12($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+	la	$a0 str_const18 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label175 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label175: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 12($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+	la	$a0 str_const19 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label176 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label176: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 12($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> n offset : 5 self type:M 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 20
+# for n method 
+	lw	$a0 20($fp) # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label177 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label177: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 16($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+	la	$a0 str_const20 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label178 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label178: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 12($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+	la	$a0 str_const21 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label179 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label179: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 12($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> n offset : 5 self type:M 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 12
+# for arg self 
+	lw	$a0 12($s0) # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> n offset : 5 self type:M 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 16
+# for env method 
+	lw	$a0 16($fp) # gen_closure_code
+	bne	$a0 $zero label180 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label180: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 40($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> n offset : 5 self type:M 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 12
+# for closures method 
+	lw	$a0 12($fp) # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+#  ==> arg offset : 3 Lambda type:O 
+#  ==> body offset : 4 Lambda type:O 
+#  ==> n offset : 5 self type:M 
+#  ==> env offset : 4 self type:M 
+#  ==> closures offset : 3 self type:M 
+#  -> curr off 16
+# for body self 
+	lw	$a0 16($s0) # gen_closure_code
+	bne	$a0 $zero label181 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label181: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 40($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+	la	$a0 str_const22 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label182 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label182: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 12($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
+	la	$a0 str_const23 # gen_closure_code
+	sw	$a0 0($sp) # gen_closure_code
+	addiu	$sp $sp -4 # gen_closure_code
+# for self SELF 
+	move	$a0 $s0 # gen_closure_code
+	bne	$a0 $zero label183 # gen_closure_code
+	la	$a0 str_const0 # gen_closure_code
+	li	$t1 1 # gen_closure_code
+	jal	_dispatch_abort # gen_closure_code
+label183: # gen_closure_code
+	lw	$t1 8($a0) # gen_closure_code
+	lw	$t1 12($t1) # gen_closure_code
+	jalr	$t1 # gen_closure_code
 	lw	$fp 12($sp) # gen_closure_code
 	lw	$s0 8($sp) # gen_closure_code
 	lw	$ra 4($sp) # gen_closure_code
@@ -2424,6 +4524,16 @@ Variable.init:
 	addiu	$fp $sp 4 # init
 	move	$s0 $a0 # init
  # formal n
+#  ==> name offset : 3 Variable type:O 
+#  ==> n offset : 3 self type:M 
+#  -> curr off 12
+# for n method 
+	lw	$a0 12($fp) # init
+#> for name self 
+	sw	$a0 12($s0) # init
+# tet
+# for self SELF 
+	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
 	lw	$s0 8($sp) # init
 	lw	$ra 4($sp) # init
@@ -2444,11 +4554,11 @@ Variable.print_self:
 	addiu	$sp $sp -4 # print_self
 # for self SELF 
 	move	$a0 $s0 # print_self
-	bne	$a0 $zero label31 # print_self
+	bne	$a0 $zero label184 # print_self
 	la	$a0 str_const0 # print_self
 	li	$t1 1 # print_self
 	jal	_dispatch_abort # print_self
-label31: # print_self
+label184: # print_self
 	lw	$t1 8($a0) # print_self
 	lw	$t1 12($t1) # print_self
 	jalr	$t1 # print_self
@@ -2480,6 +4590,43 @@ Variable.substitute:
 	move	$s0 $a0 # substitute
  # formal x
  # formal e
+# ya tyt
+#  ==> name offset : 3 Variable type:O 
+#  ==> x offset : 5 self type:M 
+#  ==> e offset : 4 self type:M 
+#  -> curr off 20
+# for x method 
+	lw	$a0 20($fp) # substitute
+	sw	$s1 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+	addiu	$sp $sp 4 # substitute
+	lw	$s1 0($sp) # substitute
+# for self SELF 
+	move	$a0 $s0 # substitute
+	sw	$t0 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+	addiu	$sp $sp 4 # substitute
+	lw	$t0 0($sp) # substitute
+	la	$a0 bool_const0 # substitute
+	beq	$t0 $s1 label187 # substitute
+	la	$a0 bool_const1 # substitute
+label187: # substitute
+	addiu	$sp $sp 4 # substitute
+	lw	$s1 0($sp) # substitute
+# ya tyt(net)
+	lw	$s1 12($a0) # substitute
+	beqz	$s1 label186 # substitute
+#  ==> name offset : 3 Variable type:O 
+#  ==> x offset : 5 self type:M 
+#  ==> e offset : 4 self type:M 
+#  -> curr off 16
+# for e method 
+	lw	$a0 16($fp) # substitute
+	b	label185 # substitute
+label186: # substitute
+# for self SELF 
+	move	$a0 $s0 # substitute
+label185: # substitute
 	lw	$fp 12($sp) # substitute
 	lw	$s0 8($sp) # substitute
 	lw	$ra 4($sp) # substitute
@@ -2502,6 +4649,183 @@ Variable.gen_code:
 # for env method 
 	lw	$a0 24($fp) # gen_code
 	sw	$a0 12($fp) # gen_code
+label188: # gen_code
+#  ==> name offset : 3 Variable type:O 
+#  ==> env offset : 6 self type:M 
+#  ==> closures offset : 5 self type:M 
+#  ==> cur_env offset : 3 Variable type:M 
+#  -> curr off 12
+# for cur_env method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label192 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label192: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 28($t1) # gen_code
+	jalr	$t1 # gen_code
+	lw	$s1 12($a0) # gen_code
+	beqz	$s1 label191 # gen_code
+	la	$a0 bool_const0 # gen_code
+	b	label190 # gen_code
+label191: # gen_code
+# ya tyt
+#  ==> name offset : 3 Variable type:O 
+#  ==> env offset : 6 self type:M 
+#  ==> closures offset : 5 self type:M 
+#  ==> cur_env offset : 3 Variable type:M 
+#  -> curr off 12
+# for cur_env method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label193 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label193: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 32($t1) # gen_code
+	jalr	$t1 # gen_code
+	sw	$s1 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+	addiu	$sp $sp 4 # gen_code
+	lw	$s1 0($sp) # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	sw	$t0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+	addiu	$sp $sp 4 # gen_code
+	lw	$t0 0($sp) # gen_code
+	la	$a0 bool_const0 # gen_code
+	beq	$t0 $s1 label194 # gen_code
+	la	$a0 bool_const1 # gen_code
+label194: # gen_code
+	addiu	$sp $sp 4 # gen_code
+	lw	$s1 0($sp) # gen_code
+# ya tyt(net)
+	lw	$s1 12($a0) # gen_code
+	la	$a0 bool_const0 # gen_code
+	beqz	$s1 label195 # gen_code
+	la	$a0 bool_const1 # gen_code
+label195: # gen_code
+label190: # gen_code
+	la	$t0 bool_const0 # gen_code
+	beq	$a0 $t0 label189 # gen_code
+	la	$a0 str_const7 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label196 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label196: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+#  ==> name offset : 3 Variable type:O 
+#  ==> env offset : 6 self type:M 
+#  ==> closures offset : 5 self type:M 
+#  ==> cur_env offset : 3 Variable type:M 
+#  -> curr off 12
+# for cur_env method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label197 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label197: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 36($t1) # gen_code
+	jalr	$t1 # gen_code
+#> for cur_env method 
+	sw	$a0 12($fp) # gen_code
+# tet
+	b	label188 # gen_code
+label189: # gen_code
+	move	$a0 $zero # gen_code
+#  ==> name offset : 3 Variable type:O 
+#  ==> env offset : 6 self type:M 
+#  ==> closures offset : 5 self type:M 
+#  ==> cur_env offset : 3 Variable type:M 
+#  -> curr off 12
+# for cur_env method 
+	lw	$a0 12($fp) # gen_code
+	bne	$a0 $zero label200 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label200: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 28($t1) # gen_code
+	jalr	$t1 # gen_code
+	lw	$s1 12($a0) # gen_code
+	beqz	$s1 label199 # gen_code
+	la	$a0 str_const8 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label201 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label201: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label202 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label202: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 28($t1) # gen_code
+	jalr	$t1 # gen_code
+	la	$a0 str_const1 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label203 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label203: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label204 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label204: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 0($t1) # gen_code
+	jalr	$t1 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	b	label198 # gen_code
+label199: # gen_code
+	la	$a0 str_const9 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label205 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label205: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+label198: # gen_code
 	lw	$fp 12($sp) # gen_code
 	lw	$s0 8($sp) # gen_code
 	lw	$ra 4($sp) # gen_code
@@ -2514,6 +4838,31 @@ Expr.print_self:
 	sw	$ra 4($sp) # print_self
 	addiu	$fp $sp 4 # print_self
 	move	$s0 $a0 # print_self
+	la	$a0 str_const3 # print_self
+	sw	$a0 0($sp) # print_self
+	addiu	$sp $sp -4 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
+	bne	$a0 $zero label206 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label206: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 12($t1) # print_self
+	jalr	$t1 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
+	bne	$a0 $zero label207 # print_self
+	la	$a0 str_const0 # print_self
+	li	$t1 1 # print_self
+	jal	_dispatch_abort # print_self
+label207: # print_self
+	lw	$t1 8($a0) # print_self
+	lw	$t1 0($t1) # print_self
+	jalr	$t1 # print_self
+# for self SELF 
+	move	$a0 $s0 # print_self
 	lw	$fp 12($sp) # print_self
 	lw	$s0 8($sp) # print_self
 	lw	$ra 4($sp) # print_self
@@ -2526,6 +4875,31 @@ Expr.beta:
 	sw	$ra 4($sp) # beta
 	addiu	$fp $sp 4 # beta
 	move	$s0 $a0 # beta
+	la	$a0 str_const4 # beta
+	sw	$a0 0($sp) # beta
+	addiu	$sp $sp -4 # beta
+# for self SELF 
+	move	$a0 $s0 # beta
+	bne	$a0 $zero label208 # beta
+	la	$a0 str_const0 # beta
+	li	$t1 1 # beta
+	jal	_dispatch_abort # beta
+label208: # beta
+	lw	$t1 8($a0) # beta
+	lw	$t1 12($t1) # beta
+	jalr	$t1 # beta
+# for self SELF 
+	move	$a0 $s0 # beta
+	bne	$a0 $zero label209 # beta
+	la	$a0 str_const0 # beta
+	li	$t1 1 # beta
+	jal	_dispatch_abort # beta
+label209: # beta
+	lw	$t1 8($a0) # beta
+	lw	$t1 0($t1) # beta
+	jalr	$t1 # beta
+# for self SELF 
+	move	$a0 $s0 # beta
 	lw	$fp 12($sp) # beta
 	lw	$s0 8($sp) # beta
 	lw	$ra 4($sp) # beta
@@ -2540,6 +4914,31 @@ Expr.substitute:
 	move	$s0 $a0 # substitute
  # formal x
  # formal e
+	la	$a0 str_const5 # substitute
+	sw	$a0 0($sp) # substitute
+	addiu	$sp $sp -4 # substitute
+# for self SELF 
+	move	$a0 $s0 # substitute
+	bne	$a0 $zero label210 # substitute
+	la	$a0 str_const0 # substitute
+	li	$t1 1 # substitute
+	jal	_dispatch_abort # substitute
+label210: # substitute
+	lw	$t1 8($a0) # substitute
+	lw	$t1 12($t1) # substitute
+	jalr	$t1 # substitute
+# for self SELF 
+	move	$a0 $s0 # substitute
+	bne	$a0 $zero label211 # substitute
+	la	$a0 str_const0 # substitute
+	li	$t1 1 # substitute
+	jal	_dispatch_abort # substitute
+label211: # substitute
+	lw	$t1 8($a0) # substitute
+	lw	$t1 0($t1) # substitute
+	jalr	$t1 # substitute
+# for self SELF 
+	move	$a0 $s0 # substitute
 	lw	$fp 12($sp) # substitute
 	lw	$s0 8($sp) # substitute
 	lw	$ra 4($sp) # substitute
@@ -2554,6 +4953,31 @@ Expr.gen_code:
 	move	$s0 $a0 # gen_code
  # formal env
  # formal closures
+	la	$a0 str_const6 # gen_code
+	sw	$a0 0($sp) # gen_code
+	addiu	$sp $sp -4 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label212 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label212: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 12($t1) # gen_code
+	jalr	$t1 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
+	bne	$a0 $zero label213 # gen_code
+	la	$a0 str_const0 # gen_code
+	li	$t1 1 # gen_code
+	jal	_dispatch_abort # gen_code
+label213: # gen_code
+	lw	$t1 8($a0) # gen_code
+	lw	$t1 0($t1) # gen_code
+	jalr	$t1 # gen_code
+# for self SELF 
+	move	$a0 $s0 # gen_code
 	lw	$fp 12($sp) # gen_code
 	lw	$s0 8($sp) # gen_code
 	lw	$ra 4($sp) # gen_code
@@ -2571,11 +4995,11 @@ LambdaListRef.isNil:
 #  -> curr off 16
 # for l self 
 	lw	$a0 16($s0) # isNil
-	bne	$a0 $zero label32 # isNil
+	bne	$a0 $zero label214 # isNil
 	la	$a0 str_const0 # isNil
 	li	$t1 1 # isNil
 	jal	_dispatch_abort # isNil
-label32: # isNil
+label214: # isNil
 	lw	$t1 8($a0) # isNil
 	lw	$t1 12($t1) # isNil
 	jalr	$t1 # isNil
@@ -2596,11 +5020,11 @@ LambdaListRef.headE:
 #  -> curr off 16
 # for l self 
 	lw	$a0 16($s0) # headE
-	bne	$a0 $zero label33 # headE
+	bne	$a0 $zero label215 # headE
 	la	$a0 str_const0 # headE
 	li	$t1 1 # headE
 	jal	_dispatch_abort # headE
-label33: # headE
+label215: # headE
 	lw	$t1 8($a0) # headE
 	lw	$t1 16($t1) # headE
 	jalr	$t1 # headE
@@ -2621,11 +5045,11 @@ LambdaListRef.headC:
 #  -> curr off 16
 # for l self 
 	lw	$a0 16($s0) # headC
-	bne	$a0 $zero label34 # headC
+	bne	$a0 $zero label216 # headC
 	la	$a0 str_const0 # headC
 	li	$t1 1 # headC
 	jal	_dispatch_abort # headC
-label34: # headC
+label216: # headC
 	lw	$t1 8($a0) # headC
 	lw	$t1 20($t1) # headC
 	jalr	$t1 # headC
@@ -2646,11 +5070,11 @@ LambdaListRef.headN:
 #  -> curr off 16
 # for l self 
 	lw	$a0 16($s0) # headN
-	bne	$a0 $zero label35 # headN
+	bne	$a0 $zero label217 # headN
 	la	$a0 str_const0 # headN
 	li	$t1 1 # headN
 	jal	_dispatch_abort # headN
-label35: # headN
+label217: # headN
 	lw	$t1 8($a0) # headN
 	lw	$t1 24($t1) # headN
 	jalr	$t1 # headN
@@ -2666,6 +5090,18 @@ LambdaListRef.reset:
 	sw	$ra 4($sp) # reset
 	addiu	$fp $sp 4 # reset
 	move	$s0 $a0 # reset
+	la	$a0 int_const1 # reset
+#> for nextNum self 
+	sw	$a0 12($s0) # reset
+# tet
+	la	$a0 LambdaList_protObj # reset
+	jal	Object.copy # reset
+	jal	LambdaList_init
+#> for l self 
+	sw	$a0 16($s0) # reset
+# tet
+# for self SELF 
+	move	$a0 $s0 # reset
 	lw	$fp 12($sp) # reset
 	lw	$s0 8($sp) # reset
 	lw	$ra 4($sp) # reset
@@ -2680,6 +5116,98 @@ LambdaListRef.add:
 	move	$s0 $a0 # add
  # formal env
  # formal c
+#  ==> nextNum offset : 3 LambdaListRef type:O 
+#  ==> l offset : 4 LambdaListRef type:O 
+#  ==> env offset : 5 self type:M 
+#  ==> c offset : 4 self type:M 
+#  -> curr off 20
+# for env method 
+	lw	$a0 20($fp) # add
+	sw	$a0 0($sp) # add
+	addiu	$sp $sp -4 # add
+#  ==> nextNum offset : 3 LambdaListRef type:O 
+#  ==> l offset : 4 LambdaListRef type:O 
+#  ==> env offset : 5 self type:M 
+#  ==> c offset : 4 self type:M 
+#  -> curr off 16
+# for c method 
+	lw	$a0 16($fp) # add
+	sw	$a0 0($sp) # add
+	addiu	$sp $sp -4 # add
+#  ==> nextNum offset : 3 LambdaListRef type:O 
+#  ==> l offset : 4 LambdaListRef type:O 
+#  ==> env offset : 5 self type:M 
+#  ==> c offset : 4 self type:M 
+#  -> curr off 12
+# for nextNum self 
+	lw	$a0 12($s0) # add
+	sw	$a0 0($sp) # add
+	addiu	$sp $sp -4 # add
+#  ==> nextNum offset : 3 LambdaListRef type:O 
+#  ==> l offset : 4 LambdaListRef type:O 
+#  ==> env offset : 5 self type:M 
+#  ==> c offset : 4 self type:M 
+#  -> curr off 16
+# for l self 
+	lw	$a0 16($s0) # add
+	bne	$a0 $zero label218 # add
+	la	$a0 str_const0 # add
+	li	$t1 1 # add
+	jal	_dispatch_abort # add
+label218: # add
+	lw	$t1 8($a0) # add
+	lw	$t1 32($t1) # add
+	jalr	$t1 # add
+#> for l self 
+	sw	$a0 16($s0) # add
+# tet
+#  ==> nextNum offset : 3 LambdaListRef type:O 
+#  ==> l offset : 4 LambdaListRef type:O 
+#  ==> env offset : 5 self type:M 
+#  ==> c offset : 4 self type:M 
+#  -> curr off 12
+# for nextNum self 
+	lw	$a0 12($s0) # add
+	sw	$a0 0($sp) # add
+	addiu	$sp $sp -4 # add
+	la	$a0 int_const0 # add
+	lw	$s1 12($a0) # add
+	addiu	$sp $sp 4 # add
+	lw	$a0 0($sp) # add
+	lw	$a0 12($a0) # add
+	add	$a0 $a0 $s1 # add
+	sw	$a0 0($sp) # add
+	addiu	$sp $sp -4 # add
+	la	$a0 Int_protObj # add
+	jal	Object.copy # add
+	addiu	$sp $sp 4 # add
+	lw	$s1 0($sp) # add
+	sw	$s1 12($a0) # add
+#> for nextNum self 
+	sw	$a0 12($s0) # add
+# tet
+#  ==> nextNum offset : 3 LambdaListRef type:O 
+#  ==> l offset : 4 LambdaListRef type:O 
+#  ==> env offset : 5 self type:M 
+#  ==> c offset : 4 self type:M 
+#  -> curr off 12
+# for nextNum self 
+	lw	$a0 12($s0) # add
+	sw	$a0 0($sp) # add
+	addiu	$sp $sp -4 # add
+	la	$a0 int_const0 # add
+	lw	$s1 12($a0) # add
+	addiu	$sp $sp 4 # add
+	lw	$a0 0($sp) # add
+	lw	$a0 12($a0) # add
+	sub	$a0 $a0 $s1 # add
+	sw	$a0 0($sp) # add
+	addiu	$sp $sp -4 # add
+	la	$a0 Int_protObj # add
+	jal	Object.copy # add
+	addiu	$sp $sp 4 # add
+	lw	$s1 0($sp) # add
+	sw	$s1 12($a0) # add
 	lw	$fp 12($sp) # add
 	lw	$s0 8($sp) # add
 	lw	$ra 4($sp) # add
@@ -2692,6 +5220,24 @@ LambdaListRef.removeHead:
 	sw	$ra 4($sp) # removeHead
 	addiu	$fp $sp 4 # removeHead
 	move	$s0 $a0 # removeHead
+#  ==> nextNum offset : 3 LambdaListRef type:O 
+#  ==> l offset : 4 LambdaListRef type:O 
+#  -> curr off 16
+# for l self 
+	lw	$a0 16($s0) # removeHead
+	bne	$a0 $zero label219 # removeHead
+	la	$a0 str_const0 # removeHead
+	li	$t1 1 # removeHead
+	jal	_dispatch_abort # removeHead
+label219: # removeHead
+	lw	$t1 8($a0) # removeHead
+	lw	$t1 28($t1) # removeHead
+	jalr	$t1 # removeHead
+#> for l self 
+	sw	$a0 16($s0) # removeHead
+# tet
+# for self SELF 
+	move	$a0 $s0 # removeHead
 	lw	$fp 12($sp) # removeHead
 	lw	$s0 8($sp) # removeHead
 	lw	$ra 4($sp) # removeHead
@@ -2797,6 +5343,64 @@ LambdaListNE.init:
  # formal l
  # formal n
  # formal r
+#  ==> lam offset : 3 LambdaListNE type:O 
+#  ==> num offset : 4 LambdaListNE type:O 
+#  ==> env offset : 5 LambdaListNE type:O 
+#  ==> rest offset : 6 LambdaListNE type:O 
+#  ==> e offset : 6 self type:M 
+#  ==> l offset : 5 self type:M 
+#  ==> n offset : 4 self type:M 
+#  ==> r offset : 3 self type:M 
+#  -> curr off 24
+# for e method 
+	lw	$a0 24($fp) # init
+#> for env self 
+	sw	$a0 20($s0) # init
+# tet
+#  ==> lam offset : 3 LambdaListNE type:O 
+#  ==> num offset : 4 LambdaListNE type:O 
+#  ==> env offset : 5 LambdaListNE type:O 
+#  ==> rest offset : 6 LambdaListNE type:O 
+#  ==> e offset : 6 self type:M 
+#  ==> l offset : 5 self type:M 
+#  ==> n offset : 4 self type:M 
+#  ==> r offset : 3 self type:M 
+#  -> curr off 20
+# for l method 
+	lw	$a0 20($fp) # init
+#> for lam self 
+	sw	$a0 12($s0) # init
+# tet
+#  ==> lam offset : 3 LambdaListNE type:O 
+#  ==> num offset : 4 LambdaListNE type:O 
+#  ==> env offset : 5 LambdaListNE type:O 
+#  ==> rest offset : 6 LambdaListNE type:O 
+#  ==> e offset : 6 self type:M 
+#  ==> l offset : 5 self type:M 
+#  ==> n offset : 4 self type:M 
+#  ==> r offset : 3 self type:M 
+#  -> curr off 16
+# for n method 
+	lw	$a0 16($fp) # init
+#> for num self 
+	sw	$a0 16($s0) # init
+# tet
+#  ==> lam offset : 3 LambdaListNE type:O 
+#  ==> num offset : 4 LambdaListNE type:O 
+#  ==> env offset : 5 LambdaListNE type:O 
+#  ==> rest offset : 6 LambdaListNE type:O 
+#  ==> e offset : 6 self type:M 
+#  ==> l offset : 5 self type:M 
+#  ==> n offset : 4 self type:M 
+#  ==> r offset : 3 self type:M 
+#  -> curr off 12
+# for r method 
+	lw	$a0 12($fp) # init
+#> for rest self 
+	sw	$a0 24($s0) # init
+# tet
+# for self SELF 
+	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
 	lw	$s0 8($sp) # init
 	lw	$ra 4($sp) # init
@@ -2822,6 +5426,19 @@ LambdaList.headE:
 	sw	$ra 4($sp) # headE
 	addiu	$fp $sp 4 # headE
 	move	$s0 $a0 # headE
+# for self SELF 
+	move	$a0 $s0 # headE
+	bne	$a0 $zero label220 # headE
+	la	$a0 str_const0 # headE
+	li	$t1 1 # headE
+	jal	_dispatch_abort # headE
+label220: # headE
+	lw	$t1 8($a0) # headE
+	lw	$t1 0($t1) # headE
+	jalr	$t1 # headE
+	la	$a0 VarList_protObj # headE
+	jal	Object.copy # headE
+	jal	VarList_init
 	lw	$fp 12($sp) # headE
 	lw	$s0 8($sp) # headE
 	lw	$ra 4($sp) # headE
@@ -2834,6 +5451,19 @@ LambdaList.headC:
 	sw	$ra 4($sp) # headC
 	addiu	$fp $sp 4 # headC
 	move	$s0 $a0 # headC
+# for self SELF 
+	move	$a0 $s0 # headC
+	bne	$a0 $zero label221 # headC
+	la	$a0 str_const0 # headC
+	li	$t1 1 # headC
+	jal	_dispatch_abort # headC
+label221: # headC
+	lw	$t1 8($a0) # headC
+	lw	$t1 0($t1) # headC
+	jalr	$t1 # headC
+	la	$a0 Lambda_protObj # headC
+	jal	Object.copy # headC
+	jal	Lambda_init
 	lw	$fp 12($sp) # headC
 	lw	$s0 8($sp) # headC
 	lw	$ra 4($sp) # headC
@@ -2846,6 +5476,17 @@ LambdaList.headN:
 	sw	$ra 4($sp) # headN
 	addiu	$fp $sp 4 # headN
 	move	$s0 $a0 # headN
+# for self SELF 
+	move	$a0 $s0 # headN
+	bne	$a0 $zero label222 # headN
+	la	$a0 str_const0 # headN
+	li	$t1 1 # headN
+	jal	_dispatch_abort # headN
+label222: # headN
+	lw	$t1 8($a0) # headN
+	lw	$t1 0($t1) # headN
+	jalr	$t1 # headN
+	la	$a0 int_const1 # headN
 	lw	$fp 12($sp) # headN
 	lw	$s0 8($sp) # headN
 	lw	$ra 4($sp) # headN
@@ -2858,6 +5499,19 @@ LambdaList.tail:
 	sw	$ra 4($sp) # tail
 	addiu	$fp $sp 4 # tail
 	move	$s0 $a0 # tail
+# for self SELF 
+	move	$a0 $s0 # tail
+	bne	$a0 $zero label223 # tail
+	la	$a0 str_const0 # tail
+	li	$t1 1 # tail
+	jal	_dispatch_abort # tail
+label223: # tail
+	lw	$t1 8($a0) # tail
+	lw	$t1 0($t1) # tail
+	jalr	$t1 # tail
+	la	$a0 LambdaList_protObj # tail
+	jal	Object.copy # tail
+	jal	LambdaList_init
 	lw	$fp 12($sp) # tail
 	lw	$s0 8($sp) # tail
 	lw	$ra 4($sp) # tail
@@ -2904,11 +5558,11 @@ LambdaList.add:
 	la	$a0 LambdaListNE_protObj # add
 	jal	Object.copy # add
 	jal	LambdaListNE_init
-	bne	$a0 $zero label36 # add
+	bne	$a0 $zero label224 # add
 	la	$a0 str_const0 # add
 	li	$t1 1 # add
 	jal	_dispatch_abort # add
-label36: # add
+label224: # add
 	lw	$t1 8($a0) # add
 	lw	$t1 36($t1) # add
 	jalr	$t1 # add
@@ -2973,6 +5627,28 @@ VarListNE.init:
 	move	$s0 $a0 # init
  # formal y
  # formal r
+#  ==> x offset : 3 VarListNE type:O 
+#  ==> rest offset : 4 VarListNE type:O 
+#  ==> y offset : 4 self type:M 
+#  ==> r offset : 3 self type:M 
+#  -> curr off 16
+# for y method 
+	lw	$a0 16($fp) # init
+#> for x self 
+	sw	$a0 12($s0) # init
+# tet
+#  ==> x offset : 3 VarListNE type:O 
+#  ==> rest offset : 4 VarListNE type:O 
+#  ==> y offset : 4 self type:M 
+#  ==> r offset : 3 self type:M 
+#  -> curr off 12
+# for r method 
+	lw	$a0 12($fp) # init
+#> for rest self 
+	sw	$a0 16($s0) # init
+# tet
+# for self SELF 
+	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
 	lw	$s0 8($sp) # init
 	lw	$ra 4($sp) # init
@@ -2985,6 +5661,47 @@ VarListNE.print:
 	sw	$ra 4($sp) # print
 	addiu	$fp $sp 4 # print
 	move	$s0 $a0 # print
+#  ==> x offset : 3 VarListNE type:O 
+#  ==> rest offset : 4 VarListNE type:O 
+#  -> curr off 12
+# for x self 
+	lw	$a0 12($s0) # print
+	bne	$a0 $zero label225 # print
+	la	$a0 str_const0 # print
+	li	$t1 1 # print
+	jal	_dispatch_abort # print
+label225: # print
+	lw	$t1 8($a0) # print
+	lw	$t1 28($t1) # print
+	jalr	$t1 # print
+	la	$a0 str_const2 # print
+	sw	$a0 0($sp) # print
+	addiu	$sp $sp -4 # print
+# for self SELF 
+	move	$a0 $s0 # print
+	bne	$a0 $zero label226 # print
+	la	$a0 str_const0 # print
+	li	$t1 1 # print
+	jal	_dispatch_abort # print
+label226: # print
+	lw	$t1 8($a0) # print
+	lw	$t1 12($t1) # print
+	jalr	$t1 # print
+#  ==> x offset : 3 VarListNE type:O 
+#  ==> rest offset : 4 VarListNE type:O 
+#  -> curr off 16
+# for rest self 
+	lw	$a0 16($s0) # print
+	bne	$a0 $zero label227 # print
+	la	$a0 str_const0 # print
+	li	$t1 1 # print
+	jal	_dispatch_abort # print
+label227: # print
+	lw	$t1 8($a0) # print
+	lw	$t1 44($t1) # print
+	jalr	$t1 # print
+# for self SELF 
+	move	$a0 $s0 # print
 	lw	$fp 12($sp) # print
 	lw	$s0 8($sp) # print
 	lw	$ra 4($sp) # print
@@ -3010,6 +5727,19 @@ VarList.head:
 	sw	$ra 4($sp) # head
 	addiu	$fp $sp 4 # head
 	move	$s0 $a0 # head
+# for self SELF 
+	move	$a0 $s0 # head
+	bne	$a0 $zero label228 # head
+	la	$a0 str_const0 # head
+	li	$t1 1 # head
+	jal	_dispatch_abort # head
+label228: # head
+	lw	$t1 8($a0) # head
+	lw	$t1 0($t1) # head
+	jalr	$t1 # head
+	la	$a0 Variable_protObj # head
+	jal	Object.copy # head
+	jal	Variable_init
 	lw	$fp 12($sp) # head
 	lw	$s0 8($sp) # head
 	lw	$ra 4($sp) # head
@@ -3022,6 +5752,19 @@ VarList.tail:
 	sw	$ra 4($sp) # tail
 	addiu	$fp $sp 4 # tail
 	move	$s0 $a0 # tail
+# for self SELF 
+	move	$a0 $s0 # tail
+	bne	$a0 $zero label229 # tail
+	la	$a0 str_const0 # tail
+	li	$t1 1 # tail
+	jal	_dispatch_abort # tail
+label229: # tail
+	lw	$t1 8($a0) # tail
+	lw	$t1 0($t1) # tail
+	jalr	$t1 # tail
+	la	$a0 VarList_protObj # tail
+	jal	Object.copy # tail
+	jal	VarList_init
 	lw	$fp 12($sp) # tail
 	lw	$s0 8($sp) # tail
 	lw	$ra 4($sp) # tail
@@ -3048,11 +5791,11 @@ VarList.add:
 	la	$a0 VarListNE_protObj # add
 	jal	Object.copy # add
 	jal	VarListNE_init
-	bne	$a0 $zero label37 # add
+	bne	$a0 $zero label230 # add
 	la	$a0 str_const0 # add
 	li	$t1 1 # add
 	jal	_dispatch_abort # add
-label37: # add
+label230: # add
 	lw	$t1 8($a0) # add
 	lw	$t1 48($t1) # add
 	jalr	$t1 # add
@@ -3073,11 +5816,11 @@ VarList.print:
 	addiu	$sp $sp -4 # print
 # for self SELF 
 	move	$a0 $s0 # print
-	bne	$a0 $zero label38 # print
+	bne	$a0 $zero label231 # print
 	la	$a0 str_const0 # print
 	li	$t1 1 # print
 	jal	_dispatch_abort # print
-label38: # print
+label231: # print
 	lw	$t1 8($a0) # print
 	lw	$t1 12($t1) # print
 	jalr	$t1 # print

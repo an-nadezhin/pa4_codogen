@@ -503,6 +503,57 @@ Main.main:
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+ # let code for name me
+	la	$a0 Base_protObj # main
+	jal	Object.copy # main
+	jal	Base_init
+	sw	$a0 12($fp) # main
+#  ==> me offset : 3 Main type:M 
+#  -> curr off 12
+# for me method 
+	lw	$a0 12($fp) # main
+	bne	$a0 $zero label0 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label0: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+ # let code for name me
+	la	$a0 Derived_protObj # main
+	jal	Object.copy # main
+	jal	Derived_init
+	sw	$a0 16($fp) # main
+#  ==> me offset : 4 Main type:M 
+#  -> curr off 16
+# for me method 
+	lw	$a0 16($fp) # main
+	bne	$a0 $zero label1 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label1: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+ # let code for name me
+	la	$a0 Derived_protObj # main
+	jal	Object.copy # main
+	jal	Derived_init
+	sw	$a0 20($fp) # main
+#  ==> me offset : 5 Main type:M 
+#  -> curr off 20
+# for me method 
+	lw	$a0 20($fp) # main
+	bne	$a0 $zero label2 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label2: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main
@@ -520,11 +571,11 @@ Derived.identify:
 	addiu	$sp $sp -4 # identify
 # for self SELF 
 	move	$a0 $s0 # identify
-	bne	$a0 $zero label0 # identify
+	bne	$a0 $zero label3 # identify
 	la	$a0 str_const0 # identify
 	li	$t1 1 # identify
 	jal	_dispatch_abort # identify
-label0: # identify
+label3: # identify
 	lw	$t1 8($a0) # identify
 	lw	$t1 12($t1) # identify
 	jalr	$t1 # identify
@@ -545,11 +596,11 @@ Base.identify:
 	addiu	$sp $sp -4 # identify
 # for self SELF 
 	move	$a0 $s0 # identify
-	bne	$a0 $zero label1 # identify
+	bne	$a0 $zero label4 # identify
 	la	$a0 str_const0 # identify
 	li	$t1 1 # identify
 	jal	_dispatch_abort # identify
-label1: # identify
+label4: # identify
 	lw	$t1 8($a0) # identify
 	lw	$t1 12($t1) # identify
 	jalr	$t1 # identify

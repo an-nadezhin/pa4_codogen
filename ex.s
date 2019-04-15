@@ -1,5 +1,3 @@
-# start of generated code
-# coding global data
 	.data
 	.align	2
 	.globl	class_nameTab
@@ -17,7 +15,6 @@ _bool_tag:
 	.word	3
 _string_tag:
 	.word	4
-# choosing GC
 	.globl	_MemMgr_INITIALIZER
 _MemMgr_INITIALIZER:
 	.word	_NoGC_Init
@@ -28,56 +25,29 @@ _MemMgr_COLLECTOR:
 _MemMgr_TEST:
 	.word	0
 	.word	-1
-str_const11:
+str_const8:
 	.word	4
 	.word	5
 	.word	String_dispTab
-	.word	int_const0
-	.byte	0	
-	.align	2
-	.word	-1
-str_const10:
-	.word	4
-	.word	6
-	.word	String_dispTab
-	.word	int_const1
-	.ascii	"Main"
-	.byte	0	
-	.align	2
-	.word	-1
-str_const9:
-	.word	4
-	.word	6
-	.word	String_dispTab
 	.word	int_const2
-	.ascii	"String"
-	.byte	0	
-	.align	2
-	.word	-1
-str_const8:
-	.word	4
-	.word	6
-	.word	String_dispTab
-	.word	int_const1
-	.ascii	"Bool"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const7:
 	.word	4
-	.word	5
+	.word	6
 	.word	String_dispTab
 	.word	int_const3
-	.ascii	"Int"
+	.ascii	"Main"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const6:
 	.word	4
-	.word	5
+	.word	6
 	.word	String_dispTab
 	.word	int_const4
-	.ascii	"IO"
+	.ascii	"String"
 	.byte	0	
 	.align	2
 	.word	-1
@@ -85,35 +55,35 @@ str_const5:
 	.word	4
 	.word	6
 	.word	String_dispTab
-	.word	int_const2
-	.ascii	"Object"
+	.word	int_const3
+	.ascii	"Bool"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const4:
 	.word	4
-	.word	7
+	.word	5
 	.word	String_dispTab
 	.word	int_const5
-	.ascii	"_prim_slot"
+	.ascii	"Int"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const3:
 	.word	4
-	.word	7
+	.word	5
 	.word	String_dispTab
 	.word	int_const6
-	.ascii	"SELF_TYPE"
+	.ascii	"IO"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const2:
 	.word	4
-	.word	7
+	.word	6
 	.word	String_dispTab
-	.word	int_const6
-	.ascii	"_no_class"
+	.word	int_const4
+	.ascii	"Object"
 	.byte	0	
 	.align	2
 	.word	-1
@@ -128,12 +98,18 @@ str_const1:
 	.word	-1
 str_const0:
 	.word	4
-	.word	8
+	.word	9
 	.word	String_dispTab
-	.word	int_const7
-	.ascii	"./casevoid.cl"
+	.word	int_const8
+	.ascii	"basicequality.cl"
 	.byte	0	
 	.align	2
+	.word	-1
+int_const8:
+	.word	2
+	.word	4
+	.word	Int_dispTab
+	.word	16
 	.word	-1
 int_const7:
 	.word	2
@@ -145,43 +121,43 @@ int_const6:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	9
+	.word	2
 	.word	-1
 int_const5:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	10
+	.word	3
 	.word	-1
 int_const4:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	2
+	.word	6
 	.word	-1
 int_const3:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	3
+	.word	4
 	.word	-1
 int_const2:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	6
+	.word	0
 	.word	-1
 int_const1:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	4
+	.word	10
 	.word	-1
 int_const0:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	0
+	.word	20
 	.word	-1
 bool_const0:
 	.word	3
@@ -195,12 +171,12 @@ bool_const1:
 	.word	Bool_dispTab
 	.word	1
 class_nameTab:
+	.word	str_const2
+	.word	str_const3
+	.word	str_const4
 	.word	str_const5
 	.word	str_const6
 	.word	str_const7
-	.word	str_const8
-	.word	str_const9
-	.word	str_const10
 class_objTab:
 	.word	Object_protObj
 	.word	Object_init
@@ -214,6 +190,10 @@ class_objTab:
 	.word	String_init
 	.word	Main_protObj
 	.word	Main_init
+Object_dispTab:
+	.word	Object.abort
+	.word	Object.type_name
+	.word	Object.copy
 Main_dispTab:
 	.word	Object.abort
 	.word	Object.type_name
@@ -242,22 +222,22 @@ IO_dispTab:
 	.word	IO.out_int
 	.word	IO.in_string
 	.word	IO.in_int
-Object_dispTab:
-	.word	Object.abort
-	.word	Object.type_name
-	.word	Object.copy
+	.word	-1
+Object_protObj:
+	.word	0
+	.word	3
+	.word	Object_dispTab
 	.word	-1
 Main_protObj:
 	.word	5
-	.word	4
+	.word	3
 	.word	Main_dispTab
-	.word	0
 	.word	-1
 String_protObj:
 	.word	4
 	.word	5
 	.word	String_dispTab
-	.word	int_const0
+	.word	int_const2
 	.word	0
 	.word	-1
 Bool_protObj:
@@ -276,12 +256,6 @@ IO_protObj:
 	.word	1
 	.word	3
 	.word	IO_dispTab
-	.word	-1
-Object_protObj:
-	.word	0
-	.word	3
-	.word	Object_dispTab
-# coding global text
 	.globl	heap_start
 heap_start:
 	.word	0
@@ -291,120 +265,123 @@ heap_start:
 	.globl	String_init
 	.globl	Bool_init
 	.globl	Main.main
-  # Initialization code 
-Main_init:
-	addiu	$sp $sp -12 # 
-	sw	$fp 12($sp) # 
-	sw	$s0 8($sp) # 
-	sw	$ra 4($sp) # 
-	addiu	$fp $sp 4 # 
-	move	$s0 $a0 # 
-	jal	Object_init # 
-	move	$a0 $s0 # 
-	lw	$fp 12($sp) # 
-	lw	$s0 8($sp) # 
-	lw	$ra 4($sp) # 
-	addiu	$sp $sp 12 # 
-	jr	$ra	 # 
-String_init:
-	addiu	$sp $sp -12 # 
-	sw	$fp 12($sp) # 
-	sw	$s0 8($sp) # 
-	sw	$ra 4($sp) # 
-	addiu	$fp $sp 4 # 
-	move	$s0 $a0 # 
-	jal	Object_init # 
-	move	$a0 $s0 # 
-	lw	$fp 12($sp) # 
-	lw	$s0 8($sp) # 
-	lw	$ra 4($sp) # 
-	addiu	$sp $sp 12 # 
-	jr	$ra	 # 
-Bool_init:
-	addiu	$sp $sp -12 # 
-	sw	$fp 12($sp) # 
-	sw	$s0 8($sp) # 
-	sw	$ra 4($sp) # 
-	addiu	$fp $sp 4 # 
-	move	$s0 $a0 # 
-	jal	Object_init # 
-	move	$a0 $s0 # 
-	lw	$fp 12($sp) # 
-	lw	$s0 8($sp) # 
-	lw	$ra 4($sp) # 
-	addiu	$sp $sp 12 # 
-	jr	$ra	 # 
-Int_init:
-	addiu	$sp $sp -12 # 
-	sw	$fp 12($sp) # 
-	sw	$s0 8($sp) # 
-	sw	$ra 4($sp) # 
-	addiu	$fp $sp 4 # 
-	move	$s0 $a0 # 
-	jal	Object_init # 
-	move	$a0 $s0 # 
-	lw	$fp 12($sp) # 
-	lw	$s0 8($sp) # 
-	lw	$ra 4($sp) # 
-	addiu	$sp $sp 12 # 
-	jr	$ra	 # 
-IO_init:
-	addiu	$sp $sp -12 # 
-	sw	$fp 12($sp) # 
-	sw	$s0 8($sp) # 
-	sw	$ra 4($sp) # 
-	addiu	$fp $sp 4 # 
-	move	$s0 $a0 # 
-	jal	Object_init # 
-	move	$a0 $s0 # 
-	lw	$fp 12($sp) # 
-	lw	$s0 8($sp) # 
-	lw	$ra 4($sp) # 
-	addiu	$sp $sp 12 # 
-	jr	$ra	 # 
 Object_init:
-	addiu	$sp $sp -12 # 
-	sw	$fp 12($sp) # 
-	sw	$s0 8($sp) # 
-	sw	$ra 4($sp) # 
-	addiu	$fp $sp 4 # 
-	move	$s0 $a0 # 
-	move	$a0 $s0 # 
-	lw	$fp 12($sp) # 
-	lw	$s0 8($sp) # 
-	lw	$ra 4($sp) # 
-	addiu	$sp $sp 12 # 
-	jr	$ra	 # 
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	move	$a0 $s0
+	lw	$fp 12($sp)
+	lw	$s0 8($sp)
+	lw	$ra 4($sp)
+	addiu	$sp $sp 12
+	jr	$ra	
+Main_init:
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	jal	Object_init
+	move	$a0 $s0
+	lw	$fp 12($sp)
+	lw	$s0 8($sp)
+	lw	$ra 4($sp)
+	addiu	$sp $sp 12
+	jr	$ra	
+String_init:
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	jal	Object_init
+	move	$a0 $s0
+	lw	$fp 12($sp)
+	lw	$s0 8($sp)
+	lw	$ra 4($sp)
+	addiu	$sp $sp 12
+	jr	$ra	
+Bool_init:
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	jal	Object_init
+	move	$a0 $s0
+	lw	$fp 12($sp)
+	lw	$s0 8($sp)
+	lw	$ra 4($sp)
+	addiu	$sp $sp 12
+	jr	$ra	
+Int_init:
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	jal	Object_init
+	move	$a0 $s0
+	lw	$fp 12($sp)
+	lw	$s0 8($sp)
+	lw	$ra 4($sp)
+	addiu	$sp $sp 12
+	jr	$ra	
+IO_init:
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	jal	Object_init
+	move	$a0 $s0
+	lw	$fp 12($sp)
+	lw	$s0 8($sp)
+	lw	$ra 4($sp)
+	addiu	$sp $sp 12
+	jr	$ra	
 Main.main:
-	addiu	$sp $sp -16 # main
-	sw	$fp 12($sp) # main
-	sw	$s0 8($sp) # main
-	sw	$ra 4($sp) # main
-	addiu	$fp $sp 4 # main
-	move	$s0 $a0 # main
-#  ==> x offset : 3 Main type:O 
-#  -> curr off 12
-# for x self 
-	lw	$a0 12($s0) # main
-	bne	$a0 $zero label0 # main
-	la	$a0 str_const0 # main
-	li	$t1 1 # main
-	jal	_case_abort2 # main
-label0: # main
-	lw	$t0 0($a0) # main
-	sw	$a0 12($fp) # main
-label2: # main
-	blt	$t0 5 label3 # main
-	bgt	$t0 5 label3 # main
-	la	$a0 int_const0 # main
-	b	label1 # main
-label3: # main
-	jal	_case_abort # main
-label1: # main
-	lw	$fp 12($sp) # main
-	lw	$s0 8($sp) # main
-	lw	$ra 4($sp) # main
-	addiu	$sp $sp 16 # main
-	jr	$ra	 # main
-
-# end of generated code
+	addiu	$sp $sp -16
+	sw	$fp 16($sp)
+	sw	$s0 12($sp)
+	sw	$ra 8($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	sw	$s1 0($fp)
+	la	$s1 int_const0
+	la	$t2 int_const1
+	move	$t1 $s1
+	la	$a0 bool_const1
+	beq	$t1 $t2 label2
+	la	$a1 bool_const0
+	jal	equality_test
+label2:
+	lw	$t1 12($a0)
+	beqz	$t1 label0
+	move	$a0 $s0
+	bne	$a0 $zero label3
+	la	$a0 str_const0
+	li	$t1 3
+	jal	_dispatch_abort
+label3:
+	lw	$t1 8($a0)
+	lw	$t1 0($t1)
+	jalr		$t1
+	b	label1
+label0:
+	la	$a0 int_const2
+label1:
+	lw	$s1 0($fp)
+	lw	$fp 16($sp)
+	lw	$s0 12($sp)
+	lw	$ra 8($sp)
+	addiu	$sp $sp 16
+	jr	$ra	

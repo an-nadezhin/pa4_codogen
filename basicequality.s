@@ -28,15 +28,15 @@ _MemMgr_COLLECTOR:
 _MemMgr_TEST:
 	.word	0
 	.word	-1
-str_const12:
+str_const11:
 	.word	4
 	.word	5
 	.word	String_dispTab
-	.word	int_const6
+	.word	int_const2
 	.byte	0	
 	.align	2
 	.word	-1
-str_const11:
+str_const10:
 	.word	4
 	.word	6
 	.word	String_dispTab
@@ -45,16 +45,16 @@ str_const11:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const10:
+str_const9:
 	.word	4
 	.word	6
 	.word	String_dispTab
-	.word	int_const5
+	.word	int_const4
 	.ascii	"String"
 	.byte	0	
 	.align	2
 	.word	-1
-str_const9:
+str_const8:
 	.word	4
 	.word	6
 	.word	String_dispTab
@@ -63,39 +63,30 @@ str_const9:
 	.byte	0	
 	.align	2
 	.word	-1
-str_const8:
-	.word	4
-	.word	5
-	.word	String_dispTab
-	.word	int_const2
-	.ascii	"Int"
-	.byte	0	
-	.align	2
-	.word	-1
 str_const7:
 	.word	4
 	.word	5
 	.word	String_dispTab
-	.word	int_const1
-	.ascii	"IO"
+	.word	int_const5
+	.ascii	"Int"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const6:
 	.word	4
-	.word	6
+	.word	5
 	.word	String_dispTab
-	.word	int_const5
-	.ascii	"Object"
+	.word	int_const6
+	.ascii	"IO"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const5:
 	.word	4
-	.word	7
+	.word	6
 	.word	String_dispTab
-	.word	int_const7
-	.ascii	"_prim_slot"
+	.word	int_const4
+	.ascii	"Object"
 	.byte	0	
 	.align	2
 	.word	-1
@@ -103,8 +94,8 @@ str_const4:
 	.word	4
 	.word	7
 	.word	String_dispTab
-	.word	int_const8
-	.ascii	"SELF_TYPE"
+	.word	int_const1
+	.ascii	"_prim_slot"
 	.byte	0	
 	.align	2
 	.word	-1
@@ -112,79 +103,73 @@ str_const3:
 	.word	4
 	.word	7
 	.word	String_dispTab
-	.word	int_const8
-	.ascii	"_no_class"
+	.word	int_const7
+	.ascii	"SELF_TYPE"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const2:
 	.word	4
-	.word	8
+	.word	7
 	.word	String_dispTab
-	.word	int_const9
-	.ascii	"<basic class>"
+	.word	int_const7
+	.ascii	"_no_class"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const1:
 	.word	4
-	.word	5
+	.word	8
 	.word	String_dispTab
-	.word	int_const0
-	.ascii	"\n"
+	.word	int_const8
+	.ascii	"<basic class>"
 	.byte	0	
 	.align	2
 	.word	-1
 str_const0:
 	.word	4
-	.word	10
+	.word	9
 	.word	String_dispTab
-	.word	int_const10
-	.ascii	"./init-order-self.cl"
+	.word	int_const9
+	.ascii	"basicequality.cl"
 	.byte	0	
 	.align	2
-	.word	-1
-int_const10:
-	.word	2
-	.word	4
-	.word	Int_dispTab
-	.word	20
 	.word	-1
 int_const9:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	13
+	.word	16
 	.word	-1
 int_const8:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	9
+	.word	13
 	.word	-1
 int_const7:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	10
+	.word	9
 	.word	-1
 int_const6:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	0
+	.word	2
 	.word	-1
 int_const5:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	6
+	.word	3
 	.word	-1
 int_const4:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	5
+	.word	6
 	.word	-1
 int_const3:
 	.word	2
@@ -196,19 +181,19 @@ int_const2:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	3
+	.word	0
 	.word	-1
 int_const1:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	2
+	.word	10
 	.word	-1
 int_const0:
 	.word	2
 	.word	4
 	.word	Int_dispTab
-	.word	1
+	.word	20
 	.word	-1
 bool_const0:
 	.word	3
@@ -222,12 +207,12 @@ bool_const1:
 	.word	Bool_dispTab
 	.word	1
 class_nameTab:
+	.word	str_const5
 	.word	str_const6
 	.word	str_const7
 	.word	str_const8
 	.word	str_const9
 	.word	str_const10
-	.word	str_const11
 class_objTab:
 	.word	Object_protObj
 	.word	Object_init
@@ -245,11 +230,6 @@ Main_dispTab:
 	.word	Object.abort
 	.word	Object.type_name
 	.word	Object.copy
-	.word	IO.out_string
-	.word	IO.out_int
-	.word	IO.in_string
-	.word	IO.in_int
-	.word	Main.recite
 	.word	Main.main
 String_dispTab:
 	.word	Object.abort
@@ -281,20 +261,14 @@ Object_dispTab:
 	.word	-1
 Main_protObj:
 	.word	5
-	.word	9
+	.word	3
 	.word	Main_dispTab
-	.word	0
-	.word	0
-	.word	0
-	.word	0
-	.word	0
-	.word	0
 	.word	-1
 String_protObj:
 	.word	4
 	.word	5
 	.word	String_dispTab
-	.word	int_const6
+	.word	int_const2
 	.word	0
 	.word	-1
 Bool_protObj:
@@ -336,7 +310,7 @@ Main_init:
 	sw	$ra 4($sp) # 
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
-	jal	IO_init # 
+	jal	Object_init # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -412,69 +386,45 @@ Object_init:
 	lw	$ra 4($sp) # 
 	addiu	$sp $sp 12 # 
 	jr	$ra	 # 
-Main.recite:
-	addiu	$sp $sp -12 # recite
-	sw	$fp 12($sp) # recite
-	sw	$s0 8($sp) # recite
-	sw	$ra 4($sp) # recite
-	addiu	$fp $sp 4 # recite
-	move	$s0 $a0 # recite
- # formal value
-#  ==> x offset : 3 Main type:O 
-#  ==> y offset : 4 Main type:O 
-#  ==> z offset : 5 Main type:O 
-#  ==> c offset : 6 Main type:O 
-#  ==> b offset : 7 Main type:O 
-#  ==> a offset : 8 Main type:O 
-#  ==> value offset : 3 self type:M 
-#  -> curr off 12
-# for value method 
-	lw	$a0 12($fp) # recite
-	sw	$a0 0($sp) # recite
-	addiu	$sp $sp -4 # recite
-# for self SELF 
-	move	$a0 $s0 # recite
-	bne	$a0 $zero label0 # recite
-	la	$a0 str_const0 # recite
-	li	$t1 1 # recite
-	jal	_dispatch_abort # recite
-label0: # recite
-	lw	$t1 8($a0) # recite
-	lw	$t1 16($t1) # recite
-	jalr	$t1 # recite
-	la	$a0 str_const1 # recite
-	sw	$a0 0($sp) # recite
-	addiu	$sp $sp -4 # recite
-# for self SELF 
-	move	$a0 $s0 # recite
-	bne	$a0 $zero label1 # recite
-	la	$a0 str_const0 # recite
-	li	$t1 1 # recite
-	jal	_dispatch_abort # recite
-label1: # recite
-	lw	$t1 8($a0) # recite
-	lw	$t1 12($t1) # recite
-	jalr	$t1 # recite
-# for self SELF 
-	move	$a0 $s0 # recite
-	lw	$fp 12($sp) # recite
-	lw	$s0 8($sp) # recite
-	lw	$ra 4($sp) # recite
-	addiu	$sp $sp 16 # recite
-	jr	$ra	 # recite
 Main.main:
-	addiu	$sp $sp -12 # main
+	addiu	$sp $sp -16 # main
 	sw	$fp 12($sp) # main
 	sw	$s0 8($sp) # main
 	sw	$ra 4($sp) # main
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
+# ya tyt
+	la	$a0 int_const0 # main
+	la	$s1 $a0 # main
+	la	$a0 int_const1 # main
+	la	$t0 $a0 # main
+	la	$a0 bool_const0 # main
+	beq	$t0 $s1 label2 # main
+	la	$a0 bool_const1 # main
+label2: # main
+	addiu	$sp $sp 4 # main
+	lw	$s1 0($sp) # main
+# ya tyt(net)
+	lw	$s1 12($a0) # main
+	beqz	$s1 label1 # main
 # for self SELF 
 	move	$a0 $s0 # main
+	bne	$a0 $zero label3 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label3: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 0($t1) # main
+	jalr	$t1 # main
+	b	label0 # main
+label1: # main
+	la	$a0 int_const2 # main
+label0: # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main
-	addiu	$sp $sp 12 # main
+	addiu	$sp $sp 16 # main
 	jr	$ra	 # main
 
 # end of generated code
