@@ -432,8 +432,7 @@ label2: # main
 	lw	$a0 16($fp) # main
 	sw	$s1 0($sp) # main
 	addiu	$sp $sp -4 # main
-	addiu	$sp $sp 4 # main
-	lw	$s1 0($sp) # main
+	lw	$s1 12($a0) # main
 #  ==> x offset : 3 Main type:M 
 #  ==> b offset : 4 Main type:M 
 #  -> curr off 16
@@ -496,12 +495,14 @@ label12: # main
 label13: # main
 	sw	$t0 0($sp) # main
 	addiu	$sp $sp -4 # main
+	lw	$t0 12($a0) # main
+	la	$a0 bool_const1 # main
+	beq	$t0 $s1 label14 # main
+	la	$a0 bool_const0 # main
+	jal	equality_test # main
+label14: # main
 	addiu	$sp $sp 4 # main
 	lw	$t0 0($sp) # main
-	la	$a0 bool_const0 # main
-	beq	$t0 $s1 label14 # main
-	la	$a0 bool_const1 # main
-label14: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
 # ya tyt(net)
@@ -513,8 +514,7 @@ label14: # main
 	lw	$a0 16($fp) # main
 	sw	$s1 0($sp) # main
 	addiu	$sp $sp -4 # main
-	addiu	$sp $sp 4 # main
-	lw	$s1 0($sp) # main
+	lw	$s1 12($a0) # main
 #  ==> x offset : 3 Main type:M 
 #  ==> b offset : 4 Main type:M 
 #  -> curr off 16
@@ -577,12 +577,14 @@ label24: # main
 label25: # main
 	sw	$t0 0($sp) # main
 	addiu	$sp $sp -4 # main
+	lw	$t0 12($a0) # main
+	la	$a0 bool_const1 # main
+	beq	$t0 $s1 label26 # main
+	la	$a0 bool_const0 # main
+	jal	equality_test # main
+label26: # main
 	addiu	$sp $sp 4 # main
 	lw	$t0 0($sp) # main
-	la	$a0 bool_const0 # main
-	beq	$t0 $s1 label26 # main
-	la	$a0 bool_const1 # main
-label26: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
 # ya tyt(net)
@@ -594,8 +596,7 @@ label26: # main
 	lw	$a0 16($fp) # main
 	sw	$s1 0($sp) # main
 	addiu	$sp $sp -4 # main
-	addiu	$sp $sp 4 # main
-	lw	$s1 0($sp) # main
+	lw	$s1 12($a0) # main
 #  ==> x offset : 3 Main type:M 
 #  ==> b offset : 4 Main type:M 
 #  -> curr off 16
@@ -658,12 +659,14 @@ label36: # main
 label37: # main
 	sw	$t0 0($sp) # main
 	addiu	$sp $sp -4 # main
+	lw	$t0 12($a0) # main
+	la	$a0 bool_const1 # main
+	beq	$t0 $s1 label38 # main
+	la	$a0 bool_const0 # main
+	jal	equality_test # main
+label38: # main
 	addiu	$sp $sp 4 # main
 	lw	$t0 0($sp) # main
-	la	$a0 bool_const0 # main
-	beq	$t0 $s1 label38 # main
-	la	$a0 bool_const1 # main
-label38: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
 # ya tyt(net)
@@ -675,8 +678,7 @@ label38: # main
 	lw	$a0 16($fp) # main
 	sw	$s1 0($sp) # main
 	addiu	$sp $sp -4 # main
-	addiu	$sp $sp 4 # main
-	lw	$s1 0($sp) # main
+	lw	$s1 12($a0) # main
 #  ==> x offset : 3 Main type:M 
 #  ==> b offset : 4 Main type:M 
 #  -> curr off 16
@@ -739,12 +741,14 @@ label48: # main
 label49: # main
 	sw	$t0 0($sp) # main
 	addiu	$sp $sp -4 # main
+	lw	$t0 12($a0) # main
+	la	$a0 bool_const1 # main
+	beq	$t0 $s1 label50 # main
+	la	$a0 bool_const0 # main
+	jal	equality_test # main
+label50: # main
 	addiu	$sp $sp 4 # main
 	lw	$t0 0($sp) # main
-	la	$a0 bool_const0 # main
-	beq	$t0 $s1 label50 # main
-	la	$a0 bool_const1 # main
-label50: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
 # ya tyt(net)
@@ -756,8 +760,7 @@ label50: # main
 	lw	$a0 16($fp) # main
 	sw	$s1 0($sp) # main
 	addiu	$sp $sp -4 # main
-	addiu	$sp $sp 4 # main
-	lw	$s1 0($sp) # main
+	lw	$s1 12($a0) # main
 #  ==> x offset : 3 Main type:M 
 #  ==> b offset : 4 Main type:M 
 #  -> curr off 16
@@ -820,12 +823,14 @@ label60: # main
 label61: # main
 	sw	$t0 0($sp) # main
 	addiu	$sp $sp -4 # main
+	lw	$t0 12($a0) # main
+	la	$a0 bool_const1 # main
+	beq	$t0 $s1 label62 # main
+	la	$a0 bool_const0 # main
+	jal	equality_test # main
+label62: # main
 	addiu	$sp $sp 4 # main
 	lw	$t0 0($sp) # main
-	la	$a0 bool_const0 # main
-	beq	$t0 $s1 label62 # main
-	la	$a0 bool_const1 # main
-label62: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
 # ya tyt(net)

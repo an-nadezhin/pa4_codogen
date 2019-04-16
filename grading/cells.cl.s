@@ -740,17 +740,18 @@ CellularAutomaton.cell_left_neighbor:
 	lw	$a0 16($fp) # cell_left_neighbor
 	sw	$s1 0($sp) # cell_left_neighbor
 	addiu	$sp $sp -4 # cell_left_neighbor
-	addiu	$sp $sp 4 # cell_left_neighbor
-	lw	$s1 0($sp) # cell_left_neighbor
+	lw	$s1 12($a0) # cell_left_neighbor
 	la	$a0 int_const1 # cell_left_neighbor
 	sw	$t0 0($sp) # cell_left_neighbor
 	addiu	$sp $sp -4 # cell_left_neighbor
+	lw	$t0 12($a0) # cell_left_neighbor
+	la	$a0 bool_const1 # cell_left_neighbor
+	beq	$t0 $s1 label13 # cell_left_neighbor
+	la	$a0 bool_const0 # cell_left_neighbor
+	jal	equality_test # cell_left_neighbor
+label13: # cell_left_neighbor
 	addiu	$sp $sp 4 # cell_left_neighbor
 	lw	$t0 0($sp) # cell_left_neighbor
-	la	$a0 bool_const0 # cell_left_neighbor
-	beq	$t0 $s1 label13 # cell_left_neighbor
-	la	$a0 bool_const1 # cell_left_neighbor
-label13: # cell_left_neighbor
 	addiu	$sp $sp 4 # cell_left_neighbor
 	lw	$s1 0($sp) # cell_left_neighbor
 # ya tyt(net)
@@ -849,8 +850,7 @@ CellularAutomaton.cell_right_neighbor:
 	lw	$a0 20($fp) # cell_right_neighbor
 	sw	$s1 0($sp) # cell_right_neighbor
 	addiu	$sp $sp -4 # cell_right_neighbor
-	addiu	$sp $sp 4 # cell_right_neighbor
-	lw	$s1 0($sp) # cell_right_neighbor
+	lw	$s1 12($a0) # cell_right_neighbor
 # for self SELF 
 	move	$a0 $s0 # cell_right_neighbor
 	bne	$a0 $zero label19 # cell_right_neighbor
@@ -878,12 +878,14 @@ label19: # cell_right_neighbor
 	sw	$s1 12($a0) # cell_right_neighbor
 	sw	$t0 0($sp) # cell_right_neighbor
 	addiu	$sp $sp -4 # cell_right_neighbor
+	lw	$t0 12($a0) # cell_right_neighbor
+	la	$a0 bool_const1 # cell_right_neighbor
+	beq	$t0 $s1 label20 # cell_right_neighbor
+	la	$a0 bool_const0 # cell_right_neighbor
+	jal	equality_test # cell_right_neighbor
+label20: # cell_right_neighbor
 	addiu	$sp $sp 4 # cell_right_neighbor
 	lw	$t0 0($sp) # cell_right_neighbor
-	la	$a0 bool_const0 # cell_right_neighbor
-	beq	$t0 $s1 label20 # cell_right_neighbor
-	la	$a0 bool_const1 # cell_right_neighbor
-label20: # cell_right_neighbor
 	addiu	$sp $sp 4 # cell_right_neighbor
 	lw	$s1 0($sp) # cell_right_neighbor
 # ya tyt(net)
@@ -971,17 +973,18 @@ label27: # cell_at_next_evolution
 	jalr	$t1 # cell_at_next_evolution
 	sw	$s1 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$s1 0($sp) # cell_at_next_evolution
+	lw	$s1 12($a0) # cell_at_next_evolution
 	la	$a0 str_const2 # cell_at_next_evolution
 	sw	$t0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
+	lw	$t0 12($a0) # cell_at_next_evolution
+	la	$a0 bool_const1 # cell_at_next_evolution
+	beq	$t0 $s1 label28 # cell_at_next_evolution
+	la	$a0 bool_const0 # cell_at_next_evolution
+	jal	equality_test # cell_at_next_evolution
+label28: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$t0 0($sp) # cell_at_next_evolution
-	la	$a0 bool_const0 # cell_at_next_evolution
-	beq	$t0 $s1 label28 # cell_at_next_evolution
-	la	$a0 bool_const1 # cell_at_next_evolution
-label28: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$s1 0($sp) # cell_at_next_evolution
 # ya tyt(net)
@@ -1014,17 +1017,18 @@ label31: # cell_at_next_evolution
 	jalr	$t1 # cell_at_next_evolution
 	sw	$s1 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$s1 0($sp) # cell_at_next_evolution
+	lw	$s1 12($a0) # cell_at_next_evolution
 	la	$a0 str_const2 # cell_at_next_evolution
 	sw	$t0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
+	lw	$t0 12($a0) # cell_at_next_evolution
+	la	$a0 bool_const1 # cell_at_next_evolution
+	beq	$t0 $s1 label32 # cell_at_next_evolution
+	la	$a0 bool_const0 # cell_at_next_evolution
+	jal	equality_test # cell_at_next_evolution
+label32: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$t0 0($sp) # cell_at_next_evolution
-	la	$a0 bool_const0 # cell_at_next_evolution
-	beq	$t0 $s1 label32 # cell_at_next_evolution
-	la	$a0 bool_const1 # cell_at_next_evolution
-label32: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$s1 0($sp) # cell_at_next_evolution
 # ya tyt(net)
@@ -1069,17 +1073,18 @@ label35: # cell_at_next_evolution
 	jalr	$t1 # cell_at_next_evolution
 	sw	$s1 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$s1 0($sp) # cell_at_next_evolution
+	lw	$s1 12($a0) # cell_at_next_evolution
 	la	$a0 str_const2 # cell_at_next_evolution
 	sw	$t0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
+	lw	$t0 12($a0) # cell_at_next_evolution
+	la	$a0 bool_const1 # cell_at_next_evolution
+	beq	$t0 $s1 label36 # cell_at_next_evolution
+	la	$a0 bool_const0 # cell_at_next_evolution
+	jal	equality_test # cell_at_next_evolution
+label36: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$t0 0($sp) # cell_at_next_evolution
-	la	$a0 bool_const0 # cell_at_next_evolution
-	beq	$t0 $s1 label36 # cell_at_next_evolution
-	la	$a0 bool_const1 # cell_at_next_evolution
-label36: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$s1 0($sp) # cell_at_next_evolution
 # ya tyt(net)
@@ -1104,17 +1109,18 @@ label33: # cell_at_next_evolution
 	sw	$s1 12($a0) # cell_at_next_evolution
 	sw	$s1 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$s1 0($sp) # cell_at_next_evolution
+	lw	$s1 12($a0) # cell_at_next_evolution
 	la	$a0 int_const0 # cell_at_next_evolution
 	sw	$t0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
+	lw	$t0 12($a0) # cell_at_next_evolution
+	la	$a0 bool_const1 # cell_at_next_evolution
+	beq	$t0 $s1 label37 # cell_at_next_evolution
+	la	$a0 bool_const0 # cell_at_next_evolution
+	jal	equality_test # cell_at_next_evolution
+label37: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$t0 0($sp) # cell_at_next_evolution
-	la	$a0 bool_const0 # cell_at_next_evolution
-	beq	$t0 $s1 label37 # cell_at_next_evolution
-	la	$a0 bool_const1 # cell_at_next_evolution
-label37: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$s1 0($sp) # cell_at_next_evolution
 # ya tyt(net)

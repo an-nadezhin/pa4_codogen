@@ -4,6 +4,6 @@ All Rights Reserved.
 See the file README for a full copyright notice.
 Loaded: ../lib/trap.handler
          X         
-Exception occurred at PC=0x1001078c
-  Bad address in text read: 0x1001078c
-  Exception 6  [Bad address in text read]  Execution aborted
+Exception occurred at PC=0x00401b14
+  Unaligned address in inst/data fetch: 0x1001046d
+  Exception 4  [Unaligned address in inst/data fetch]  Execution aborted

@@ -81,7 +81,8 @@ long temps__offset = 0;
 #define TEMPS_IN
 #endif
 
-extern void emit_string_constant(ostream& str, char *s);
+extern void emit_string_constant(ostream &str, char *s);
+
 extern int cgen_debug;
 
 //
@@ -100,32 +101,32 @@ extern int cgen_debug;
 //
 //////////////////////////////////////////////////////////////////////
 Symbol
-arg,
-arg2,
-Bool,
-concat,
-cool_abort,
-copy,
-Int,
-in_int,
-in_string,
-IO,
-length,
-Main,
-main_meth,
-No_class,
-No_type,
-Object,
-out_int,
-out_string,
-prim_slot,
-self,
-SELF_TYPE,
-Str,
-str_field,
-substr,
-type_name,
-val;
+        arg,
+        arg2,
+        Bool,
+        concat,
+        cool_abort,
+        copy,
+        Int,
+        in_int,
+        in_string,
+        IO,
+        length,
+        Main,
+        main_meth,
+        No_class,
+        No_type,
+        Object,
+        out_int,
+        out_string,
+        prim_slot,
+        self,
+        SELF_TYPE,
+        Str,
+        str_field,
+        substr,
+        type_name,
+        val;
 
 static char *gc_init_names[] = {"_NoGC_Init", "_GenGC_Init", "_ScnGC_Init"};
 static char *gc_collect_names[] = {"_NoGC_Collect", "_GenGC_Collect", "_ScnGC_Collect"};
@@ -182,21 +183,22 @@ void program_class::cgen(ostream &s) {
 //
 //*****************************************************************
 
-void attr_class::cgen(std::ostream& s, Symbol self_class, Environment var, Environment met) {
+void attr_class::cgen(std::ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN
 
     INFO_OUT
 }
 
-void method_class::cgen(ostream& s, Symbol self_class, Environment var, Environment met) {
+void method_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN
+
     init_alloc_temp();
     auto curr_var = new std::vector<EnvElement>(*var);
     int size = calc_temp() + formals->len();
 
     int cnt = FRAME_OFFSET + size;
     for (int i = formals->first(); formals->more(i); i = formals->next(i)) {
-        formal_class* f = dynamic_cast<formal_class*> (formals->nth(i));
+        formal_class *f = dynamic_cast<formal_class *> (formals->nth(i));
         if (f) {
             EnvElement new_elem = EnvElement(self, f->name, --cnt, Type::METHOD);
             curr_var->push_back(new_elem);
@@ -211,9 +213,10 @@ void method_class::cgen(ostream& s, Symbol self_class, Environment var, Environm
 
 void assign_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
+
     expr->cgen(s, self_class, var, met);
 
-    auto pred = [ = ](EnvElement a){return a.name == name;};
+    auto pred = [=](EnvElement a) { return a.name == name; };
     auto off_var = std::find_if(var->rbegin(), var->rend(), pred);
     if (off_var->type == Type::OBJECT) {
         s << "#> for " << name << " self \n";
@@ -229,6 +232,7 @@ void assign_class::cgen(ostream &s, Symbol self_class, Environment var, Environm
 
 void static_dispatch_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
+
     Symbol type = type_name;
     if (type == SELF_TYPE) {
         type = curr_node->get_name();
@@ -245,16 +249,13 @@ void static_dispatch_class::cgen(ostream &s, Symbol self_class, Environment var,
 
     CgenNodeP node = codegen_classtable->lookup(type);
     auto table = node->get_method_table();
-    auto pred = [ = ](EnvElement a){return a.name == name;};
-    
+    auto pred = [=](EnvElement a) { return a.name == name; };
+
     auto off = std::find_if(table->begin(), table->end(), pred);
     int offset = 1;
-    if(off != table->end())
-    {
+    if (off != table->end()) {
         offset = off->offset;
-    }
-    else
-    {
+    } else {
         assert(0);
     }
 
@@ -295,19 +296,16 @@ void dispatch_class::cgen(ostream &s, Symbol self_class, Environment var, Enviro
 
     CgenNodeP node = codegen_classtable->lookup(type);
     tmp_met = node->get_method_table();
-    auto pred = [ = ](EnvElement a){return a.name == name;};
+    auto pred = [=](EnvElement a) { return a.name == name; };
     auto off = std::find_if(tmp_met->rbegin(), tmp_met->rend(), pred);
 
     int offset = 1;
-    if(off != tmp_met->rend())
-    {
+    if (off != tmp_met->rend()) {
         offset = off->offset;
-    }
-    else
-    {
+    } else {
         assert(0);
     }
-    
+
     emit_label_def(jump_label, s);
     emit_load(T1, DISPTABLE_OFFSET, ACC, s);
     emit_load(T1, offset, T1, s);
@@ -321,6 +319,8 @@ void cond_class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
 
     //todo chek!!!!!!!!!!!!!!!
 
+//    int offset = alloc_temp() + FRAME_OFFSET;
+//    emit_store(ACC, offset, FP, s);
     int then_label = create_label();
     int else_label = create_label();
     pred->cgen(s, self_class, var, met);
@@ -337,6 +337,7 @@ void cond_class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
 
 void loop_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
+
     int cond_label = create_label();
     int end_label = create_label();
     emit_label_def(cond_label, s);
@@ -351,10 +352,12 @@ void loop_class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
     INFO_OUT_AS;
 }
 
-static std::vector<std::pair<std::pair<int, int>, int>> case_list;
+static std::vector<std::pair<std::pair < int, int>, int>>
+case_list;
 
 void typcase_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
+
     expr->cgen(s, self_class, var, met);
     int last_label = create_label();
     emit_abort(last_label, line_number, CASEABORT2, s);
@@ -370,7 +373,7 @@ void typcase_class::cgen(ostream &s, Symbol self_class, Environment var, Environ
         Symbol type = cases->nth(i)->get_type_decl();
         CgenNodeP class_node = codegen_classtable->lookup(type);
         case_list.push_back(std::make_pair(std::make_pair(class_node->get_id(),
-                class_node->get_max_id()), i));
+                                                          class_node->get_max_id()), i));
     }
 
     auto lmbd = [](auto a, auto b) {
@@ -381,7 +384,7 @@ void typcase_class::cgen(ostream &s, Symbol self_class, Environment var, Environ
     int id = 0, max_id = 0, node_idx = 0;
     int cur_label = 0, next_label = create_label();
     for (auto it = case_list.begin(); it != case_list.end();) {
-        id=  it->first.first;
+        id = it->first.first;
         max_id = it->first.second;
         node_idx = it->second;
         it++;
@@ -411,18 +414,17 @@ void typcase_class::cgen(ostream &s, Symbol self_class, Environment var, Environ
 
 void block_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
-//    s << "# start here\n";
- //   auto tmp_met = new std::vector<EnvElement>(*met);
+
     for (int i = body->first(); body->more(i); i = body->next(i)) {
         body->nth(i)->cgen(s, self_class, var, met);
-//        emit_push(ACC, s);
     }
-//    s << "# end here\n";
+
     INFO_OUT_AS;
 }
 
 void let_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
+
     s << " # let code for name " << identifier << "\n";
     auto curr_var = new std::vector<EnvElement>(*var);
     int offset = alloc_temp() + FRAME_OFFSET;
@@ -454,6 +456,7 @@ void let_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
 
 void plus_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
+
     e1->cgen(s, self, var, met);
     emit_push(ACC, s);
     e2->cgen(s, self, var, met);
@@ -465,6 +468,7 @@ void plus_class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
     emit_new(Int, s);
     emit_pop(T4, s);
     emit_store_int(T4, ACC, s);
+
 
     INFO_OUT_AS;
 }
@@ -536,7 +540,7 @@ void neg_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
         emit_fetch_int(T3, ACC, s);
     }
     emit_neg(T3, T3, s);
-    emit_store_int( T3, ACC, s);
+    emit_store_int(T3, ACC, s);
     INFO_OUT_AS;
 }
 
@@ -561,19 +565,29 @@ void lt_class::cgen(ostream &s, Symbol self_class, Environment var, Environment 
 
 void eq_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
+
     s << "# ya tyt\n";
+
+
     e1->cgen(s, self, var, met);
-    emit_load_address(T4, ACC, s);
+    emit_push(T4, s);
+    emit_fetch_int(T4, ACC, s);
     e2->cgen(s, self, var, met);
-    emit_load_address(T3, ACC, s);
+    emit_push(T3, s);
+    emit_fetch_int(T3, ACC, s);
 
     int end_label = create_label();
-    emit_load_bool(ACC, falsebool, s);
-    emit_beq(T3, T4, end_label, s);
     emit_load_bool(ACC, truebool, s);
+    emit_beq(T3, T4, end_label, s);
+    emit_load_bool(ACC, falsebool, s);
+    emit_jal(EQUALITY_TEST, s);
     emit_label_def(end_label, s);
+    emit_pop(T3, s);
     emit_pop(T4, s);
+
+
     s << "# ya tyt(net)\n";
+
     INFO_OUT_AS;
 }
 
@@ -613,7 +627,7 @@ void comp_class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
 }
 
 
-void int_const_class::cgen(ostream& s, Symbol self_class, Environment var, Environment met) {
+void int_const_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
     //
     // Need to be sure we have an IntEntry *, not an arbitrary Symbol
@@ -623,13 +637,13 @@ void int_const_class::cgen(ostream& s, Symbol self_class, Environment var, Envir
     INFO_OUT_AS;
 }
 
-void string_const_class::cgen(ostream& s, Symbol self_class, Environment var, Environment met) {
+void string_const_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
     emit_load_string(ACC, stringtable.lookup_string(token->get_string()), s);
     INFO_OUT_AS;
 }
 
-void bool_const_class::cgen(ostream& s, Symbol self_class, Environment var, Environment met) {
+void bool_const_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
     emit_load_bool(ACC, BoolConst(val), s);
     INFO_OUT_AS;
@@ -670,6 +684,7 @@ void new__class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
             emit_load_bool(ACC, falsebool, s);
         }
     }
+
     INFO_OUT_AS;
 }
 
@@ -696,17 +711,16 @@ void no_expr_class::cgen(ostream &s, Symbol self_class, Environment var, Environ
 void object_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
     if (name != self && name != self_class) {
-        auto pred = [ = ](EnvElement a){return a.name == name;};
+        auto pred = [=](EnvElement a) { return a.name == name; };
         auto off_var = std::find_if(var->rbegin(), var->rend(), pred);
-        
-        for(auto it = var->begin(); it != var->end(); ++it)
-        {
+
+        for (auto it = var->begin(); it != var->end(); ++it) {
             s << "#  ==> " << it->name->get_string() << " offset : "
-                    << it->offset << " " << it->self->get_string() << " type:" <<
-                    (it->type == Type::OBJECT ? "O" : "M") << " \n";
+              << it->offset << " " << it->self->get_string() << " type:" <<
+              (it->type == Type::OBJECT ? "O" : "M") << " \n";
         }
-        s << "#  -> curr off " << (off_var->offset)*WORD_SIZE << "\n";
-        
+        s << "#  -> curr off " << (off_var->offset) * WORD_SIZE << "\n";
+
         if (off_var->type == Type::OBJECT) {
             s << "# for " << name << " self \n";
             emit_load(ACC, off_var->offset, SELF, s);
@@ -719,6 +733,8 @@ void object_class::cgen(ostream &s, Symbol self_class, Environment var, Environm
         s << "# for " << name << " SELF \n";
         emit_move(ACC, SELF, s);
     }
+
+
     INFO_OUT_AS;
 }
 

@@ -1,6 +1,0 @@
-20c20,22
-< COOL program successfully executed
----
-> Exception occurred at PC=0x10010708
->   Bad address in text read: 0x10010708
->   Exception 6  [Bad address in text read]  Execution aborted

@@ -423,17 +423,18 @@ Main.exp:
 	lw	$a0 24($fp) # exp
 	sw	$s1 0($sp) # exp
 	addiu	$sp $sp -4 # exp
-	addiu	$sp $sp 4 # exp
-	lw	$s1 0($sp) # exp
+	lw	$s1 12($a0) # exp
 	la	$a0 int_const0 # exp
 	sw	$t0 0($sp) # exp
 	addiu	$sp $sp -4 # exp
+	lw	$t0 12($a0) # exp
+	la	$a0 bool_const1 # exp
+	beq	$t0 $s1 label2 # exp
+	la	$a0 bool_const0 # exp
+	jal	equality_test # exp
+label2: # exp
 	addiu	$sp $sp 4 # exp
 	lw	$t0 0($sp) # exp
-	la	$a0 bool_const0 # exp
-	beq	$t0 $s1 label2 # exp
-	la	$a0 bool_const1 # exp
-label2: # exp
 	addiu	$sp $sp 4 # exp
 	lw	$s1 0($sp) # exp
 # ya tyt(net)
@@ -450,8 +451,7 @@ label1: # exp
 	lw	$a0 24($fp) # exp
 	sw	$s1 0($sp) # exp
 	addiu	$sp $sp -4 # exp
-	addiu	$sp $sp 4 # exp
-	lw	$s1 0($sp) # exp
+	lw	$s1 12($a0) # exp
 	la	$a0 int_const2 # exp
 	sw	$a0 0($sp) # exp
 	addiu	$sp $sp -4 # exp
@@ -489,12 +489,14 @@ label1: # exp
 	sw	$s1 12($a0) # exp
 	sw	$t0 0($sp) # exp
 	addiu	$sp $sp -4 # exp
+	lw	$t0 12($a0) # exp
+	la	$a0 bool_const1 # exp
+	beq	$t0 $s1 label5 # exp
+	la	$a0 bool_const0 # exp
+	jal	equality_test # exp
+label5: # exp
 	addiu	$sp $sp 4 # exp
 	lw	$t0 0($sp) # exp
-	la	$a0 bool_const0 # exp
-	beq	$t0 $s1 label5 # exp
-	la	$a0 bool_const1 # exp
-label5: # exp
 	addiu	$sp $sp 4 # exp
 	lw	$s1 0($sp) # exp
 # ya tyt(net)

@@ -415,17 +415,18 @@ Main.fact:
 	lw	$a0 20($fp) # fact
 	sw	$s1 0($sp) # fact
 	addiu	$sp $sp -4 # fact
-	addiu	$sp $sp 4 # fact
-	lw	$s1 0($sp) # fact
+	lw	$s1 12($a0) # fact
 	la	$a0 int_const0 # fact
 	sw	$t0 0($sp) # fact
 	addiu	$sp $sp -4 # fact
+	lw	$t0 12($a0) # fact
+	la	$a0 bool_const1 # fact
+	beq	$t0 $s1 label2 # fact
+	la	$a0 bool_const0 # fact
+	jal	equality_test # fact
+label2: # fact
 	addiu	$sp $sp 4 # fact
 	lw	$t0 0($sp) # fact
-	la	$a0 bool_const0 # fact
-	beq	$t0 $s1 label2 # fact
-	la	$a0 bool_const1 # fact
-label2: # fact
 	addiu	$sp $sp 4 # fact
 	lw	$s1 0($sp) # fact
 # ya tyt(net)

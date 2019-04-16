@@ -406,17 +406,18 @@ Main.fibo:
 	lw	$a0 20($fp) # fibo
 	sw	$s1 0($sp) # fibo
 	addiu	$sp $sp -4 # fibo
-	addiu	$sp $sp 4 # fibo
-	lw	$s1 0($sp) # fibo
+	lw	$s1 12($a0) # fibo
 	la	$a0 int_const0 # fibo
 	sw	$t0 0($sp) # fibo
 	addiu	$sp $sp -4 # fibo
+	lw	$t0 12($a0) # fibo
+	la	$a0 bool_const1 # fibo
+	beq	$t0 $s1 label2 # fibo
+	la	$a0 bool_const0 # fibo
+	jal	equality_test # fibo
+label2: # fibo
 	addiu	$sp $sp 4 # fibo
 	lw	$t0 0($sp) # fibo
-	la	$a0 bool_const0 # fibo
-	beq	$t0 $s1 label2 # fibo
-	la	$a0 bool_const1 # fibo
-label2: # fibo
 	addiu	$sp $sp 4 # fibo
 	lw	$s1 0($sp) # fibo
 # ya tyt(net)
@@ -432,17 +433,18 @@ label1: # fibo
 	lw	$a0 20($fp) # fibo
 	sw	$s1 0($sp) # fibo
 	addiu	$sp $sp -4 # fibo
-	addiu	$sp $sp 4 # fibo
-	lw	$s1 0($sp) # fibo
+	lw	$s1 12($a0) # fibo
 	la	$a0 int_const1 # fibo
 	sw	$t0 0($sp) # fibo
 	addiu	$sp $sp -4 # fibo
+	lw	$t0 12($a0) # fibo
+	la	$a0 bool_const1 # fibo
+	beq	$t0 $s1 label5 # fibo
+	la	$a0 bool_const0 # fibo
+	jal	equality_test # fibo
+label5: # fibo
 	addiu	$sp $sp 4 # fibo
 	lw	$t0 0($sp) # fibo
-	la	$a0 bool_const0 # fibo
-	beq	$t0 $s1 label5 # fibo
-	la	$a0 bool_const1 # fibo
-label5: # fibo
 	addiu	$sp $sp 4 # fibo
 	lw	$s1 0($sp) # fibo
 # ya tyt(net)

@@ -1,7 +1,6 @@
 	-1 (basicequality)	 Simple equality tests
 	-1 (calls)	 Method calls
 	-1 (cells)	 Cellular automaton program from examples directory
-	-1 (eval-order-arith)	 Checking evaluation order of arithmetic expressions
 	-1 (exp)	 An exponent function
 	-1 (fact)	 A factorial function
 	-1 (fibo)	 A Fibonacci function
@@ -15,7 +14,6 @@
 	-1 (new-self-init)	 Checking evaluation of attribute initialization exprs on a "new"d object
 	-1 (new-st)	 New SELF_TYPE behavior
 	-1 (newbasic)	 Use of new with basic classes
-	-1 (not)	 "not" operator
 	-1 (objectequality)	 Object equality tests
 	-1 (override)	 Dispatch of overridden functions
 	-1 (primes)	 prime number program from examples directory

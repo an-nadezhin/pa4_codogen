@@ -701,8 +701,7 @@ label13: # main
 	jalr	$t1 # main
 	sw	$s1 0($sp) # main
 	addiu	$sp $sp -4 # main
-	addiu	$sp $sp 4 # main
-	lw	$s1 0($sp) # main
+	lw	$s1 12($a0) # main
 	la	$a0 int_const11 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -718,12 +717,14 @@ label14: # main
 	jalr	$t1 # main
 	sw	$t0 0($sp) # main
 	addiu	$sp $sp -4 # main
+	lw	$t0 12($a0) # main
+	la	$a0 bool_const1 # main
+	beq	$t0 $s1 label15 # main
+	la	$a0 bool_const0 # main
+	jal	equality_test # main
+label15: # main
 	addiu	$sp $sp 4 # main
 	lw	$t0 0($sp) # main
-	la	$a0 bool_const0 # main
-	beq	$t0 $s1 label15 # main
-	la	$a0 bool_const1 # main
-label15: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
 # ya tyt(net)

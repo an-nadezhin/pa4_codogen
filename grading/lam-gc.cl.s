@@ -1553,8 +1553,7 @@ label5: # beta_reduce
 	lw	$a0 16($fp) # beta_reduce
 	sw	$s1 0($sp) # beta_reduce
 	addiu	$sp $sp -4 # beta_reduce
-	addiu	$sp $sp 4 # beta_reduce
-	lw	$s1 0($sp) # beta_reduce
+	lw	$s1 12($a0) # beta_reduce
 #  ==> e offset : 6 self type:M 
 #  ==> done offset : 3 Main type:M 
 #  ==> new_expr offset : 4 Main type:M 
@@ -1563,12 +1562,14 @@ label5: # beta_reduce
 	lw	$a0 24($fp) # beta_reduce
 	sw	$t0 0($sp) # beta_reduce
 	addiu	$sp $sp -4 # beta_reduce
+	lw	$t0 12($a0) # beta_reduce
+	la	$a0 bool_const1 # beta_reduce
+	beq	$t0 $s1 label8 # beta_reduce
+	la	$a0 bool_const0 # beta_reduce
+	jal	equality_test # beta_reduce
+label8: # beta_reduce
 	addiu	$sp $sp 4 # beta_reduce
 	lw	$t0 0($sp) # beta_reduce
-	la	$a0 bool_const0 # beta_reduce
-	beq	$t0 $s1 label8 # beta_reduce
-	la	$a0 bool_const1 # beta_reduce
-label8: # beta_reduce
 	addiu	$sp $sp 4 # beta_reduce
 	lw	$s1 0($sp) # beta_reduce
 # ya tyt(net)
@@ -4064,8 +4065,7 @@ Lambda.substitute:
 	lw	$a0 24($fp) # substitute
 	sw	$s1 0($sp) # substitute
 	addiu	$sp $sp -4 # substitute
-	addiu	$sp $sp 4 # substitute
-	lw	$s1 0($sp) # substitute
+	lw	$s1 12($a0) # substitute
 #  ==> arg offset : 3 Lambda type:O 
 #  ==> body offset : 4 Lambda type:O 
 #  ==> x offset : 6 self type:M 
@@ -4075,12 +4075,14 @@ Lambda.substitute:
 	lw	$a0 12($s0) # substitute
 	sw	$t0 0($sp) # substitute
 	addiu	$sp $sp -4 # substitute
+	lw	$t0 12($a0) # substitute
+	la	$a0 bool_const1 # substitute
+	beq	$t0 $s1 label160 # substitute
+	la	$a0 bool_const0 # substitute
+	jal	equality_test # substitute
+label160: # substitute
 	addiu	$sp $sp 4 # substitute
 	lw	$t0 0($sp) # substitute
-	la	$a0 bool_const0 # substitute
-	beq	$t0 $s1 label160 # substitute
-	la	$a0 bool_const1 # substitute
-label160: # substitute
 	addiu	$sp $sp 4 # substitute
 	lw	$s1 0($sp) # substitute
 # ya tyt(net)
@@ -4599,18 +4601,19 @@ Variable.substitute:
 	lw	$a0 20($fp) # substitute
 	sw	$s1 0($sp) # substitute
 	addiu	$sp $sp -4 # substitute
-	addiu	$sp $sp 4 # substitute
-	lw	$s1 0($sp) # substitute
+	lw	$s1 12($a0) # substitute
 # for self SELF 
 	move	$a0 $s0 # substitute
 	sw	$t0 0($sp) # substitute
 	addiu	$sp $sp -4 # substitute
+	lw	$t0 12($a0) # substitute
+	la	$a0 bool_const1 # substitute
+	beq	$t0 $s1 label187 # substitute
+	la	$a0 bool_const0 # substitute
+	jal	equality_test # substitute
+label187: # substitute
 	addiu	$sp $sp 4 # substitute
 	lw	$t0 0($sp) # substitute
-	la	$a0 bool_const0 # substitute
-	beq	$t0 $s1 label187 # substitute
-	la	$a0 bool_const1 # substitute
-label187: # substitute
 	addiu	$sp $sp 4 # substitute
 	lw	$s1 0($sp) # substitute
 # ya tyt(net)
@@ -4688,18 +4691,19 @@ label193: # gen_code
 	jalr	$t1 # gen_code
 	sw	$s1 0($sp) # gen_code
 	addiu	$sp $sp -4 # gen_code
-	addiu	$sp $sp 4 # gen_code
-	lw	$s1 0($sp) # gen_code
+	lw	$s1 12($a0) # gen_code
 # for self SELF 
 	move	$a0 $s0 # gen_code
 	sw	$t0 0($sp) # gen_code
 	addiu	$sp $sp -4 # gen_code
+	lw	$t0 12($a0) # gen_code
+	la	$a0 bool_const1 # gen_code
+	beq	$t0 $s1 label194 # gen_code
+	la	$a0 bool_const0 # gen_code
+	jal	equality_test # gen_code
+label194: # gen_code
 	addiu	$sp $sp 4 # gen_code
 	lw	$t0 0($sp) # gen_code
-	la	$a0 bool_const0 # gen_code
-	beq	$t0 $s1 label194 # gen_code
-	la	$a0 bool_const1 # gen_code
-label194: # gen_code
 	addiu	$sp $sp 4 # gen_code
 	lw	$s1 0($sp) # gen_code
 # ya tyt(net)
