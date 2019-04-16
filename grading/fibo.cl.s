@@ -399,60 +399,46 @@ Main.fibo:
 	addiu	$fp $sp 4 # fibo
 	move	$s0 $a0 # fibo
  # formal i
-# ya tyt
 #  ==> i offset : 5 self type:M 
 #  -> curr off 20
 # for i method 
 	lw	$a0 20($fp) # fibo
-	sw	$s1 0($sp) # fibo
+	sw	$a0 0($sp) # fibo
 	addiu	$sp $sp -4 # fibo
-	lw	$s1 12($a0) # fibo
 	la	$a0 int_const0 # fibo
-	sw	$t0 0($sp) # fibo
-	addiu	$sp $sp -4 # fibo
-	lw	$t0 12($a0) # fibo
+	move	$t1 $a0 # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$t2 0($sp) # fibo
 	la	$a0 bool_const1 # fibo
-	beq	$t0 $s1 label2 # fibo
-	la	$a0 bool_const0 # fibo
+	beq	$t1 $t2 label2 # fibo
+	la	$a1 bool_const0 # fibo
 	jal	equality_test # fibo
 label2: # fibo
-	addiu	$sp $sp 4 # fibo
-	lw	$t0 0($sp) # fibo
-	addiu	$sp $sp 4 # fibo
-	lw	$s1 0($sp) # fibo
-# ya tyt(net)
 	lw	$s1 12($a0) # fibo
-	beqz	$s1 label1 # fibo
+	beqz	$s1 label0 # fibo
 	la	$a0 int_const0 # fibo
-	b	label0 # fibo
-label1: # fibo
-# ya tyt
+	b	label1 # fibo
+label0: # fibo
 #  ==> i offset : 5 self type:M 
 #  -> curr off 20
 # for i method 
 	lw	$a0 20($fp) # fibo
-	sw	$s1 0($sp) # fibo
+	sw	$a0 0($sp) # fibo
 	addiu	$sp $sp -4 # fibo
-	lw	$s1 12($a0) # fibo
 	la	$a0 int_const1 # fibo
-	sw	$t0 0($sp) # fibo
-	addiu	$sp $sp -4 # fibo
-	lw	$t0 12($a0) # fibo
+	move	$t1 $a0 # fibo
+	addiu	$sp $sp 4 # fibo
+	lw	$t2 0($sp) # fibo
 	la	$a0 bool_const1 # fibo
-	beq	$t0 $s1 label5 # fibo
-	la	$a0 bool_const0 # fibo
+	beq	$t1 $t2 label5 # fibo
+	la	$a1 bool_const0 # fibo
 	jal	equality_test # fibo
 label5: # fibo
-	addiu	$sp $sp 4 # fibo
-	lw	$t0 0($sp) # fibo
-	addiu	$sp $sp 4 # fibo
-	lw	$s1 0($sp) # fibo
-# ya tyt(net)
 	lw	$s1 12($a0) # fibo
-	beqz	$s1 label4 # fibo
+	beqz	$s1 label3 # fibo
 	la	$a0 int_const1 # fibo
-	b	label3 # fibo
-label4: # fibo
+	b	label4 # fibo
+label3: # fibo
 #  ==> i offset : 5 self type:M 
 #  -> curr off 20
 # for i method 
@@ -529,8 +515,8 @@ label7: # fibo
 	addiu	$sp $sp 4 # fibo
 	lw	$s1 0($sp) # fibo
 	sw	$s1 12($a0) # fibo
-label3: # fibo
-label0: # fibo
+label4: # fibo
+label1: # fibo
 	lw	$fp 12($sp) # fibo
 	lw	$s0 8($sp) # fibo
 	lw	$ra 4($sp) # fibo

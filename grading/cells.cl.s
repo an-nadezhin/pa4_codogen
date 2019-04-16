@@ -506,7 +506,6 @@ label0: # main
 	jalr	$t1 # main
 #> for cells self 
 	sw	$a0 12($s0) # main
-# tet
 #  ==> cells offset : 3 Main type:O 
 #  -> curr off 12
 # for cells self 
@@ -523,6 +522,7 @@ label1: # main
 	la	$a0 int_const2 # main
 	sw	$a0 12($fp) # main
 label2: # main
+# lt start
 	la	$a0 int_const1 # main
 	sw	$s1 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -534,11 +534,12 @@ label2: # main
 	lw	$a0 12($fp) # main
 	lw	$t0 12($a0) # main
 	la	$a0 bool_const0 # main
-	blt	$t0 $s1 label4 # main
+	ble	$t0 $s1 label4 # main
 	la	$a0 bool_const1 # main
 label4: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
+# lt end
 	la	$t0 bool_const0 # main
 	beq	$a0 $t0 label3 # main
 #  ==> cells offset : 3 Main type:O 
@@ -589,7 +590,6 @@ label6: # main
 	sw	$s1 12($a0) # main
 #> for countdown method 
 	sw	$a0 12($fp) # main
-# tet
 	b	label2 # main
 label3: # main
 	move	$a0 $zero # main
@@ -615,7 +615,6 @@ CellularAutomaton.init:
 	lw	$a0 12($fp) # init
 #> for population_map self 
 	sw	$a0 12($s0) # init
-# tet
 # for self SELF 
 	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
@@ -732,31 +731,24 @@ CellularAutomaton.cell_left_neighbor:
 	addiu	$fp $sp 4 # cell_left_neighbor
 	move	$s0 $a0 # cell_left_neighbor
  # formal position
-# ya tyt
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 4 self type:M 
 #  -> curr off 16
 # for position method 
 	lw	$a0 16($fp) # cell_left_neighbor
-	sw	$s1 0($sp) # cell_left_neighbor
+	sw	$a0 0($sp) # cell_left_neighbor
 	addiu	$sp $sp -4 # cell_left_neighbor
-	lw	$s1 12($a0) # cell_left_neighbor
 	la	$a0 int_const1 # cell_left_neighbor
-	sw	$t0 0($sp) # cell_left_neighbor
-	addiu	$sp $sp -4 # cell_left_neighbor
-	lw	$t0 12($a0) # cell_left_neighbor
+	move	$t1 $a0 # cell_left_neighbor
+	addiu	$sp $sp 4 # cell_left_neighbor
+	lw	$t2 0($sp) # cell_left_neighbor
 	la	$a0 bool_const1 # cell_left_neighbor
-	beq	$t0 $s1 label13 # cell_left_neighbor
-	la	$a0 bool_const0 # cell_left_neighbor
+	beq	$t1 $t2 label13 # cell_left_neighbor
+	la	$a1 bool_const0 # cell_left_neighbor
 	jal	equality_test # cell_left_neighbor
 label13: # cell_left_neighbor
-	addiu	$sp $sp 4 # cell_left_neighbor
-	lw	$t0 0($sp) # cell_left_neighbor
-	addiu	$sp $sp 4 # cell_left_neighbor
-	lw	$s1 0($sp) # cell_left_neighbor
-# ya tyt(net)
 	lw	$s1 12($a0) # cell_left_neighbor
-	beqz	$s1 label12 # cell_left_neighbor
+	beqz	$s1 label11 # cell_left_neighbor
 # for self SELF 
 	move	$a0 $s0 # cell_left_neighbor
 	bne	$a0 $zero label14 # cell_left_neighbor
@@ -794,8 +786,8 @@ label15: # cell_left_neighbor
 	lw	$t1 8($a0) # cell_left_neighbor
 	lw	$t1 40($t1) # cell_left_neighbor
 	jalr	$t1 # cell_left_neighbor
-	b	label11 # cell_left_neighbor
-label12: # cell_left_neighbor
+	b	label12 # cell_left_neighbor
+label11: # cell_left_neighbor
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 4 self type:M 
 #  -> curr off 16
@@ -828,7 +820,7 @@ label16: # cell_left_neighbor
 	lw	$t1 8($a0) # cell_left_neighbor
 	lw	$t1 40($t1) # cell_left_neighbor
 	jalr	$t1 # cell_left_neighbor
-label11: # cell_left_neighbor
+label12: # cell_left_neighbor
 	lw	$fp 12($sp) # cell_left_neighbor
 	lw	$s0 8($sp) # cell_left_neighbor
 	lw	$ra 4($sp) # cell_left_neighbor
@@ -842,15 +834,13 @@ CellularAutomaton.cell_right_neighbor:
 	addiu	$fp $sp 4 # cell_right_neighbor
 	move	$s0 $a0 # cell_right_neighbor
  # formal position
-# ya tyt
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 5 self type:M 
 #  -> curr off 20
 # for position method 
 	lw	$a0 20($fp) # cell_right_neighbor
-	sw	$s1 0($sp) # cell_right_neighbor
+	sw	$a0 0($sp) # cell_right_neighbor
 	addiu	$sp $sp -4 # cell_right_neighbor
-	lw	$s1 12($a0) # cell_right_neighbor
 # for self SELF 
 	move	$a0 $s0 # cell_right_neighbor
 	bne	$a0 $zero label19 # cell_right_neighbor
@@ -876,21 +866,16 @@ label19: # cell_right_neighbor
 	addiu	$sp $sp 4 # cell_right_neighbor
 	lw	$s1 0($sp) # cell_right_neighbor
 	sw	$s1 12($a0) # cell_right_neighbor
-	sw	$t0 0($sp) # cell_right_neighbor
-	addiu	$sp $sp -4 # cell_right_neighbor
-	lw	$t0 12($a0) # cell_right_neighbor
+	move	$t1 $a0 # cell_right_neighbor
+	addiu	$sp $sp 4 # cell_right_neighbor
+	lw	$t2 0($sp) # cell_right_neighbor
 	la	$a0 bool_const1 # cell_right_neighbor
-	beq	$t0 $s1 label20 # cell_right_neighbor
-	la	$a0 bool_const0 # cell_right_neighbor
+	beq	$t1 $t2 label20 # cell_right_neighbor
+	la	$a1 bool_const0 # cell_right_neighbor
 	jal	equality_test # cell_right_neighbor
 label20: # cell_right_neighbor
-	addiu	$sp $sp 4 # cell_right_neighbor
-	lw	$t0 0($sp) # cell_right_neighbor
-	addiu	$sp $sp 4 # cell_right_neighbor
-	lw	$s1 0($sp) # cell_right_neighbor
-# ya tyt(net)
 	lw	$s1 12($a0) # cell_right_neighbor
-	beqz	$s1 label18 # cell_right_neighbor
+	beqz	$s1 label17 # cell_right_neighbor
 	la	$a0 int_const1 # cell_right_neighbor
 	sw	$a0 0($sp) # cell_right_neighbor
 	addiu	$sp $sp -4 # cell_right_neighbor
@@ -904,8 +889,8 @@ label21: # cell_right_neighbor
 	lw	$t1 8($a0) # cell_right_neighbor
 	lw	$t1 40($t1) # cell_right_neighbor
 	jalr	$t1 # cell_right_neighbor
-	b	label17 # cell_right_neighbor
-label18: # cell_right_neighbor
+	b	label18 # cell_right_neighbor
+label17: # cell_right_neighbor
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 5 self type:M 
 #  -> curr off 20
@@ -938,7 +923,7 @@ label22: # cell_right_neighbor
 	lw	$t1 8($a0) # cell_right_neighbor
 	lw	$t1 40($t1) # cell_right_neighbor
 	jalr	$t1 # cell_right_neighbor
-label17: # cell_right_neighbor
+label18: # cell_right_neighbor
 	lw	$fp 12($sp) # cell_right_neighbor
 	lw	$s0 8($sp) # cell_right_neighbor
 	lw	$ra 4($sp) # cell_right_neighbor
@@ -952,8 +937,6 @@ CellularAutomaton.cell_at_next_evolution:
 	addiu	$fp $sp 4 # cell_at_next_evolution
 	move	$s0 $a0 # cell_at_next_evolution
  # formal position
-# ya tyt
-# ya tyt
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 5 self type:M 
 #  -> curr off 20
@@ -971,33 +954,26 @@ label27: # cell_at_next_evolution
 	lw	$t1 8($a0) # cell_at_next_evolution
 	lw	$t1 40($t1) # cell_at_next_evolution
 	jalr	$t1 # cell_at_next_evolution
-	sw	$s1 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp -4 # cell_at_next_evolution
-	lw	$s1 12($a0) # cell_at_next_evolution
-	la	$a0 str_const2 # cell_at_next_evolution
-	sw	$t0 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp -4 # cell_at_next_evolution
-	lw	$t0 12($a0) # cell_at_next_evolution
-	la	$a0 bool_const1 # cell_at_next_evolution
-	beq	$t0 $s1 label28 # cell_at_next_evolution
-	la	$a0 bool_const0 # cell_at_next_evolution
-	jal	equality_test # cell_at_next_evolution
-label28: # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$t0 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$s1 0($sp) # cell_at_next_evolution
-# ya tyt(net)
-	lw	$s1 12($a0) # cell_at_next_evolution
-	beqz	$s1 label26 # cell_at_next_evolution
-	la	$a0 int_const0 # cell_at_next_evolution
-	b	label25 # cell_at_next_evolution
-label26: # cell_at_next_evolution
-	la	$a0 int_const1 # cell_at_next_evolution
-label25: # cell_at_next_evolution
 	sw	$a0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-# ya tyt
+	la	$a0 str_const2 # cell_at_next_evolution
+	move	$t1 $a0 # cell_at_next_evolution
+	addiu	$sp $sp 4 # cell_at_next_evolution
+	lw	$t2 0($sp) # cell_at_next_evolution
+	la	$a0 bool_const1 # cell_at_next_evolution
+	beq	$t1 $t2 label28 # cell_at_next_evolution
+	la	$a1 bool_const0 # cell_at_next_evolution
+	jal	equality_test # cell_at_next_evolution
+label28: # cell_at_next_evolution
+	lw	$s1 12($a0) # cell_at_next_evolution
+	beqz	$s1 label25 # cell_at_next_evolution
+	la	$a0 int_const0 # cell_at_next_evolution
+	b	label26 # cell_at_next_evolution
+label25: # cell_at_next_evolution
+	la	$a0 int_const1 # cell_at_next_evolution
+label26: # cell_at_next_evolution
+	sw	$a0 0($sp) # cell_at_next_evolution
+	addiu	$sp $sp -4 # cell_at_next_evolution
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 5 self type:M 
 #  -> curr off 20
@@ -1015,30 +991,24 @@ label31: # cell_at_next_evolution
 	lw	$t1 8($a0) # cell_at_next_evolution
 	lw	$t1 44($t1) # cell_at_next_evolution
 	jalr	$t1 # cell_at_next_evolution
-	sw	$s1 0($sp) # cell_at_next_evolution
+	sw	$a0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-	lw	$s1 12($a0) # cell_at_next_evolution
 	la	$a0 str_const2 # cell_at_next_evolution
-	sw	$t0 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp -4 # cell_at_next_evolution
-	lw	$t0 12($a0) # cell_at_next_evolution
+	move	$t1 $a0 # cell_at_next_evolution
+	addiu	$sp $sp 4 # cell_at_next_evolution
+	lw	$t2 0($sp) # cell_at_next_evolution
 	la	$a0 bool_const1 # cell_at_next_evolution
-	beq	$t0 $s1 label32 # cell_at_next_evolution
-	la	$a0 bool_const0 # cell_at_next_evolution
+	beq	$t1 $t2 label32 # cell_at_next_evolution
+	la	$a1 bool_const0 # cell_at_next_evolution
 	jal	equality_test # cell_at_next_evolution
 label32: # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$t0 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$s1 0($sp) # cell_at_next_evolution
-# ya tyt(net)
 	lw	$s1 12($a0) # cell_at_next_evolution
-	beqz	$s1 label30 # cell_at_next_evolution
+	beqz	$s1 label29 # cell_at_next_evolution
 	la	$a0 int_const0 # cell_at_next_evolution
-	b	label29 # cell_at_next_evolution
-label30: # cell_at_next_evolution
-	la	$a0 int_const1 # cell_at_next_evolution
+	b	label30 # cell_at_next_evolution
 label29: # cell_at_next_evolution
+	la	$a0 int_const1 # cell_at_next_evolution
+label30: # cell_at_next_evolution
 	lw	$s1 12($a0) # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$a0 0($sp) # cell_at_next_evolution
@@ -1053,7 +1023,6 @@ label29: # cell_at_next_evolution
 	sw	$s1 12($a0) # cell_at_next_evolution
 	sw	$a0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-# ya tyt
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 5 self type:M 
 #  -> curr off 20
@@ -1071,30 +1040,24 @@ label35: # cell_at_next_evolution
 	lw	$t1 8($a0) # cell_at_next_evolution
 	lw	$t1 48($t1) # cell_at_next_evolution
 	jalr	$t1 # cell_at_next_evolution
-	sw	$s1 0($sp) # cell_at_next_evolution
+	sw	$a0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-	lw	$s1 12($a0) # cell_at_next_evolution
 	la	$a0 str_const2 # cell_at_next_evolution
-	sw	$t0 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp -4 # cell_at_next_evolution
-	lw	$t0 12($a0) # cell_at_next_evolution
+	move	$t1 $a0 # cell_at_next_evolution
+	addiu	$sp $sp 4 # cell_at_next_evolution
+	lw	$t2 0($sp) # cell_at_next_evolution
 	la	$a0 bool_const1 # cell_at_next_evolution
-	beq	$t0 $s1 label36 # cell_at_next_evolution
-	la	$a0 bool_const0 # cell_at_next_evolution
+	beq	$t1 $t2 label36 # cell_at_next_evolution
+	la	$a1 bool_const0 # cell_at_next_evolution
 	jal	equality_test # cell_at_next_evolution
 label36: # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$t0 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$s1 0($sp) # cell_at_next_evolution
-# ya tyt(net)
 	lw	$s1 12($a0) # cell_at_next_evolution
-	beqz	$s1 label34 # cell_at_next_evolution
+	beqz	$s1 label33 # cell_at_next_evolution
 	la	$a0 int_const0 # cell_at_next_evolution
-	b	label33 # cell_at_next_evolution
-label34: # cell_at_next_evolution
-	la	$a0 int_const1 # cell_at_next_evolution
+	b	label34 # cell_at_next_evolution
 label33: # cell_at_next_evolution
+	la	$a0 int_const1 # cell_at_next_evolution
+label34: # cell_at_next_evolution
 	lw	$s1 12($a0) # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$a0 0($sp) # cell_at_next_evolution
@@ -1107,30 +1070,24 @@ label33: # cell_at_next_evolution
 	addiu	$sp $sp 4 # cell_at_next_evolution
 	lw	$s1 0($sp) # cell_at_next_evolution
 	sw	$s1 12($a0) # cell_at_next_evolution
-	sw	$s1 0($sp) # cell_at_next_evolution
+	sw	$a0 0($sp) # cell_at_next_evolution
 	addiu	$sp $sp -4 # cell_at_next_evolution
-	lw	$s1 12($a0) # cell_at_next_evolution
 	la	$a0 int_const0 # cell_at_next_evolution
-	sw	$t0 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp -4 # cell_at_next_evolution
-	lw	$t0 12($a0) # cell_at_next_evolution
+	move	$t1 $a0 # cell_at_next_evolution
+	addiu	$sp $sp 4 # cell_at_next_evolution
+	lw	$t2 0($sp) # cell_at_next_evolution
 	la	$a0 bool_const1 # cell_at_next_evolution
-	beq	$t0 $s1 label37 # cell_at_next_evolution
-	la	$a0 bool_const0 # cell_at_next_evolution
+	beq	$t1 $t2 label37 # cell_at_next_evolution
+	la	$a1 bool_const0 # cell_at_next_evolution
 	jal	equality_test # cell_at_next_evolution
 label37: # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$t0 0($sp) # cell_at_next_evolution
-	addiu	$sp $sp 4 # cell_at_next_evolution
-	lw	$s1 0($sp) # cell_at_next_evolution
-# ya tyt(net)
 	lw	$s1 12($a0) # cell_at_next_evolution
-	beqz	$s1 label24 # cell_at_next_evolution
+	beqz	$s1 label23 # cell_at_next_evolution
 	la	$a0 str_const2 # cell_at_next_evolution
-	b	label23 # cell_at_next_evolution
-label24: # cell_at_next_evolution
-	la	$a0 str_const3 # cell_at_next_evolution
+	b	label24 # cell_at_next_evolution
 label23: # cell_at_next_evolution
+	la	$a0 str_const3 # cell_at_next_evolution
+label24: # cell_at_next_evolution
 	lw	$fp 12($sp) # cell_at_next_evolution
 	lw	$s0 8($sp) # cell_at_next_evolution
 	lw	$ra 4($sp) # cell_at_next_evolution
@@ -1162,6 +1119,7 @@ label38: # evolve
 	la	$a0 str_const16 # evolve
 	sw	$a0 20($fp) # evolve
 label39: # evolve
+# lt start
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 3 CellularAutomaton type:M 
 #  ==> num offset : 4 CellularAutomaton type:M 
@@ -1181,11 +1139,12 @@ label39: # evolve
 	lw	$a0 16($fp) # evolve
 	lw	$t0 12($a0) # evolve
 	la	$a0 bool_const0 # evolve
-	blt	$t0 $s1 label41 # evolve
+	ble	$t0 $s1 label41 # evolve
 	la	$a0 bool_const1 # evolve
 label41: # evolve
 	addiu	$sp $sp 4 # evolve
 	lw	$s1 0($sp) # evolve
+# lt end
 	la	$t0 bool_const0 # evolve
 	beq	$a0 $t0 label40 # evolve
 #  ==> population_map offset : 3 CellularAutomaton type:O 
@@ -1226,7 +1185,6 @@ label43: # evolve
 	jalr	$t1 # evolve
 #> for temp method 
 	sw	$a0 20($fp) # evolve
-# tet
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 3 CellularAutomaton type:M 
 #  ==> num offset : 4 CellularAutomaton type:M 
@@ -1251,7 +1209,6 @@ label43: # evolve
 	sw	$s1 12($a0) # evolve
 #> for position method 
 	sw	$a0 12($fp) # evolve
-# tet
 	b	label39 # evolve
 label40: # evolve
 	move	$a0 $zero # evolve
@@ -1264,7 +1221,6 @@ label40: # evolve
 	lw	$a0 20($fp) # evolve
 #> for population_map self 
 	sw	$a0 12($s0) # evolve
-# tet
 # for self SELF 
 	move	$a0 $s0 # evolve
 	lw	$fp 12($sp) # evolve

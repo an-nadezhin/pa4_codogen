@@ -415,7 +415,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for a self 
 	sw	$a0 12($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 12
@@ -438,7 +437,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for b self 
 	sw	$a0 16($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 16
@@ -461,7 +459,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for a self 
 	sw	$a0 12($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 12
@@ -484,7 +481,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for b self 
 	sw	$a0 16($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 16
@@ -507,7 +503,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for a self 
 	sw	$a0 12($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 12
@@ -530,7 +525,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for b self 
 	sw	$a0 16($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 16
@@ -553,7 +547,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for a self 
 	sw	$a0 12($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 12
@@ -576,7 +569,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for b self 
 	sw	$a0 16($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 16
@@ -599,7 +591,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for a self 
 	sw	$a0 12($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 12
@@ -622,7 +613,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for b self 
 	sw	$a0 16($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  -> curr off 12

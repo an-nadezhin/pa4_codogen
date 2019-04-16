@@ -403,7 +403,6 @@ Main.f:
 	la	$a0 int_const0 # f
 #> for i method 
 	sw	$a0 12($fp) # f
-# tet
 	lw	$fp 12($sp) # f
 	lw	$s0 8($sp) # f
 	lw	$ra 4($sp) # f

@@ -599,7 +599,6 @@ B.f:
 	sw	$s1 12($a0) # f
 #> for x self 
 	sw	$a0 12($s0) # f
-# tet
 #  ==> x offset : 3 A type:O 
 #  ==> y offset : 4 self type:M 
 #  -> curr off 12
@@ -671,7 +670,6 @@ A.f:
 	sw	$s1 12($a0) # f
 #> for x self 
 	sw	$a0 12($s0) # f
-# tet
 #  ==> x offset : 3 A type:O 
 #  ==> y offset : 4 self type:M 
 #  -> curr off 12
@@ -743,7 +741,6 @@ A.g:
 	sw	$s1 12($a0) # g
 #> for x self 
 	sw	$a0 12($s0) # g
-# tet
 #  ==> x offset : 3 A type:O 
 #  ==> y offset : 4 self type:M 
 #  -> curr off 12

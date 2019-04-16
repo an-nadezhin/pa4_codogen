@@ -553,7 +553,6 @@ label0: # jack
 	sw	$s1 12($a0) # jack
 #> for y self 
 	sw	$a0 16($s0) # jack
-# tet
  # let code for name y
 #  ==> x offset : 3 Bob type:O 
 #  ==> y offset : 4 Bob type:O 

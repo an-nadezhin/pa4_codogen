@@ -502,7 +502,6 @@ Main.g:
 	sw	$s1 12($a0) # g
 #> for x self 
 	sw	$a0 12($s0) # g
-# tet
 #  ==> x offset : 3 Main type:O 
 #  ==> z offset : 4 self type:M 
 #  -> curr off 16

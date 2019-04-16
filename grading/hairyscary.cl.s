@@ -670,7 +670,6 @@ Bazz.doh:
 	sw	$s1 12($a0) # doh
 #> for h self 
 	sw	$a0 12($s0) # doh
-# tet
 #  ==> h offset : 3 Bazz type:O 
 #  ==> g offset : 4 Bazz type:O 
 #  ==> i offset : 5 Bazz type:O 
@@ -726,7 +725,6 @@ Foo.doh:
 	sw	$s1 12($a0) # doh
 #> for h self 
 	sw	$a0 12($s0) # doh
-# tet
 #  ==> h offset : 3 Bazz type:O 
 #  ==> g offset : 4 Bazz type:O 
 #  ==> i offset : 5 Bazz type:O 

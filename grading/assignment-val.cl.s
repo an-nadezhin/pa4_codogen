@@ -518,13 +518,11 @@ Main.main:
 	la	$a0 int_const1 # main
 #> for x method 
 	sw	$a0 12($fp) # main
-# tet
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
 	la	$a0 int_const2 # main
 #> for x method 
 	sw	$a0 12($fp) # main
-# tet
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
 # for self SELF 

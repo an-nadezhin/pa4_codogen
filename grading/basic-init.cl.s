@@ -489,7 +489,7 @@ label1: # main
 # for b self 
 	lw	$a0 20($s0) # main
 	lw	$s1 12($a0) # main
-	beqz	$s1 label3 # main
+	beqz	$s1 label2 # main
 	la	$a0 str_const1 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -503,8 +503,8 @@ label4: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 12($t1) # main
 	jalr	$t1 # main
-	b	label2 # main
-label3: # main
+	b	label3 # main
+label2: # main
 	la	$a0 str_const2 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -518,7 +518,7 @@ label5: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 12($t1) # main
 	jalr	$t1 # main
-label2: # main
+label3: # main
 #  ==> i offset : 3 Main type:O 
 #  ==> s offset : 4 Main type:O 
 #  ==> b offset : 5 Main type:O 
@@ -532,7 +532,7 @@ label2: # main
 label8: # main
 	move	$a0 $t0 # main
 	lw	$s1 12($a0) # main
-	beqz	$s1 label7 # main
+	beqz	$s1 label6 # main
 	la	$a0 str_const3 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -546,8 +546,8 @@ label9: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 12($t1) # main
 	jalr	$t1 # main
-	b	label6 # main
-label7: # main
+	b	label7 # main
+label6: # main
 	la	$a0 str_const4 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -561,7 +561,7 @@ label10: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 12($t1) # main
 	jalr	$t1 # main
-label6: # main
+label7: # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

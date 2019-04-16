@@ -415,7 +415,6 @@ Main.main:
 	la	$a0 int_const1 # main
 #> for x method 
 	sw	$a0 12($fp) # main
-# tet
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
 #  ==> x offset : 3 Main type:M 
@@ -439,7 +438,6 @@ Main.main:
 	sw	$s1 12($a0) # main
 #> for x method 
 	sw	$a0 12($fp) # main
-# tet
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
 	la	$a0 int_const2 # main

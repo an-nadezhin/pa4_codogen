@@ -428,7 +428,7 @@ Main.main:
 # for x method 
 	lw	$a0 12($fp) # main
 	lw	$s1 12($a0) # main
-	beqz	$s1 label1 # main
+	beqz	$s1 label0 # main
 # for self SELF 
 	move	$a0 $s0 # main
 	bne	$a0 $zero label2 # main
@@ -439,8 +439,8 @@ label2: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 0($t1) # main
 	jalr	$t1 # main
-	b	label0 # main
-label1: # main
+	b	label1 # main
+label0: # main
 #  ==> x offset : 3 Main type:M 
 #  ==> y offset : 4 Main type:M 
 #  ==> z offset : 5 Main type:M 
@@ -503,7 +503,7 @@ label5: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 12($t1) # main
 	jalr	$t1 # main
-label0: # main
+label1: # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

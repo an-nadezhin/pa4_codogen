@@ -544,7 +544,6 @@ label5: # main
 	jalr	$t1 # main
 #> for a2 method 
 	sw	$a0 16($fp) # main
-# tet
 #  ==> a1 offset : 3 Main type:M 
 #  ==> a2 offset : 4 Main type:M 
 #  -> curr off 16
@@ -685,7 +684,6 @@ A.bump:
 	sw	$s1 12($a0) # bump
 #> for x self 
 	sw	$a0 12($s0) # bump
-# tet
 	lw	$fp 12($sp) # bump
 	lw	$s0 8($sp) # bump
 	lw	$ra 4($sp) # bump

@@ -995,19 +995,16 @@ label31: # main
 	jal	B_init
 #> for a self 
 	sw	$a0 12($s0) # main
-# tet
 	la	$a0 C_protObj # main
 	jal	Object.copy # main
 	jal	C_init
 #> for b self 
 	sw	$a0 16($s0) # main
-# tet
 	la	$a0 D_protObj # main
 	jal	Object.copy # main
 	jal	D_init
 #> for c self 
 	sw	$a0 20($s0) # main
-# tet
 #  ==> a offset : 3 Main type:O 
 #  ==> b offset : 4 Main type:O 
 #  ==> c offset : 5 Main type:O 

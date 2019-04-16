@@ -226,7 +226,7 @@ void assign_class::cgen(ostream &s, Symbol self_class, Environment var, Environm
         emit_store(ACC, off_var->offset, FP, s);
     }
     expr_is_const = true;
-    s << "# tet\n";
+
     INFO_OUT_AS;
 }
 
@@ -317,12 +317,8 @@ void dispatch_class::cgen(ostream &s, Symbol self_class, Environment var, Enviro
 void cond_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
 
-    //todo chek!!!!!!!!!!!!!!!
-
-//    int offset = alloc_temp() + FRAME_OFFSET;
-//    emit_store(ACC, offset, FP, s);
-    int then_label = create_label();
     int else_label = create_label();
+    int then_label = create_label();
     pred->cgen(s, self_class, var, met);
     emit_fetch_int(T4, ACC, s);
     emit_beqz(T4, else_label, s);
@@ -331,6 +327,8 @@ void cond_class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
     emit_label_def(else_label, s);
     else_exp->cgen(s, self_class, var, met);
     emit_label_def(then_label, s);
+
+    expr_is_const = true;
 
     INFO_OUT_AS;
 }
@@ -457,9 +455,9 @@ void let_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
 void plus_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
 
-    e1->cgen(s, self, var, met);
+    e1->cgen(s, self_class, var, met);
     emit_push(ACC, s);
-    e2->cgen(s, self, var, met);
+    e2->cgen(s, self_class, var, met);
     emit_fetch_int(T4, ACC, s);
     emit_pop(ACC, s);
     emit_fetch_int(ACC, ACC, s);
@@ -476,9 +474,9 @@ void plus_class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
 void sub_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
 
-    e1->cgen(s, self, var, met);
+    e1->cgen(s, self_class, var, met);
     emit_push(ACC, s);
-    e2->cgen(s, self, var, met);
+    e2->cgen(s, self_class, var, met);
     emit_fetch_int(T4, ACC, s);
     emit_pop(ACC, s);
     emit_fetch_int(ACC, ACC, s);
@@ -493,9 +491,9 @@ void sub_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
 void mul_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
 
-    e1->cgen(s, self, var, met);
+    e1->cgen(s, self_class, var, met);
     emit_push(ACC, s);
-    e2->cgen(s, self, var, met);
+    e2->cgen(s, self_class, var, met);
     emit_fetch_int(T4, ACC, s);
     emit_pop(ACC, s);
     emit_fetch_int(ACC, ACC, s);
@@ -511,9 +509,9 @@ void mul_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
 void divide_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
 
-    e1->cgen(s, self, var, met);
+    e1->cgen(s, self_class, var, met);
     emit_push(ACC, s);
-    e2->cgen(s, self, var, met);
+    e2->cgen(s, self_class, var, met);
     emit_fetch_int(T4, ACC, s);
     emit_pop(ACC, s);
     emit_fetch_int(ACC, ACC, s);
@@ -546,58 +544,49 @@ void neg_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
 
 void lt_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
-
-    e1->cgen(s, self, var, met);
+    s << "# lt start\n";
+    e1->cgen(s, self_class, var, met);
     emit_push(T4, s);
     emit_fetch_int(T4, ACC, s);
-    e2->cgen(s, self, var, met);
+    e2->cgen(s, self_class, var, met);
     emit_fetch_int(T3, ACC, s);
 
     int end_label = create_label();
     emit_load_bool(ACC, falsebool, s);
-    emit_blt(T3, T4, end_label, s);
+    emit_bleq(T3, T4, end_label, s);
     emit_load_bool(ACC, truebool, s);
     emit_label_def(end_label, s);
     emit_pop(T4, s);
-
+    s << "# lt end\n";
     INFO_OUT_AS;
 }
 
 void eq_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
 
-    s << "# ya tyt\n";
-
-
-    e1->cgen(s, self, var, met);
-    emit_push(T4, s);
-    emit_fetch_int(T4, ACC, s);
-    e2->cgen(s, self, var, met);
-    emit_push(T3, s);
-    emit_fetch_int(T3, ACC, s);
+    e1->cgen(s, self_class, var, met);
+    emit_push(ACC, s);
+    e2->cgen(s, self_class, var, met);
+    emit_move(T1, ACC, s);
+    emit_pop(T2, s);
 
     int end_label = create_label();
     emit_load_bool(ACC, truebool, s);
-    emit_beq(T3, T4, end_label, s);
-    emit_load_bool(ACC, falsebool, s);
+    emit_beq(T1, T2, end_label, s);
+    emit_load_bool(A1, falsebool, s);
     emit_jal(EQUALITY_TEST, s);
     emit_label_def(end_label, s);
-    emit_pop(T3, s);
-    emit_pop(T4, s);
-
-
-    s << "# ya tyt(net)\n";
 
     INFO_OUT_AS;
 }
 
 void leq_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
-
-    e1->cgen(s, self, var, met);
+    s << "# leq start\n";
+    e1->cgen(s, self_class, var, met);
     emit_push(T4, s);
     emit_fetch_int(T4, ACC, s);
-    e2->cgen(s, self, var, met);
+    e2->cgen(s, self_class, var, met);
     emit_fetch_int(T3, ACC, s);
 
     int end_label = create_label();
@@ -606,14 +595,14 @@ void leq_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
     emit_load_bool(ACC, truebool, s);
     emit_label_def(end_label, s);
     emit_pop(T4, s);
-
+    s << "# leq end\n";
     INFO_OUT_AS;
 }
 
 void comp_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
 
-    e1->cgen(s, self, var, met);
+    e1->cgen(s, self_class, var, met);
     emit_fetch_int(T4, ACC, s);
 
     int end_label = create_label();

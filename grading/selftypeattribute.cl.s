@@ -585,7 +585,6 @@ A.init:
 	lw	$s1 0($sp) # init
 #> for x self 
 	sw	$a0 12($s0) # init
-# tet
 	lw	$fp 12($sp) # init
 	lw	$s0 8($sp) # init
 	lw	$ra 4($sp) # init

@@ -564,7 +564,6 @@ label3: # main
 	lw	$a0 12($fp) # main
 #> for b1 method 
 	sw	$a0 36($fp) # main
-# tet
 	la	$a0 str_const3 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -667,7 +666,6 @@ label7: # main
 	lw	$a0 20($fp) # main
 #> for b2 method 
 	sw	$a0 40($fp) # main
-# tet
 	la	$a0 str_const4 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -778,7 +776,6 @@ label12: # main
 	jalr	$t1 # main
 #> for b1 method 
 	sw	$a0 36($fp) # main
-# tet
 	la	$a0 str_const3 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -889,7 +886,6 @@ label17: # main
 	jalr	$t1 # main
 #> for b2 method 
 	sw	$a0 40($fp) # main
-# tet
 	la	$a0 str_const4 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main

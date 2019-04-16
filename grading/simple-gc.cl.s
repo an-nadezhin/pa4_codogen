@@ -485,7 +485,6 @@ Main.f:
 	sw	$s1 12($a0) # f
 #> for y self 
 	sw	$a0 12($s0) # f
-# tet
 	lw	$fp 12($sp) # f
 	lw	$s0 8($sp) # f
 	lw	$ra 4($sp) # f
@@ -573,7 +572,6 @@ label0: # main
 	sw	$s1 12($a0) # main
 #> for y self 
 	sw	$a0 12($s0) # main
-# tet
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
 # for self SELF 

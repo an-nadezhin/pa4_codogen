@@ -415,43 +415,34 @@ Main.exp:
 	move	$s0 $a0 # exp
  # formal b
  # formal x
-# ya tyt
 #  ==> b offset : 7 self type:M 
 #  ==> x offset : 6 self type:M 
 #  -> curr off 24
 # for x method 
 	lw	$a0 24($fp) # exp
-	sw	$s1 0($sp) # exp
+	sw	$a0 0($sp) # exp
 	addiu	$sp $sp -4 # exp
-	lw	$s1 12($a0) # exp
 	la	$a0 int_const0 # exp
-	sw	$t0 0($sp) # exp
-	addiu	$sp $sp -4 # exp
-	lw	$t0 12($a0) # exp
+	move	$t1 $a0 # exp
+	addiu	$sp $sp 4 # exp
+	lw	$t2 0($sp) # exp
 	la	$a0 bool_const1 # exp
-	beq	$t0 $s1 label2 # exp
-	la	$a0 bool_const0 # exp
+	beq	$t1 $t2 label2 # exp
+	la	$a1 bool_const0 # exp
 	jal	equality_test # exp
 label2: # exp
-	addiu	$sp $sp 4 # exp
-	lw	$t0 0($sp) # exp
-	addiu	$sp $sp 4 # exp
-	lw	$s1 0($sp) # exp
-# ya tyt(net)
 	lw	$s1 12($a0) # exp
-	beqz	$s1 label1 # exp
+	beqz	$s1 label0 # exp
 	la	$a0 int_const1 # exp
-	b	label0 # exp
-label1: # exp
-# ya tyt
+	b	label1 # exp
+label0: # exp
 #  ==> b offset : 7 self type:M 
 #  ==> x offset : 6 self type:M 
 #  -> curr off 24
 # for x method 
 	lw	$a0 24($fp) # exp
-	sw	$s1 0($sp) # exp
+	sw	$a0 0($sp) # exp
 	addiu	$sp $sp -4 # exp
-	lw	$s1 12($a0) # exp
 	la	$a0 int_const2 # exp
 	sw	$a0 0($sp) # exp
 	addiu	$sp $sp -4 # exp
@@ -487,21 +478,16 @@ label1: # exp
 	addiu	$sp $sp 4 # exp
 	lw	$s1 0($sp) # exp
 	sw	$s1 12($a0) # exp
-	sw	$t0 0($sp) # exp
-	addiu	$sp $sp -4 # exp
-	lw	$t0 12($a0) # exp
+	move	$t1 $a0 # exp
+	addiu	$sp $sp 4 # exp
+	lw	$t2 0($sp) # exp
 	la	$a0 bool_const1 # exp
-	beq	$t0 $s1 label5 # exp
-	la	$a0 bool_const0 # exp
+	beq	$t1 $t2 label5 # exp
+	la	$a1 bool_const0 # exp
 	jal	equality_test # exp
 label5: # exp
-	addiu	$sp $sp 4 # exp
-	lw	$t0 0($sp) # exp
-	addiu	$sp $sp 4 # exp
-	lw	$s1 0($sp) # exp
-# ya tyt(net)
 	lw	$s1 12($a0) # exp
-	beqz	$s1 label4 # exp
+	beqz	$s1 label3 # exp
  # let code for name y
 #  ==> b offset : 7 self type:M 
 #  ==> x offset : 6 self type:M 
@@ -569,8 +555,8 @@ label6: # exp
 	addiu	$sp $sp 4 # exp
 	lw	$s1 0($sp) # exp
 	sw	$s1 12($a0) # exp
-	b	label3 # exp
-label4: # exp
+	b	label4 # exp
+label3: # exp
 #  ==> b offset : 7 self type:M 
 #  ==> x offset : 6 self type:M 
 #  -> curr off 28
@@ -629,8 +615,8 @@ label7: # exp
 	addiu	$sp $sp 4 # exp
 	lw	$s1 0($sp) # exp
 	sw	$s1 12($a0) # exp
-label3: # exp
-label0: # exp
+label4: # exp
+label1: # exp
 	lw	$fp 12($sp) # exp
 	lw	$s0 8($sp) # exp
 	lw	$ra 4($sp) # exp

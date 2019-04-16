@@ -485,7 +485,7 @@ Main.main:
 	la	$a0 bool_const1 # main
 label4: # main
 	lw	$s1 12($a0) # main
-	beqz	$s1 label3 # main
+	beqz	$s1 label2 # main
  # let code for name foo
 	la	$a0 int_const2 # main
 	sw	$a0 24($fp) # main
@@ -523,10 +523,10 @@ label5: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 28($t1) # main
 	jalr	$t1 # main
-	b	label2 # main
-label3: # main
-	la	$a0 int_const0 # main
+	b	label3 # main
 label2: # main
+	la	$a0 int_const0 # main
+label3: # main
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

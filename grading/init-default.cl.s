@@ -575,12 +575,12 @@ label3: # print_attr
 # for b self 
 	lw	$a0 16($s0) # print_attr
 	lw	$s1 12($a0) # print_attr
-	beqz	$s1 label5 # print_attr
+	beqz	$s1 label4 # print_attr
 	la	$a0 str_const3 # print_attr
-	b	label4 # print_attr
-label5: # print_attr
-	la	$a0 str_const4 # print_attr
+	b	label5 # print_attr
 label4: # print_attr
+	la	$a0 str_const4 # print_attr
+label5: # print_attr
 	sw	$a0 0($sp) # print_attr
 	addiu	$sp $sp -4 # print_attr
 # for self SELF 

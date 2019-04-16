@@ -1543,44 +1543,35 @@ label5: # beta_reduce
 	jalr	$t1 # beta_reduce
 #> for new_expr method 
 	sw	$a0 16($fp) # beta_reduce
-# tet
-# ya tyt
 #  ==> e offset : 6 self type:M 
 #  ==> done offset : 3 Main type:M 
 #  ==> new_expr offset : 4 Main type:M 
 #  -> curr off 16
 # for new_expr method 
 	lw	$a0 16($fp) # beta_reduce
-	sw	$s1 0($sp) # beta_reduce
+	sw	$a0 0($sp) # beta_reduce
 	addiu	$sp $sp -4 # beta_reduce
-	lw	$s1 12($a0) # beta_reduce
 #  ==> e offset : 6 self type:M 
 #  ==> done offset : 3 Main type:M 
 #  ==> new_expr offset : 4 Main type:M 
 #  -> curr off 24
 # for e method 
 	lw	$a0 24($fp) # beta_reduce
-	sw	$t0 0($sp) # beta_reduce
-	addiu	$sp $sp -4 # beta_reduce
-	lw	$t0 12($a0) # beta_reduce
+	move	$t1 $a0 # beta_reduce
+	addiu	$sp $sp 4 # beta_reduce
+	lw	$t2 0($sp) # beta_reduce
 	la	$a0 bool_const1 # beta_reduce
-	beq	$t0 $s1 label8 # beta_reduce
-	la	$a0 bool_const0 # beta_reduce
+	beq	$t1 $t2 label8 # beta_reduce
+	la	$a1 bool_const0 # beta_reduce
 	jal	equality_test # beta_reduce
 label8: # beta_reduce
-	addiu	$sp $sp 4 # beta_reduce
-	lw	$t0 0($sp) # beta_reduce
-	addiu	$sp $sp 4 # beta_reduce
-	lw	$s1 0($sp) # beta_reduce
-# ya tyt(net)
 	lw	$s1 12($a0) # beta_reduce
-	beqz	$s1 label7 # beta_reduce
+	beqz	$s1 label6 # beta_reduce
 	la	$a0 bool_const1 # beta_reduce
 #> for done method 
 	sw	$a0 12($fp) # beta_reduce
-# tet
-	b	label6 # beta_reduce
-label7: # beta_reduce
+	b	label7 # beta_reduce
+label6: # beta_reduce
 #  ==> e offset : 6 self type:M 
 #  ==> done offset : 3 Main type:M 
 #  ==> new_expr offset : 4 Main type:M 
@@ -1589,7 +1580,6 @@ label7: # beta_reduce
 	lw	$a0 16($fp) # beta_reduce
 #> for e method 
 	sw	$a0 24($fp) # beta_reduce
-# tet
 	la	$a0 str_const39 # beta_reduce
 	sw	$a0 0($sp) # beta_reduce
 	addiu	$sp $sp -4 # beta_reduce
@@ -1617,7 +1607,7 @@ label10: # beta_reduce
 	lw	$t1 8($a0) # beta_reduce
 	lw	$t1 28($t1) # beta_reduce
 	jalr	$t1 # beta_reduce
-label6: # beta_reduce
+label7: # beta_reduce
 	b	label2 # beta_reduce
 label3: # beta_reduce
 	move	$a0 $zero # beta_reduce
@@ -3358,7 +3348,6 @@ App.init:
 	lw	$a0 16($fp) # init
 #> for fun self 
 	sw	$a0 12($s0) # init
-# tet
 #  ==> fun offset : 3 App type:O 
 #  ==> arg offset : 4 App type:O 
 #  ==> f offset : 4 self type:M 
@@ -3368,7 +3357,6 @@ App.init:
 	lw	$a0 12($fp) # init
 #> for arg self 
 	sw	$a0 16($s0) # init
-# tet
 # for self SELF 
 	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
@@ -3905,7 +3893,6 @@ Lambda.init:
 	lw	$a0 16($fp) # init
 #> for arg self 
 	sw	$a0 12($s0) # init
-# tet
 #  ==> arg offset : 3 Lambda type:O 
 #  ==> body offset : 4 Lambda type:O 
 #  ==> a offset : 4 self type:M 
@@ -3915,7 +3902,6 @@ Lambda.init:
 	lw	$a0 12($fp) # init
 #> for body self 
 	sw	$a0 16($s0) # init
-# tet
 # for self SELF 
 	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
@@ -4055,7 +4041,6 @@ Lambda.substitute:
 	move	$s0 $a0 # substitute
  # formal x
  # formal e
-# ya tyt
 #  ==> arg offset : 3 Lambda type:O 
 #  ==> body offset : 4 Lambda type:O 
 #  ==> x offset : 6 self type:M 
@@ -4063,9 +4048,8 @@ Lambda.substitute:
 #  -> curr off 24
 # for x method 
 	lw	$a0 24($fp) # substitute
-	sw	$s1 0($sp) # substitute
+	sw	$a0 0($sp) # substitute
 	addiu	$sp $sp -4 # substitute
-	lw	$s1 12($a0) # substitute
 #  ==> arg offset : 3 Lambda type:O 
 #  ==> body offset : 4 Lambda type:O 
 #  ==> x offset : 6 self type:M 
@@ -4073,25 +4057,20 @@ Lambda.substitute:
 #  -> curr off 12
 # for arg self 
 	lw	$a0 12($s0) # substitute
-	sw	$t0 0($sp) # substitute
-	addiu	$sp $sp -4 # substitute
-	lw	$t0 12($a0) # substitute
+	move	$t1 $a0 # substitute
+	addiu	$sp $sp 4 # substitute
+	lw	$t2 0($sp) # substitute
 	la	$a0 bool_const1 # substitute
-	beq	$t0 $s1 label160 # substitute
-	la	$a0 bool_const0 # substitute
+	beq	$t1 $t2 label160 # substitute
+	la	$a1 bool_const0 # substitute
 	jal	equality_test # substitute
 label160: # substitute
-	addiu	$sp $sp 4 # substitute
-	lw	$t0 0($sp) # substitute
-	addiu	$sp $sp 4 # substitute
-	lw	$s1 0($sp) # substitute
-# ya tyt(net)
 	lw	$s1 12($a0) # substitute
-	beqz	$s1 label159 # substitute
+	beqz	$s1 label158 # substitute
 # for self SELF 
 	move	$a0 $s0 # substitute
-	b	label158 # substitute
-label159: # substitute
+	b	label159 # substitute
+label158: # substitute
  # let code for name new_body
 #  ==> arg offset : 3 Lambda type:O 
 #  ==> body offset : 4 Lambda type:O 
@@ -4171,7 +4150,7 @@ label162: # substitute
 	lw	$t1 8($a0) # substitute
 	lw	$t1 44($t1) # substitute
 	jalr	$t1 # substitute
-label158: # substitute
+label159: # substitute
 	lw	$fp 12($sp) # substitute
 	lw	$s0 8($sp) # substitute
 	lw	$ra 4($sp) # substitute
@@ -4268,7 +4247,7 @@ label169: # gen_code
 	lw	$t1 28($t1) # gen_code
 	jalr	$t1 # gen_code
 	lw	$s1 12($a0) # gen_code
-	beqz	$s1 label168 # gen_code
+	beqz	$s1 label167 # gen_code
 	la	$a0 str_const14 # gen_code
 	sw	$a0 0($sp) # gen_code
 	addiu	$sp $sp -4 # gen_code
@@ -4282,8 +4261,8 @@ label170: # gen_code
 	lw	$t1 8($a0) # gen_code
 	lw	$t1 12($t1) # gen_code
 	jalr	$t1 # gen_code
-	b	label167 # gen_code
-label168: # gen_code
+	b	label168 # gen_code
+label167: # gen_code
 	la	$a0 str_const15 # gen_code
 	sw	$a0 0($sp) # gen_code
 	addiu	$sp $sp -4 # gen_code
@@ -4297,7 +4276,7 @@ label171: # gen_code
 	lw	$t1 8($a0) # gen_code
 	lw	$t1 12($t1) # gen_code
 	jalr	$t1 # gen_code
-label167: # gen_code
+label168: # gen_code
 # for self SELF 
 	move	$a0 $s0 # gen_code
 	lw	$fp 12($sp) # gen_code
@@ -4533,7 +4512,6 @@ Variable.init:
 	lw	$a0 12($fp) # init
 #> for name self 
 	sw	$a0 12($s0) # init
-# tet
 # for self SELF 
 	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
@@ -4592,44 +4570,37 @@ Variable.substitute:
 	move	$s0 $a0 # substitute
  # formal x
  # formal e
-# ya tyt
 #  ==> name offset : 3 Variable type:O 
 #  ==> x offset : 5 self type:M 
 #  ==> e offset : 4 self type:M 
 #  -> curr off 20
 # for x method 
 	lw	$a0 20($fp) # substitute
-	sw	$s1 0($sp) # substitute
+	sw	$a0 0($sp) # substitute
 	addiu	$sp $sp -4 # substitute
-	lw	$s1 12($a0) # substitute
 # for self SELF 
 	move	$a0 $s0 # substitute
-	sw	$t0 0($sp) # substitute
-	addiu	$sp $sp -4 # substitute
-	lw	$t0 12($a0) # substitute
+	move	$t1 $a0 # substitute
+	addiu	$sp $sp 4 # substitute
+	lw	$t2 0($sp) # substitute
 	la	$a0 bool_const1 # substitute
-	beq	$t0 $s1 label187 # substitute
-	la	$a0 bool_const0 # substitute
+	beq	$t1 $t2 label187 # substitute
+	la	$a1 bool_const0 # substitute
 	jal	equality_test # substitute
 label187: # substitute
-	addiu	$sp $sp 4 # substitute
-	lw	$t0 0($sp) # substitute
-	addiu	$sp $sp 4 # substitute
-	lw	$s1 0($sp) # substitute
-# ya tyt(net)
 	lw	$s1 12($a0) # substitute
-	beqz	$s1 label186 # substitute
+	beqz	$s1 label185 # substitute
 #  ==> name offset : 3 Variable type:O 
 #  ==> x offset : 5 self type:M 
 #  ==> e offset : 4 self type:M 
 #  -> curr off 16
 # for e method 
 	lw	$a0 16($fp) # substitute
-	b	label185 # substitute
-label186: # substitute
+	b	label186 # substitute
+label185: # substitute
 # for self SELF 
 	move	$a0 $s0 # substitute
-label185: # substitute
+label186: # substitute
 	lw	$fp 12($sp) # substitute
 	lw	$s0 8($sp) # substitute
 	lw	$ra 4($sp) # substitute
@@ -4669,11 +4640,10 @@ label192: # gen_code
 	lw	$t1 28($t1) # gen_code
 	jalr	$t1 # gen_code
 	lw	$s1 12($a0) # gen_code
-	beqz	$s1 label191 # gen_code
+	beqz	$s1 label190 # gen_code
 	la	$a0 bool_const0 # gen_code
-	b	label190 # gen_code
-label191: # gen_code
-# ya tyt
+	b	label191 # gen_code
+label190: # gen_code
 #  ==> name offset : 3 Variable type:O 
 #  ==> env offset : 6 self type:M 
 #  ==> closures offset : 5 self type:M 
@@ -4689,30 +4659,24 @@ label193: # gen_code
 	lw	$t1 8($a0) # gen_code
 	lw	$t1 32($t1) # gen_code
 	jalr	$t1 # gen_code
-	sw	$s1 0($sp) # gen_code
+	sw	$a0 0($sp) # gen_code
 	addiu	$sp $sp -4 # gen_code
-	lw	$s1 12($a0) # gen_code
 # for self SELF 
 	move	$a0 $s0 # gen_code
-	sw	$t0 0($sp) # gen_code
-	addiu	$sp $sp -4 # gen_code
-	lw	$t0 12($a0) # gen_code
+	move	$t1 $a0 # gen_code
+	addiu	$sp $sp 4 # gen_code
+	lw	$t2 0($sp) # gen_code
 	la	$a0 bool_const1 # gen_code
-	beq	$t0 $s1 label194 # gen_code
-	la	$a0 bool_const0 # gen_code
+	beq	$t1 $t2 label194 # gen_code
+	la	$a1 bool_const0 # gen_code
 	jal	equality_test # gen_code
 label194: # gen_code
-	addiu	$sp $sp 4 # gen_code
-	lw	$t0 0($sp) # gen_code
-	addiu	$sp $sp 4 # gen_code
-	lw	$s1 0($sp) # gen_code
-# ya tyt(net)
 	lw	$s1 12($a0) # gen_code
 	la	$a0 bool_const0 # gen_code
 	beqz	$s1 label195 # gen_code
 	la	$a0 bool_const1 # gen_code
 label195: # gen_code
-label190: # gen_code
+label191: # gen_code
 	la	$t0 bool_const0 # gen_code
 	beq	$a0 $t0 label189 # gen_code
 	la	$a0 str_const7 # gen_code
@@ -4745,7 +4709,6 @@ label197: # gen_code
 	jalr	$t1 # gen_code
 #> for cur_env method 
 	sw	$a0 12($fp) # gen_code
-# tet
 	b	label188 # gen_code
 label189: # gen_code
 	move	$a0 $zero # gen_code
@@ -4765,7 +4728,7 @@ label200: # gen_code
 	lw	$t1 28($t1) # gen_code
 	jalr	$t1 # gen_code
 	lw	$s1 12($a0) # gen_code
-	beqz	$s1 label199 # gen_code
+	beqz	$s1 label198 # gen_code
 	la	$a0 str_const8 # gen_code
 	sw	$a0 0($sp) # gen_code
 	addiu	$sp $sp -4 # gen_code
@@ -4814,8 +4777,8 @@ label204: # gen_code
 	jalr	$t1 # gen_code
 # for self SELF 
 	move	$a0 $s0 # gen_code
-	b	label198 # gen_code
-label199: # gen_code
+	b	label199 # gen_code
+label198: # gen_code
 	la	$a0 str_const9 # gen_code
 	sw	$a0 0($sp) # gen_code
 	addiu	$sp $sp -4 # gen_code
@@ -4829,7 +4792,7 @@ label205: # gen_code
 	lw	$t1 8($a0) # gen_code
 	lw	$t1 12($t1) # gen_code
 	jalr	$t1 # gen_code
-label198: # gen_code
+label199: # gen_code
 	lw	$fp 12($sp) # gen_code
 	lw	$s0 8($sp) # gen_code
 	lw	$ra 4($sp) # gen_code
@@ -5097,13 +5060,11 @@ LambdaListRef.reset:
 	la	$a0 int_const1 # reset
 #> for nextNum self 
 	sw	$a0 12($s0) # reset
-# tet
 	la	$a0 LambdaList_protObj # reset
 	jal	Object.copy # reset
 	jal	LambdaList_init
 #> for l self 
 	sw	$a0 16($s0) # reset
-# tet
 # for self SELF 
 	move	$a0 $s0 # reset
 	lw	$fp 12($sp) # reset
@@ -5164,7 +5125,6 @@ label218: # add
 	jalr	$t1 # add
 #> for l self 
 	sw	$a0 16($s0) # add
-# tet
 #  ==> nextNum offset : 3 LambdaListRef type:O 
 #  ==> l offset : 4 LambdaListRef type:O 
 #  ==> env offset : 5 self type:M 
@@ -5189,7 +5149,6 @@ label218: # add
 	sw	$s1 12($a0) # add
 #> for nextNum self 
 	sw	$a0 12($s0) # add
-# tet
 #  ==> nextNum offset : 3 LambdaListRef type:O 
 #  ==> l offset : 4 LambdaListRef type:O 
 #  ==> env offset : 5 self type:M 
@@ -5239,7 +5198,6 @@ label219: # removeHead
 	jalr	$t1 # removeHead
 #> for l self 
 	sw	$a0 16($s0) # removeHead
-# tet
 # for self SELF 
 	move	$a0 $s0 # removeHead
 	lw	$fp 12($sp) # removeHead
@@ -5360,7 +5318,6 @@ LambdaListNE.init:
 	lw	$a0 24($fp) # init
 #> for env self 
 	sw	$a0 20($s0) # init
-# tet
 #  ==> lam offset : 3 LambdaListNE type:O 
 #  ==> num offset : 4 LambdaListNE type:O 
 #  ==> env offset : 5 LambdaListNE type:O 
@@ -5374,7 +5331,6 @@ LambdaListNE.init:
 	lw	$a0 20($fp) # init
 #> for lam self 
 	sw	$a0 12($s0) # init
-# tet
 #  ==> lam offset : 3 LambdaListNE type:O 
 #  ==> num offset : 4 LambdaListNE type:O 
 #  ==> env offset : 5 LambdaListNE type:O 
@@ -5388,7 +5344,6 @@ LambdaListNE.init:
 	lw	$a0 16($fp) # init
 #> for num self 
 	sw	$a0 16($s0) # init
-# tet
 #  ==> lam offset : 3 LambdaListNE type:O 
 #  ==> num offset : 4 LambdaListNE type:O 
 #  ==> env offset : 5 LambdaListNE type:O 
@@ -5402,7 +5357,6 @@ LambdaListNE.init:
 	lw	$a0 12($fp) # init
 #> for rest self 
 	sw	$a0 24($s0) # init
-# tet
 # for self SELF 
 	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init
@@ -5640,7 +5594,6 @@ VarListNE.init:
 	lw	$a0 16($fp) # init
 #> for x self 
 	sw	$a0 12($s0) # init
-# tet
 #  ==> x offset : 3 VarListNE type:O 
 #  ==> rest offset : 4 VarListNE type:O 
 #  ==> y offset : 4 self type:M 
@@ -5650,7 +5603,6 @@ VarListNE.init:
 	lw	$a0 12($fp) # init
 #> for rest self 
 	sw	$a0 16($s0) # init
-# tet
 # for self SELF 
 	move	$a0 $s0 # init
 	lw	$fp 12($sp) # init

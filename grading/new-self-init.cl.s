@@ -627,7 +627,6 @@ label5: # report
 	lw	$a0 12($fp) # report
 #> for derivedAttr self 
 	sw	$a0 16($s0) # report
-# tet
 #  ==> baseAttr offset : 3 Base type:O 
 #  ==> derivedAttr offset : 4 Derived type:O 
 #  ==> value offset : 3 self type:M 

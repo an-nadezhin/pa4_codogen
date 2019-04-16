@@ -408,33 +408,26 @@ Main.fact:
 	addiu	$fp $sp 4 # fact
 	move	$s0 $a0 # fact
  # formal n
-# ya tyt
 #  ==> n offset : 5 self type:M 
 #  -> curr off 20
 # for n method 
 	lw	$a0 20($fp) # fact
-	sw	$s1 0($sp) # fact
+	sw	$a0 0($sp) # fact
 	addiu	$sp $sp -4 # fact
-	lw	$s1 12($a0) # fact
 	la	$a0 int_const0 # fact
-	sw	$t0 0($sp) # fact
-	addiu	$sp $sp -4 # fact
-	lw	$t0 12($a0) # fact
+	move	$t1 $a0 # fact
+	addiu	$sp $sp 4 # fact
+	lw	$t2 0($sp) # fact
 	la	$a0 bool_const1 # fact
-	beq	$t0 $s1 label2 # fact
-	la	$a0 bool_const0 # fact
+	beq	$t1 $t2 label2 # fact
+	la	$a1 bool_const0 # fact
 	jal	equality_test # fact
 label2: # fact
-	addiu	$sp $sp 4 # fact
-	lw	$t0 0($sp) # fact
-	addiu	$sp $sp 4 # fact
-	lw	$s1 0($sp) # fact
-# ya tyt(net)
 	lw	$s1 12($a0) # fact
-	beqz	$s1 label1 # fact
+	beqz	$s1 label0 # fact
 	la	$a0 int_const1 # fact
-	b	label0 # fact
-label1: # fact
+	b	label1 # fact
+label0: # fact
 #  ==> n offset : 5 self type:M 
 #  -> curr off 20
 # for n method 
@@ -484,7 +477,7 @@ label3: # fact
 	addiu	$sp $sp 4 # fact
 	lw	$s1 0($sp) # fact
 	sw	$s1 12($a0) # fact
-label0: # fact
+label1: # fact
 	lw	$fp 12($sp) # fact
 	lw	$s0 8($sp) # fact
 	lw	$ra 4($sp) # fact

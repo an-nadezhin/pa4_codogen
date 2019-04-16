@@ -406,6 +406,7 @@ Main.main:
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
 label0: # main
+# lt start
 #  ==> a offset : 3 Main type:O 
 #  ==> i offset : 4 Main type:O 
 #  -> curr off 16
@@ -426,11 +427,12 @@ label0: # main
 	la	$a0 int_const1 # main
 	lw	$t0 12($a0) # main
 	la	$a0 bool_const0 # main
-	blt	$t0 $s1 label2 # main
+	ble	$t0 $s1 label2 # main
 	la	$a0 bool_const1 # main
 label2: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
+# lt end
 	la	$t0 bool_const0 # main
 	beq	$a0 $t0 label1 # main
 	la	$a0 Int_protObj # main
@@ -438,7 +440,6 @@ label2: # main
 	jal	Int_init
 #> for a self 
 	sw	$a0 12($s0) # main
-# tet
  # let code for name b
 	la	$a0 IO_protObj # main
 	jal	Object.copy # main
@@ -472,7 +473,6 @@ label2: # main
 	sw	$s1 12($a0) # main
 #> for i self 
 	sw	$a0 16($s0) # main
-# tet
 	b	label0 # main
 label1: # main
 	move	$a0 $zero # main
