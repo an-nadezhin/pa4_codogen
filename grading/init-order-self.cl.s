@@ -337,6 +337,90 @@ Main_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	IO_init # 
+	la	$a0 int_const0 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label0 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label0: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	sw	$a0 12($s0) # 
+	la	$a0 int_const1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label1 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label1: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	sw	$a0 16($s0) # 
+	la	$a0 int_const2 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label2 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label2: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	sw	$a0 20($s0) # 
+	la	$a0 int_const3 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label3 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label3: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	sw	$a0 24($s0) # 
+	la	$a0 int_const4 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label4 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label4: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	sw	$a0 28($s0) # 
+	la	$a0 int_const5 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label5 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label5: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	sw	$a0 32($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -434,11 +518,11 @@ Main.recite:
 	addiu	$sp $sp -4 # recite
 # for self SELF 
 	move	$a0 $s0 # recite
-	bne	$a0 $zero label0 # recite
+	bne	$a0 $zero label6 # recite
 	la	$a0 str_const0 # recite
 	li	$t1 1 # recite
 	jal	_dispatch_abort # recite
-label0: # recite
+label6: # recite
 	lw	$t1 8($a0) # recite
 	lw	$t1 16($t1) # recite
 	jalr	$t1 # recite
@@ -447,11 +531,11 @@ label0: # recite
 	addiu	$sp $sp -4 # recite
 # for self SELF 
 	move	$a0 $s0 # recite
-	bne	$a0 $zero label1 # recite
+	bne	$a0 $zero label7 # recite
 	la	$a0 str_const0 # recite
 	li	$t1 1 # recite
 	jal	_dispatch_abort # recite
-label1: # recite
+label7: # recite
 	lw	$t1 8($a0) # recite
 	lw	$t1 12($t1) # recite
 	jalr	$t1 # recite

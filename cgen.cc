@@ -186,6 +186,21 @@ void program_class::cgen(ostream &s) {
 void attr_class::cgen(std::ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN
 
+    auto pred = [=](EnvElement a) { return a.name == name; };
+    auto curr_var = new std::vector<EnvElement>(*var);
+    auto off_var = std::find_if(var->rbegin(), var->rend(), pred);
+/*
+    s << "# off_var->type() = " << (off_var->type == Type::OBJECT) << endl;
+    s << "# name = " << name << endl;
+    s << "# type_decl = " << type_decl << endl;
+    s << "# init->get_type " << (bool) init->get_type() << endl;
+
+*/
+    if (init->get_type()) {
+        init->cgen(s, self_class, curr_var, met);
+        emit_store(ACC, off_var->offset, SELF, s);
+    }
+
     INFO_OUT
 }
 
@@ -544,7 +559,7 @@ void neg_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
 
 void lt_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
-    s << "# lt start\n";
+
     e1->cgen(s, self_class, var, met);
     emit_push(T4, s);
     emit_fetch_int(T4, ACC, s);
@@ -557,7 +572,7 @@ void lt_class::cgen(ostream &s, Symbol self_class, Environment var, Environment 
     emit_load_bool(ACC, truebool, s);
     emit_label_def(end_label, s);
     emit_pop(T4, s);
-    s << "# lt end\n";
+
     INFO_OUT_AS;
 }
 
@@ -582,7 +597,7 @@ void eq_class::cgen(ostream &s, Symbol self_class, Environment var, Environment 
 
 void leq_class::cgen(ostream &s, Symbol self_class, Environment var, Environment met) {
     INFO_IN_AS;
-    s << "# leq start\n";
+
     e1->cgen(s, self_class, var, met);
     emit_push(T4, s);
     emit_fetch_int(T4, ACC, s);
@@ -595,7 +610,7 @@ void leq_class::cgen(ostream &s, Symbol self_class, Environment var, Environment
     emit_load_bool(ACC, truebool, s);
     emit_label_def(end_label, s);
     emit_pop(T4, s);
-    s << "# leq end\n";
+
     INFO_OUT_AS;
 }
 
@@ -610,7 +625,6 @@ void comp_class::cgen(ostream &s, Symbol self_class, Environment var, Environmen
     emit_beqz(T4, end_label, s);
     emit_load_bool(ACC, truebool, s);
     emit_label_def(end_label, s);
-
 
     INFO_OUT_AS;
 }

@@ -649,7 +649,6 @@ label9: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
 	sw	$s1 12($a0) # main
-# lt start
 	la	$a0 int_const8 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -686,7 +685,6 @@ label11: # main
 label12: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
-# lt end
 	la	$a0 int_const10 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -723,7 +721,6 @@ label14: # main
 	la	$a1 bool_const0 # main
 	jal	equality_test # main
 label15: # main
-# leq start
 	la	$a0 int_const12 # main
 	sw	$a0 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -760,7 +757,6 @@ label17: # main
 label18: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
-# leq end
 	lw	$fp 12($sp) # main
 	lw	$s0 8($sp) # main
 	lw	$ra 4($sp) # main

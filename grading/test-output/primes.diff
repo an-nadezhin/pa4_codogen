@@ -1,5 +1,4 @@
-6,101c6
-< 2 is trivially prime.
+7,101c7,8
 < 3 is prime.
 < 5 is prime.
 < 7 is prime.
@@ -96,4 +95,5 @@
 < 499 is prime.
 < Abort called from class String
 ---
-> COOL program successfully executed
+> Can't expand data segment by 65536 bytes to 1114112 bytes
+> Use -ldata # with # > 1114112

@@ -433,6 +433,21 @@ Derived_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	Base_init # 
+	la	$a0 int_const1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label0 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label0: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	la	$a0 int_const1 # 
+	sw	$a0 16($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -447,6 +462,21 @@ Base_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	IO_init # 
+	la	$a0 int_const0 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label1 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label1: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	la	$a0 int_const0 # 
+	sw	$a0 12($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -538,27 +568,27 @@ Main.main:
 	la	$a0 Derived_protObj # main
 	jal	Object.copy # main
 	jal	Derived_init
-	bne	$a0 $zero label0 # main
-	la	$a0 str_const0 # main
-	li	$t1 1 # main
-	jal	_dispatch_abort # main
-label0: # main
-	lw	$t1 8($a0) # main
-	lw	$t1 28($t1) # main
-	jalr	$t1 # main
-	bne	$a0 $zero label1 # main
-	la	$a0 str_const0 # main
-	li	$t1 1 # main
-	jal	_dispatch_abort # main
-label1: # main
-	lw	$t1 8($a0) # main
-	lw	$t1 32($t1) # main
-	jalr	$t1 # main
 	bne	$a0 $zero label2 # main
 	la	$a0 str_const0 # main
 	li	$t1 1 # main
 	jal	_dispatch_abort # main
 label2: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 28($t1) # main
+	jalr	$t1 # main
+	bne	$a0 $zero label3 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label3: # main
+	lw	$t1 8($a0) # main
+	lw	$t1 32($t1) # main
+	jalr	$t1 # main
+	bne	$a0 $zero label4 # main
+	la	$a0 str_const0 # main
+	li	$t1 1 # main
+	jal	_dispatch_abort # main
+label4: # main
 	lw	$t1 8($a0) # main
 	lw	$t1 28($t1) # main
 	jalr	$t1 # main
@@ -580,11 +610,11 @@ Derived.report:
 	addiu	$sp $sp -4 # report
 # for self SELF 
 	move	$a0 $s0 # report
-	bne	$a0 $zero label3 # report
+	bne	$a0 $zero label5 # report
 	la	$a0 str_const0 # report
 	li	$t1 1 # report
 	jal	_dispatch_abort # report
-label3: # report
+label5: # report
 	lw	$t1 8($a0) # report
 	lw	$t1 12($t1) # report
 	jalr	$t1 # report
@@ -598,11 +628,11 @@ label3: # report
 	addiu	$sp $sp -4 # report
 # for self SELF 
 	move	$a0 $s0 # report
-	bne	$a0 $zero label4 # report
+	bne	$a0 $zero label6 # report
 	la	$a0 str_const0 # report
 	li	$t1 1 # report
 	jal	_dispatch_abort # report
-label4: # report
+label6: # report
 	lw	$t1 8($a0) # report
 	lw	$t1 16($t1) # report
 	jalr	$t1 # report
@@ -611,11 +641,11 @@ label4: # report
 	addiu	$sp $sp -4 # report
 # for self SELF 
 	move	$a0 $s0 # report
-	bne	$a0 $zero label5 # report
+	bne	$a0 $zero label7 # report
 	la	$a0 str_const0 # report
 	li	$t1 1 # report
 	jal	_dispatch_abort # report
-label5: # report
+label7: # report
 	lw	$t1 8($a0) # report
 	lw	$t1 12($t1) # report
 	jalr	$t1 # report
@@ -637,11 +667,11 @@ label5: # report
 	addiu	$sp $sp -4 # report
 # for self SELF 
 	move	$a0 $s0 # report
-	bne	$a0 $zero label6 # report
+	bne	$a0 $zero label8 # report
 	la	$a0 str_const0 # report
 	li	$t1 1 # report
 	jal	_dispatch_abort # report
-label6: # report
+label8: # report
 	la	$t0 Base_dispTab
 	lw	$t0 28($t0) # report
 	jalr	$t0 # report
@@ -667,11 +697,11 @@ Base.report:
 	addiu	$sp $sp -4 # report
 # for self SELF 
 	move	$a0 $s0 # report
-	bne	$a0 $zero label7 # report
+	bne	$a0 $zero label9 # report
 	la	$a0 str_const0 # report
 	li	$t1 1 # report
 	jal	_dispatch_abort # report
-label7: # report
+label9: # report
 	lw	$t1 8($a0) # report
 	lw	$t1 16($t1) # report
 	jalr	$t1 # report
@@ -680,11 +710,11 @@ label7: # report
 	addiu	$sp $sp -4 # report
 # for self SELF 
 	move	$a0 $s0 # report
-	bne	$a0 $zero label8 # report
+	bne	$a0 $zero label10 # report
 	la	$a0 str_const0 # report
 	li	$t1 1 # report
 	jal	_dispatch_abort # report
-label8: # report
+label10: # report
 	lw	$t1 8($a0) # report
 	lw	$t1 12($t1) # report
 	jalr	$t1 # report

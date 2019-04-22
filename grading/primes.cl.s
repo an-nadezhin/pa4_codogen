@@ -374,6 +374,383 @@ Main_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	IO_init # 
+	la	$a0 str_const1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label0 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label0: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 12($t1) # 
+	jalr	$t1 # 
+	la	$a0 int_const1 # 
+	sw	$a0 12($s0) # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 12
+# for out self 
+	lw	$a0 12($s0) # 
+	sw	$a0 16($s0) # 
+	la	$a0 int_const2 # 
+	sw	$a0 24($s0) # 
+label1: # 
+	la	$a0 bool_const1 # 
+	la	$t0 bool_const0 # 
+	beq	$a0 $t0 label2 # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 16
+# for testee self 
+	lw	$a0 16($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 int_const3 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+#> for testee self 
+	sw	$a0 16($s0) # 
+	la	$a0 int_const1 # 
+#> for divisor self 
+	sw	$a0 20($s0) # 
+label3: # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 16
+# for testee self 
+	lw	$a0 16($s0) # 
+	sw	$s1 0($sp) # 
+	addiu	$sp $sp -4 # 
+	lw	$s1 12($a0) # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 20
+# for divisor self 
+	lw	$a0 20($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 20
+# for divisor self 
+	lw	$a0 20($s0) # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	mul	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	lw	$t0 12($a0) # 
+	la	$a0 bool_const0 # 
+	ble	$t0 $s1 label7 # 
+	la	$a0 bool_const1 # 
+label7: # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	lw	$s1 12($a0) # 
+	beqz	$s1 label5 # 
+	la	$a0 bool_const0 # 
+	b	label6 # 
+label5: # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 16
+# for testee self 
+	lw	$a0 16($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 20
+# for divisor self 
+	lw	$a0 20($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 16
+# for testee self 
+	lw	$a0 16($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 20
+# for divisor self 
+	lw	$a0 20($s0) # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	div	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	mul	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	sub	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 int_const0 # 
+	move	$t1 $a0 # 
+	addiu	$sp $sp 4 # 
+	lw	$t2 0($sp) # 
+	la	$a0 bool_const1 # 
+	beq	$t1 $t2 label10 # 
+	la	$a1 bool_const0 # 
+	jal	equality_test # 
+label10: # 
+	lw	$s1 12($a0) # 
+	beqz	$s1 label8 # 
+	la	$a0 bool_const0 # 
+	b	label9 # 
+label8: # 
+	la	$a0 bool_const1 # 
+label9: # 
+label6: # 
+	la	$t0 bool_const0 # 
+	beq	$a0 $t0 label4 # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 20
+# for divisor self 
+	lw	$a0 20($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 int_const3 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+#> for divisor self 
+	sw	$a0 20($s0) # 
+	b	label3 # 
+label4: # 
+	move	$a0 $zero # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 16
+# for testee self 
+	lw	$a0 16($s0) # 
+	sw	$s1 0($sp) # 
+	addiu	$sp $sp -4 # 
+	lw	$s1 12($a0) # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 20
+# for divisor self 
+	lw	$a0 20($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 20
+# for divisor self 
+	lw	$a0 20($s0) # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	mul	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	lw	$t0 12($a0) # 
+	la	$a0 bool_const0 # 
+	ble	$t0 $s1 label13 # 
+	la	$a0 bool_const1 # 
+label13: # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	lw	$s1 12($a0) # 
+	beqz	$s1 label11 # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 16
+# for testee self 
+	lw	$a0 16($s0) # 
+#> for out self 
+	sw	$a0 12($s0) # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 12
+# for out self 
+	lw	$a0 12($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label14 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label14: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 16($t1) # 
+	jalr	$t1 # 
+	la	$a0 str_const2 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label15 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label15: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 12($t1) # 
+	jalr	$t1 # 
+	b	label12 # 
+label11: # 
+	la	$a0 int_const0 # 
+label12: # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 24
+# for stop self 
+	lw	$a0 24($s0) # 
+	sw	$s1 0($sp) # 
+	addiu	$sp $sp -4 # 
+	lw	$s1 12($a0) # 
+#  ==> out offset : 3 Main type:O 
+#  ==> testee offset : 4 Main type:O 
+#  ==> divisor offset : 5 Main type:O 
+#  ==> stop offset : 6 Main type:O 
+#  ==> m offset : 7 Main type:O 
+#  -> curr off 16
+# for testee self 
+	lw	$a0 16($s0) # 
+	lw	$t0 12($a0) # 
+	la	$a0 bool_const0 # 
+	blt	$t0 $s1 label18 # 
+	la	$a0 bool_const1 # 
+label18: # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	lw	$s1 12($a0) # 
+	beqz	$s1 label16 # 
+	la	$a0 str_const3 # 
+	bne	$a0 $zero label19 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label19: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 0($t1) # 
+	jalr	$t1 # 
+	b	label17 # 
+label16: # 
+	la	$a0 str_const4 # 
+label17: # 
+	b	label1 # 
+label2: # 
+	move	$a0 $zero # 
+	sw	$a0 28($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 

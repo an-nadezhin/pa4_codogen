@@ -1343,6 +1343,8 @@ LambdaListRef_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	Object_init # 
+	la	$a0 int_const1 # 
+	sw	$a0 12($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 

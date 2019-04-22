@@ -522,7 +522,6 @@ label1: # main
 	la	$a0 int_const2 # main
 	sw	$a0 12($fp) # main
 label2: # main
-# lt start
 	la	$a0 int_const1 # main
 	sw	$s1 0($sp) # main
 	addiu	$sp $sp -4 # main
@@ -539,7 +538,6 @@ label2: # main
 label4: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
-# lt end
 	la	$t0 bool_const0 # main
 	beq	$a0 $t0 label3 # main
 #  ==> cells offset : 3 Main type:O 
@@ -1119,7 +1117,6 @@ label38: # evolve
 	la	$a0 str_const16 # evolve
 	sw	$a0 20($fp) # evolve
 label39: # evolve
-# lt start
 #  ==> population_map offset : 3 CellularAutomaton type:O 
 #  ==> position offset : 3 CellularAutomaton type:M 
 #  ==> num offset : 4 CellularAutomaton type:M 
@@ -1144,7 +1141,6 @@ label39: # evolve
 label41: # evolve
 	addiu	$sp $sp 4 # evolve
 	lw	$s1 0($sp) # evolve
-# lt end
 	la	$t0 bool_const0 # evolve
 	beq	$a0 $t0 label40 # evolve
 #  ==> population_map offset : 3 CellularAutomaton type:O 

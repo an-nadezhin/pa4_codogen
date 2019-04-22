@@ -406,7 +406,6 @@ Main.main:
 	la	$a0 bool_const0 # main
 	sw	$a0 16($fp) # main
 label0: # main
-# lt start
 #  ==> x offset : 3 Main type:M 
 #  ==> b offset : 4 Main type:M 
 #  -> curr off 12
@@ -423,7 +422,6 @@ label0: # main
 label2: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
-# lt end
 	la	$t0 bool_const0 # main
 	beq	$a0 $t0 label1 # main
 #  ==> x offset : 3 Main type:M 

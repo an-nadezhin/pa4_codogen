@@ -32,26 +32,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b113b9-8c1b-4f98-82ec-79d32a7b66b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/basicequality.cl" beforeDir="false" afterPath="$PROJECT_DIR$/basicequality.cl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicequality.s" beforeDir="false" afterPath="$PROJECT_DIR$/basicequality.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basicequality.cl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basicequality.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cgen" beforeDir="false" afterPath="$PROJECT_DIR$/cgen" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cgen.cc" beforeDir="false" afterPath="$PROJECT_DIR$/cgen.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cgen.o" beforeDir="false" afterPath="$PROJECT_DIR$/cgen.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex.s" beforeDir="false" afterPath="$PROJECT_DIR$/ex.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/RESULTS" beforeDir="false" afterPath="$PROJECT_DIR$/grading/RESULTS" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/SCORE" beforeDir="false" afterPath="$PROJECT_DIR$/grading/SCORE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/abort.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/abort.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/assignment-val.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/assignment-val.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/basic-init.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/basic-init.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/basicequality.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/basicequality.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/bigexpr.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/bigexpr.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/bool.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/bool.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/calls.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/calls.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/case-none.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/case-none.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/case-order.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/case-order.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/casevoid.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/casevoid.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/cells.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/cells.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/copy-self-dispatch.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/copy-self-dispatch.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/dispatch-override-dynamic.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/dispatch-override-dynamic.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/dispatch-override-static.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/dispatch-override-static.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/dispatch-void-dynamic.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/dispatch-void-dynamic.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/dispatch-void-static.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/dispatch-void-static.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/dispatchvoidlet.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/dispatchvoidlet.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/eval-order-args.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/eval-order-args.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/eval-order-arith.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/eval-order-arith.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/exp.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/exp.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/fact.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/fact.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/fibo.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/fibo.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/hairyscary.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/hairyscary.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/init-default.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/init-default.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/init-order-self.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/init-order-self.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/init-order-super.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/init-order-super.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/lam-gc.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/lam-gc.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/let-nested.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/let-nested.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/letinit.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/letinit.cl.s" afterDir="false" />
@@ -59,33 +74,72 @@
       <change beforePath="$PROJECT_DIR$/grading/mod-param.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/mod-param.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/multiple-dispatch.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/multiple-dispatch.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/multiple-static-dispatch.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/multiple-static-dispatch.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/new-self-dispatch.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/new-self-dispatch.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/new-self-init.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/new-self-init.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/new-st.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/new-st.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/newbasic.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/newbasic.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/not.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/not.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/objectequality.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/objectequality.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/override.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/override.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/primes.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/primes.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/scoping.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/scoping.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/selftypeattribute.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/selftypeattribute.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/sequence.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/sequence.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/shadow-attr-case.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/shadow-attr-case.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/shadow-attr-formal.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/shadow-attr-formal.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/shadow-attr-let.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/shadow-attr-let.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/shadow-case-let.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/shadow-case-let.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/shadow-formal-case.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/shadow-formal-case.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/shadow-formal-let.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/shadow-formal-let.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/shadow-let-case.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/shadow-let-case.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/shadow-let-let.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/shadow-let-let.cl.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grading/simple-gc.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/simple-gc.cl.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/basicequality.cl.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/basicequality.cl.out.unfilt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/basicequality.diff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/cells.cl.out" beforeDir="false" afterPath="$PROJECT_DIR$/grading/test-output/cells.cl.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/cells.cl.out.unfilt" beforeDir="false" afterPath="$PROJECT_DIR$/grading/test-output/cells.cl.out.unfilt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/cells.diff" beforeDir="false" afterPath="$PROJECT_DIR$/grading/test-output/cells.diff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/exp.cl.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/exp.cl.out.unfilt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/exp.diff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/fact.cl.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/fact.cl.out.unfilt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/fact.diff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/fibo.cl.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/fibo.cl.out.unfilt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/fibo.diff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/objectequality.cl.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/objectequality.cl.out.unfilt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grading/test-output/objectequality.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/string-methods.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/string-methods.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/calls.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/calls.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/calls.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/hairyscary.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/hairyscary.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/hairyscary.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-default.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-default.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-default.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-order-self.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-order-self.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-order-self.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-order-super.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-order-super.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/init-order-super.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/multiple-static-dispatch.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/multiple-static-dispatch.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/multiple-static-dispatch.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/new-self-init.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/new-self-init.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/new-self-init.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/new-st.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/new-st.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/new-st.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/newbasic.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/newbasic.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/newbasic.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/override.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/override.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/override.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/primes.cl.out" beforeDir="false" afterPath="$PROJECT_DIR$/grading/test-output/primes.cl.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/primes.cl.out.unfilt" beforeDir="false" afterPath="$PROJECT_DIR$/grading/test-output/primes.cl.out.unfilt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/primes.diff" beforeDir="false" afterPath="$PROJECT_DIR$/grading/test-output/primes.diff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/scoping.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/scoping.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/scoping.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/sequence.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/sequence.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/sequence.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/string-methods.cl.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/string-methods.cl.out.unfilt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/test-output/string-methods.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading/typename.cl.s" beforeDir="false" afterPath="$PROJECT_DIR$/grading/typename.cl.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence.cl" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,8 +155,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cgen.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="842">
-              <caret line="586" column="21" lean-forward="true" selection-start-line="586" selection-start-column="21" selection-end-line="586" selection-end-column="21" />
+            <state relative-caret-position="204">
+              <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
               <folding>
                 <element signature="e#777#798#0" />
               </folding>
@@ -111,37 +165,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/trap.handler">
+        <entry file="file://$PROJECT_DIR$/calls.s">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-125">
-              <caret line="459" column="18" selection-start-line="459" selection-start-column="18" selection-end-line="459" selection-end-column="24" />
+            <state relative-caret-position="330">
+              <caret line="323" column="17" selection-start-line="323" selection-start-column="17" selection-end-line="323" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basicequality.s">
+        <entry file="file://$PROJECT_DIR$/calls.cl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="392" selection-start-line="392" selection-end-line="420" />
+            <state relative-caret-position="198">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basicequality.cl">
+        <entry file="file://$PROJECT_DIR$/grading/basic-init.cl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grading/basicequality.cl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="40" />
+            <state relative-caret-position="22">
+              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="4" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -149,8 +194,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex.s">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="358" column="19" selection-start-line="358" selection-start-column="19" selection-end-line="358" selection-end-column="19" />
+            <state relative-caret-position="566">
+              <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -159,7 +204,7 @@
         <entry file="file://$PROJECT_DIR$/cgen_static_init.cxx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="132" column="21" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="21" />
+              <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
               <folding>
                 <element signature="e#2158#2186#0" expanded="true" />
                 <element signature="e#3371#3399#0" expanded="true" />
@@ -177,8 +222,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/cool-tree.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="536" column="26" selection-start-line="536" selection-start-column="24" selection-end-line="536" selection-end-column="26" />
+            <state relative-caret-position="248">
+              <caret line="218" column="14" selection-start-line="218" selection-start-column="14" selection-end-line="218" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -186,7 +231,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/emit.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
+            <state relative-caret-position="995">
               <caret line="114" column="21" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
             </state>
           </provider>
@@ -196,17 +241,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>emit_load_imm</find>
-      <find>disp</find>
-      <find>line_number</find>
-      <find>s</find>
-      <find>beqz</find>
-      <find>cre</find>
-      <find>emit_br</find>
-      <find>FP</find>
-      <find>emit_load_int</find>
-      <find>cond_</find>
-      <find>LA</find>
       <find>int_const1</find>
       <find>emit_load_ad</find>
       <find>equality</find>
@@ -214,18 +248,29 @@
       <find>emit_store</find>
       <find>emit_load</find>
       <find>offset</find>
-      <find>tyt</find>
       <find>method_</find>
       <find>plus</find>
-      <find>SW</find>
       <find>ble</find>
       <find>alloc_temp</find>
       <find>let</find>
       <find>emit_fet</find>
       <find>eq</find>
-      <find>int_const0</find>
       <find>emit_move</find>
       <find>expr_is_const</find>
+      <find>tyt</find>
+      <find>int_const0</find>
+      <find>attr_</find>
+      <find>attr</find>
+      <find>formal_class</find>
+      <find>branch_cl</find>
+      <find>type</find>
+      <find>let_class</find>
+      <find>formal</find>
+      <find>prim</find>
+      <find>assi</find>
+      <find>curr</find>
+      <find>SW</find>
+      <find>off_var</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -239,6 +284,8 @@
         <option value="$PROJECT_DIR$/example.s" />
         <option value="$PROJECT_DIR$/example.cl" />
         <option value="$PROJECT_DIR$/basicequality.cl" />
+        <option value="$PROJECT_DIR$/include/cool-tree.h" />
+        <option value="$PROJECT_DIR$/calls.cl" />
         <option value="$PROJECT_DIR$/cgen.cc" />
       </list>
     </option>
@@ -262,11 +309,6 @@
             <path>
               <item name="pa4_codegen" type="b2602c69:ProjectViewProjectNode" />
               <item name="pa4_codegen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pa4_codegen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pa4_codegen" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -322,18 +364,20 @@
       <workItem from="1555315627473" duration="10048000" />
       <workItem from="1555332588544" duration="9100000" />
       <workItem from="1555400871283" duration="2079000" />
-      <workItem from="1555406039306" duration="12864000" />
+      <workItem from="1555406039306" duration="13011000" />
+      <workItem from="1555517549114" duration="5252000" />
+      <workItem from="1555565558195" duration="397000" />
+      <workItem from="1555923940083" duration="6031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73154000" />
+    <option name="totallyTimeSpent" value="84981000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23021583" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23851688" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -358,41 +402,12 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/examples/complex.cl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/life.cl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/list.cl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/new_complex.cl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/cgen.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tree.cc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-132" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="332" column="18" lean-forward="true" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main.s" />
     <entry file="file://$PROJECT_DIR$/grading/test-output/abort.cl.out" />
     <entry file="file://$PROJECT_DIR$/grading/test-output/abort.diff" />
     <entry file="file://$PROJECT_DIR$/stringtab.cc">
@@ -424,9 +439,7 @@
     <entry file="file://$PROJECT_DIR$/grading/test-output/bool.cl.out" />
     <entry file="file://$PROJECT_DIR$/grading/test-output/bool.cl.out.unfilt" />
     <entry file="file://$PROJECT_DIR$/grading/test-output/bool.diff" />
-    <entry file="file://$PROJECT_DIR$/grading/test-output/exp.diff">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/grading/test-output/exp.diff" />
     <entry file="file://$PROJECT_DIR$/grading/test-output/eval-order-args.diff" />
     <entry file="file://$PROJECT_DIR$/grading/test-output/eval-order-args.cl.out" />
     <entry file="file://$PROJECT_DIR$/grading/test-output/assignment-val.cl.out" />
@@ -454,13 +467,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9504">
-          <caret line="432" selection-start-line="386" selection-end-line="432" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example.s" />
     <entry file="file://$PROJECT_DIR$/example.cl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -489,9 +496,7 @@
     <entry file="file://$PROJECT_DIR$/grading/basicequality.cl.out">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/grading/test-output/basicequality.cl.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/grading/test-output/basicequality.cl.out" />
     <entry file="file://$PROJECT_DIR$/grading/calls.cl.out">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -501,61 +506,60 @@
     <entry file="file://$PROJECT_DIR$/grading/test-output/calls.cl.out">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/grading/test-output/objectequality.cl.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/grading/test-output/objectequality.cl.out" />
     <entry file="file://$PROJECT_DIR$/grading/objectequality.cl.out">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/grading/objectequality.cl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/cool-tree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="536" column="26" selection-start-line="536" selection-start-column="24" selection-end-line="536" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/basicequality.s" />
+    <entry file="file://$PROJECT_DIR$/basicequality.cl" />
     <entry file="file://$PROJECT_DIR$/grading/basicequality.cl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="40" />
+        <state relative-caret-position="220">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/trap.handler">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
+        <state relative-caret-position="22">
           <caret line="459" column="18" selection-start-line="459" selection-start-column="18" selection-end-line="459" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basicequality.cl">
+    <entry file="file://$PROJECT_DIR$/examples/hello_world.cl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/complex.cl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/emit.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="995">
+          <caret line="114" column="21" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basicequality.s">
+    <entry file="file://$PROJECT_DIR$/grading/basic-init.cl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="392" selection-start-line="392" selection-end-line="420" />
+        <state relative-caret-position="22">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ex.s">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="358" column="19" selection-start-line="358" selection-start-column="19" selection-end-line="358" selection-end-column="19" />
+        <state relative-caret-position="566">
+          <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cgen_static_init.cxx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="132" column="21" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="21" />
+          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
           <folding>
             <element signature="e#2158#2186#0" expanded="true" />
             <element signature="e#3371#3399#0" expanded="true" />
@@ -569,17 +573,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/emit.h">
+    <entry file="file://$PROJECT_DIR$/include/cool-tree.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="114" column="21" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+        <state relative-caret-position="248">
+          <caret line="218" column="14" selection-start-line="218" selection-start-column="14" selection-end-line="218" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calls.cl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calls.s">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="323" column="17" selection-start-line="323" selection-start-column="17" selection-end-line="323" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cgen.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="586" column="21" lean-forward="true" selection-start-line="586" selection-start-column="21" selection-end-line="586" selection-end-column="21" />
+        <state relative-caret-position="204">
+          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
           <folding>
             <element signature="e#777#798#0" />
           </folding>

@@ -374,6 +374,26 @@ A_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	Object_init # 
+#  ==> x offset : 3 A type:O 
+#  -> curr off 12
+# for x self 
+	lw	$a0 12($s0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 int_const0 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 12($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 

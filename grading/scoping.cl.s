@@ -377,6 +377,8 @@ Main_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	Bob_init # 
+	la	$a0 int_const1 # 
+	sw	$a0 20($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -391,6 +393,8 @@ Bob_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	IO_init # 
+	la	$a0 int_const0 # 
+	sw	$a0 16($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 

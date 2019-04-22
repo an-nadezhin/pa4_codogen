@@ -323,6 +323,8 @@ Main_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	IO_init # 
+	la	$a0 int_const0 # 
+	sw	$a0 16($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -406,7 +408,6 @@ Main.main:
 	addiu	$fp $sp 4 # main
 	move	$s0 $a0 # main
 label0: # main
-# lt start
 #  ==> a offset : 3 Main type:O 
 #  ==> i offset : 4 Main type:O 
 #  -> curr off 16
@@ -432,7 +433,6 @@ label0: # main
 label2: # main
 	addiu	$sp $sp 4 # main
 	lw	$s1 0($sp) # main
-# lt end
 	la	$t0 bool_const0 # main
 	beq	$a0 $t0 label1 # main
 	la	$a0 Int_protObj # main

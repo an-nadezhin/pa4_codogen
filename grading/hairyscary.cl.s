@@ -456,6 +456,22 @@ Main_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	Object_init # 
+	la	$a0 Bazz_protObj # 
+	jal	Object.copy # 
+	jal	Bazz_init
+	sw	$a0 12($s0) # 
+	la	$a0 Foo_protObj # 
+	jal	Object.copy # 
+	jal	Foo_init
+	sw	$a0 16($s0) # 
+	la	$a0 Razz_protObj # 
+	jal	Object.copy # 
+	jal	Razz_init
+	sw	$a0 20($s0) # 
+	la	$a0 Bar_protObj # 
+	jal	Object.copy # 
+	jal	Bar_init
+	sw	$a0 24($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -470,6 +486,64 @@ Bazz_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	IO_init # 
+	la	$a0 int_const1 # 
+	sw	$a0 12($s0) # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label0 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_case_abort2 # 
+label0: # 
+	lw	$t0 0($a0) # 
+	sw	$a0 12($fp) # 
+label2: # 
+	blt	$t0 8 label3 # 
+	bgt	$t0 8 label3 # 
+	la	$a0 Foo_protObj # 
+	jal	Object.copy # 
+	jal	Foo_init
+	b	label1 # 
+label3: # 
+	blt	$t0 7 label4 # 
+	bgt	$t0 7 label4 # 
+	la	$a0 Bar_protObj # 
+	jal	Object.copy # 
+	jal	Bar_init
+	b	label1 # 
+label4: # 
+	blt	$t0 6 label5 # 
+	bgt	$t0 6 label5 # 
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> n offset : 3 Bazz type:M 
+#  -> curr off 12
+# for n method 
+	lw	$a0 12($fp) # 
+	b	label1 # 
+label5: # 
+	blt	$t0 5 label6 # 
+	bgt	$t0 7 label6 # 
+	la	$a0 Razz_protObj # 
+	jal	Object.copy # 
+	jal	Razz_init
+	b	label1 # 
+label6: # 
+	jal	_case_abort # 
+label1: # 
+	sw	$a0 16($s0) # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label7 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label7: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	sw	$a0 20($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -484,6 +558,172 @@ Razz_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	Foo_init # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label8 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_case_abort2 # 
+label8: # 
+	lw	$t0 0($a0) # 
+	sw	$a0 12($fp) # 
+label10: # 
+	blt	$t0 7 label11 # 
+	bgt	$t0 7 label11 # 
+	la	$a0 Bar_protObj # 
+	jal	Object.copy # 
+	jal	Bar_init
+	b	label9 # 
+label11: # 
+	blt	$t0 6 label12 # 
+	bgt	$t0 6 label12 # 
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  ==> e offset : 8 Razz type:O 
+#  ==> f offset : 9 Razz type:O 
+#  ==> n offset : 3 Razz type:M 
+#  -> curr off 12
+# for n method 
+	lw	$a0 12($fp) # 
+	b	label9 # 
+label12: # 
+	jal	_case_abort # 
+label9: # 
+	sw	$a0 32($s0) # 
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  ==> e offset : 8 Razz type:O 
+#  ==> f offset : 9 Razz type:O 
+#  -> curr off 24
+# for a self 
+	lw	$a0 24($s0) # 
+	bne	$a0 $zero label13 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label13: # 
+	la	$t0 Bazz_dispTab
+	lw	$t0 32($t0) # 
+	jalr	$t0 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  ==> e offset : 8 Razz type:O 
+#  ==> f offset : 9 Razz type:O 
+#  -> curr off 16
+# for g self 
+	lw	$a0 16($s0) # 
+	bne	$a0 $zero label14 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label14: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 32($t1) # 
+	jalr	$t1 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  ==> e offset : 8 Razz type:O 
+#  ==> f offset : 9 Razz type:O 
+#  -> curr off 32
+# for e self 
+	lw	$a0 32($s0) # 
+	bne	$a0 $zero label15 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label15: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 32($t1) # 
+	jalr	$t1 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label16 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label16: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 32($t1) # 
+	jalr	$t1 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label17 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label17: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 36($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -498,6 +738,28 @@ Bar_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	Razz_init # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label18 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label18: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 32($t1) # 
+	jalr	$t1 # 
+	sw	$a0 40($s0) # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label19 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label19: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	sw	$a0 44($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -512,6 +774,141 @@ Foo_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	Bazz_init # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label20 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_case_abort2 # 
+label20: # 
+	lw	$t0 0($a0) # 
+	sw	$a0 12($fp) # 
+label22: # 
+	blt	$t0 7 label23 # 
+	bgt	$t0 7 label23 # 
+	la	$a0 Bar_protObj # 
+	jal	Object.copy # 
+	jal	Bar_init
+	b	label21 # 
+label23: # 
+	blt	$t0 6 label24 # 
+	bgt	$t0 6 label24 # 
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  ==> n offset : 3 Foo type:M 
+#  -> curr off 12
+# for n method 
+	lw	$a0 12($fp) # 
+	b	label21 # 
+label24: # 
+	blt	$t0 5 label25 # 
+	bgt	$t0 7 label25 # 
+	la	$a0 Razz_protObj # 
+	jal	Object.copy # 
+	jal	Razz_init
+	b	label21 # 
+label25: # 
+	jal	_case_abort # 
+label21: # 
+	sw	$a0 24($s0) # 
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  -> curr off 24
+# for a self 
+	lw	$a0 24($s0) # 
+	bne	$a0 $zero label26 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label26: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 32($t1) # 
+	jalr	$t1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+#  ==> h offset : 3 Bazz type:O 
+#  ==> g offset : 4 Bazz type:O 
+#  ==> i offset : 5 Bazz type:O 
+#  ==> a offset : 6 Foo type:O 
+#  ==> b offset : 7 Foo type:O 
+#  -> curr off 16
+# for g self 
+	lw	$a0 16($s0) # 
+	bne	$a0 $zero label27 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label27: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 32($t1) # 
+	jalr	$t1 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label28 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label28: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 32($t1) # 
+	jalr	$t1 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+# for self SELF 
+	move	$a0 $s0 # 
+	bne	$a0 $zero label29 # 
+	la	$a0 str_const0 # 
+	li	$t1 1 # 
+	jal	_dispatch_abort # 
+label29: # 
+	lw	$t1 8($a0) # 
+	lw	$t1 28($t1) # 
+	jalr	$t1 # 
+	lw	$s1 12($a0) # 
+	addiu	$sp $sp 4 # 
+	lw	$a0 0($sp) # 
+	lw	$a0 12($a0) # 
+	add	$a0 $a0 $s1 # 
+	sw	$a0 0($sp) # 
+	addiu	$sp $sp -4 # 
+	la	$a0 Int_protObj # 
+	jal	Object.copy # 
+	addiu	$sp $sp 4 # 
+	lw	$s1 0($sp) # 
+	sw	$s1 12($a0) # 
+	sw	$a0 28($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
@@ -617,11 +1014,11 @@ Bazz.printh:
 	addiu	$sp $sp -4 # printh
 # for self SELF 
 	move	$a0 $s0 # printh
-	bne	$a0 $zero label0 # printh
+	bne	$a0 $zero label30 # printh
 	la	$a0 str_const0 # printh
 	li	$t1 1 # printh
 	jal	_dispatch_abort # printh
-label0: # printh
+label30: # printh
 	lw	$t1 8($a0) # printh
 	lw	$t1 16($t1) # printh
 	jalr	$t1 # printh

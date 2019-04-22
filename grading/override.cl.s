@@ -420,6 +420,22 @@ Main_init:
 	addiu	$fp $sp 4 # 
 	move	$s0 $a0 # 
 	jal	IO_init # 
+	la	$a0 A_protObj # 
+	jal	Object.copy # 
+	jal	A_init
+	sw	$a0 12($s0) # 
+	la	$a0 B_protObj # 
+	jal	Object.copy # 
+	jal	B_init
+	sw	$a0 16($s0) # 
+	la	$a0 C_protObj # 
+	jal	Object.copy # 
+	jal	C_init
+	sw	$a0 20($s0) # 
+	la	$a0 D_protObj # 
+	jal	Object.copy # 
+	jal	D_init
+	sw	$a0 24($s0) # 
 	move	$a0 $s0 # 
 	lw	$fp 12($sp) # 
 	lw	$s0 8($sp) # 
